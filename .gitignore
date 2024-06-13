@@ -2,3 +2,4 @@ gant
 node_modules
 *.json
 *.md
+.angular
