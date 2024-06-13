@@ -1,0 +1,88 @@
+<div class="row">
+  <h1 class="titre">FILTER</h1>
+
+  <form action="" method="">
+    <!-- Label, Category, Room -->
+    <div class="row g-1">
+      <div class="col mb-1">
+        <label for="labelSearch">Label</label>
+        <input name="intitule" type="search" class="form-control" id="labelSearch" placeholder="Search for label" value="" required>
+      </div>
+      <div class="col mb-1">
+        <label for="category">Category</label>
+        <select name="categorie" class="form-control" id="category">
+          <option>default</option>
+        </select>
+      </div>
+      <div class="col mb-1">
+        <label for="room">Room</label>
+        <select name="salle" class="form-control" id="room">
+          <option>default</option>
+        </select>
+      </div>
+    <!-- Start Date and End Date  -->
+      <div class="col mb-1">
+        <label for="startDate">Start date</label>
+        <input name="debut" type="date" class="form-control" id="startDate" placeholder="Start date" value="" required>
+      </div>
+      <div class="col mb-1">
+        <label for="endDate">End date</label>
+        <input name="fin" type="date" class="form-control" id="endDate" placeholder="End date" value="" required>
+      </div>
+
+      <div class="col mb-1">
+        <label for="">Minimum worth</label>
+        <input name="valeur_min" type="number" class="form-control" id="" placeholder="Worth" value="" required>
+      </div>
+      <div class="col mb-1">
+        <label for="">Maximum worth</label>
+        <input name="valeur_max" type="number" class="form-control" id="" placeholder="Worth" value="" required>
+      </div>
+
+    </div>
+
+    <button class="btn btn-light submit-button" type="submit">Filter</button>
+  </form>
+</div><br>
+
+<div class="row info">
+      <h1 class="titre">THEME LIST</h1>
+
+      <table class="table">
+        <thead class="header">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Label</th>
+          <th scope="col">Category</th>
+          <th scope="col">Room</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Worth (Ar) </th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Theme 1</td>
+          <td>Category 1</td>
+          <td>Room 101</td>
+          <td>2023-01-01</td>
+          <td>2023-12-31</td>
+          <td>400 000 Ar</td>
+          <td>
+            <button class="icon-btn ripple" id="">
+              <i class="mdi mdi-table-edit icon-edit"></i>
+            </button>
+          </td>
+          <td>
+            <button class="icon-btn ripple" id="">
+              <i class="mdi mdi-delete icon-delete"></i>
+            </button>
+          </td>
+        </tr>
+        <!-- Other table rows -->
+        </tbody>
+      </table>
+</div>

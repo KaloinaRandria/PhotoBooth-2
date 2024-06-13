@@ -1,0 +1,91 @@
+<div *ngIf="userConnected !== null" class="head" [ngClass]="getHeadClass()">
+  <div class="head-content animate__animated animate__fadeIn animate__slow">
+    <div class="head-content-left">
+<!--      <div class="search-container">-->
+<!--        <div *ngIf="!canShowSearchAsOverlay" class="normal-search">-->
+<!--          <input type="search" class="search" name="" id="" placeholder="Search...">-->
+
+<!--        </div>-->
+<!--        <div class="search-icon-div">-->
+<!--          <i class="mdi mdi-magnify search-icon"></i>-->
+<!--        </div>-->
+<!--        <div *ngIf="canShowSearchAsOverlay">-->
+<!--          &lt;!&ndash;<button-->
+<!--            [cdkMenuTriggerFor]="searchOverlay"-->
+<!--            class="search-menu-btn ripple"-->
+<!--          >-->
+<!--            <i class="mdi mdi-json search-icon"></i>-->
+<!--          </button>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+    <div class="head-content-right">
+      <div class="head-menu">
+        <div class="head-menu-item">
+          <button class="head-menu-item-btn ripple bell-icon menu-icon" id="messageDropdown" data-toggle="dropdown" aria-expanded="false">
+            <i class="mdi mdi-bell menu-icon "></i>
+            <div class="circle-indicator pulse"></div>
+
+          </button>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+            <h4 class="p-3 mb-0">Messages</h4>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                <img src="assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
+              </div>
+              <div class="preview-item-content">
+                <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
+                <p class="text-muted mb-0"> 1 Minutes ago </p>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                <img src="assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
+              </div>
+              <div class="preview-item-content">
+                <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
+                <p class="text-muted mb-0"> 15 Minutes ago </p>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                <img src="assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
+              </div>
+              <div class="preview-item-content">
+                <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
+                <p class="text-muted mb-0"> 18 Minutes ago </p>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="username">
+        <h4>NOM</h4>
+      </div>
+      <div class="head-user-avatar-container">
+        <div class="head-user-avatar">
+          <i class="mdi mdi-account profil-icon"></i>
+        </div>
+      </div>
+      <div class="log-out-div">
+        <div (click)="logOut()" class="log-out-icon-div">
+          <i class="mdi mdi-logout log-out-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<ng-template #searchOverlay cdkMenu>
+  <div class="overlay overlay-search overlay-fall">
+    <input type="search" class="search" name="" placeholder="Search...">
+    <button class="search-btn">
+      <i class="mdi mdi-json search-icon"></i>
+    </button>
+  </div>
+</ng-template>-->

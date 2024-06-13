@@ -1,0 +1,9 @@
+.error-snackbar .mdc-snackbar__surface {
+  --mdc-snackbar-supporting-text-color: #ebe8e8 !important;
+  background-color: #664a4a !important;
+}
+
+.success-snackbar .mdc-snackbar__surface {
+  --mdc-snackbar-supporting-text-color: #ebe8e8 !important;
+  background-color: #86c97f !important;
+}

@@ -1,0 +1,47 @@
+.image-carousel {
+}
+
+.carousel-control-prev, .carousel-control-next{
+  background: none;
+  border: none;
+}
+
+.card {
+  background-color: #2a1515 !important;
+}
+
+.carousel-div {
+  padding: unset !important;
+}
+
+.carousel-inner {
+  height: 400px;
+  /* mila atao responsive selon la taille d ecran sns */
+
+  .carousel-item {
+    height: -webkit-fill-available;
+
+    img {
+      height: -webkit-fill-available;
+    }
+  }
+}
+
+.carousel-item {
+  height: -webkit-fill-available;
+
+  .img
+  {
+
+  }
+
+}
+
+/*.description-image-theme{*/
+/*  left: 100px;*/
+/*}*/
+
+/*.carousel-caption{*/
+/*  position: relative;*/
+/*  left:50%;*/
+/*}*/

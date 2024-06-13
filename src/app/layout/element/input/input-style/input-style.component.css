@@ -1,0 +1,30 @@
+.search-bar {
+  width: 270px;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #303030;
+  border-bottom: 2px solid #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 25px;
+  background-color: #1b1b19;
+  color: white;
+  transition: all 0.3s ease;
+  letter-spacing: 5px;
+}
+
+.search-bar::placeholder {
+  color: #9a9a9a;
+}
+
+.search-bar:hover {
+  background-color: #313131;
+}
+
+.search-bar:active,
+.search-bar:focus {
+  background-color: #1e1f20;
+  border: 1px solid #2d2d2d;
+  border-bottom: 2px solid rgb(109, 20, 20);
+}

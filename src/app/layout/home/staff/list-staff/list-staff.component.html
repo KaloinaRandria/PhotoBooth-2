@@ -1,0 +1,76 @@
+<div class="row">
+  <form action="" method="" class="row g-1">
+    <div class="col"> 
+        <div class="input-group">
+          <input name="username" type="search" class="form-control" id="" placeholder="username"
+                 aria-describedby="inputGroupPrepend2" required>
+        </div>
+      </div>
+      <div class="col">
+        <input name="age_min" type="number" class="form-control" id="" placeholder="age_min" required>
+      </div>
+
+      <div class="col">
+        <input name="age_max" type="number" class="form-control" id="" placeholder="age_max" required>
+      </div>
+
+      <div class="col">
+        <select name="post" class="form-control">
+          <option>post</option>
+        </select>
+      </div>
+      <div class="col">
+        <select name="role" class="form-control">
+          <option>role</option>
+        </select>
+      </div>
+      <div class="col">
+        <input name="salaire" type="number" class="form-control " id="" placeholder="salaire" required>
+      </div>
+
+    <button class="btn btn-light submit-button" type="submit">Filter</button>
+  </form>
+</div><br>
+<div class="row info">
+      <h1 class="titre">STAFF LIST</h1>
+
+      <table class="table">
+        <thead class="header">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Post</th>
+          <th scope="col">Hiring Date</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let membre of staff">
+          <th scope="row">1</th>
+          <td>{{ membre.prenom }}</td>
+          <td>{{ membre.nom }}</td>
+          <td>{{ membre.date_de_naissance }}</td>
+          <td>{{ membre.poste.intitule }}</td>
+          <td>{{ membre.date_embauche }}</td>
+          <td>$5000</td>
+          <td>
+            <button class="icon-btn ripple " id=""  >
+              <i class="mdi mdi-table-edit icon-edit "></i>
+
+            </button>
+          </td>
+          <td>
+            <button class="icon-btn ripple " id=""  >
+              <i class="mdi mdi-delete icon-delete "></i>
+
+            </button>
+          </td>
+        </tr>
+        <!-- Other table rows -->
+        </tbody>
+      </table>
+</div>

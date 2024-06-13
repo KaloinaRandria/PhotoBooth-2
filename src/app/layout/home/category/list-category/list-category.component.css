@@ -1,0 +1,145 @@
+/*INSERT CSS*/
+.form-div
+{
+  /*font-family: Arsenal;*/
+}
+
+table tr th{
+  color: #261D15;
+}
+table tr th td{
+  color: #261D15;
+}
+.form-control
+{
+  background-color: white;
+  color: black;
+  border: none;
+}
+.form-div-lg
+{
+  background: #27263e;
+  border-radius: 20px;
+  width: 100%;
+  height: 100px;
+}
+
+
+.form-div-sm {
+  padding: 15px;
+  height: auto;
+}
+
+.form-div-md {
+  padding: 43px;
+  height: auto;
+}
+
+.titre{
+}
+
+.currency{
+  position: relative;
+  left: 100%;
+  bottom: 40%;
+  width: 50%;
+  background-color: black;
+  color: white;
+
+}
+
+
+.submit-button{
+}
+
+
+/*LIST CSS*/
+.list-div{
+  width: auto;
+  background: #6d1515;
+  border-radius: 20px;
+  height: auto;
+  padding: 50px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+}
+/*.list-div-lg, .list-div-md, .list-div-sm*/
+/*{*/
+/*  width: 100%;*/
+/*  color :white;*/
+/*}*/
+
+/*.list-div-lg*/
+/*{*/
+/*  background: #6d1515;*/
+/*  border-radius: 20px;*/
+/*  width: 100%;*/
+/*  height: auto;*/
+/*}*/
+
+
+/*.list-div-sm {*/
+/*  width: 100%;*/
+/*  padding: 15px;*/
+/*  height: auto;*/
+/*}*/
+
+/*.list-div-md {*/
+/*  width: 100%;*/
+/*  padding: 43px;*/
+/*  height: auto;*/
+/*}*/
+
+
+
+.table, .table-hover{
+  color: white;
+  border: white;
+
+
+}
+
+.table-hover tr:hover{
+  background: #230707;
+  color:white;
+}
+
+
+.header th {
+  color: white;
+
+}
+
+
+
+
+.icon-btn {
+  border-radius: 50%; /* Make it a circle */
+  width: 40px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  border:none;
+  text-align: center;
+  cursor: pointer;
+  color : #6c1515;
+}
+.icon-btn:hover{
+  background-color: #ff3333;
+  color: white;
+}
+
+.icon-edit{
+  font-size: x-large;
+  position: relative;
+  top: 10%;
+}
+
+.icon-delete{
+  font-size: x-large;
+  position: relative;
+  top: 5%;
+}
+
+
+

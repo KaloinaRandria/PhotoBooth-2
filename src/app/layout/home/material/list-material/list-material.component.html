@@ -1,0 +1,70 @@
+<div class="row info">
+  <form action="" method="">
+    <!-- intitule quantité      -->
+    <div class="row g-1">
+      <div class="col mb-1">
+        <label for="">Label</label>
+        <input name="intitule" type="search" class="form-control" id="" placeholder="Label" value="" required>
+      </div>
+
+      <div class="col mb-1">
+        <label for="">Status</label>
+        <select name="status" class="form-control">
+          <option>Available</option>
+          <option>Unavailable</option>
+        </select>
+      </div>
+      <!-- Prix -->
+      <div class="col mb-1">
+        <label for="">Minimum price</label>
+        <input name="prix_min" type="number" class="form-control" id="" required>
+      </div>
+      <div class="col mb-1">
+        <label for="">Maximum price</label>
+        <input name="prix_max" type="number" class="form-control" id="" required>
+      </div>
+
+    </div>
+
+    <button class="btn btn-light submit-button" type="submit">Filter</button>
+  </form>
+</div><br>
+
+
+<div class="row info">
+  <h1 class="titre">MATERIAL LIST</h1>
+
+  <table class="table">
+    <thead class="header">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Label</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Status</th>
+      <th scope="col">Price</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td scope="row">1</td>
+      <td>Item 1</td>
+      <td>10</td>
+      <td>Available</td>
+      <td>$50</td>
+      <td>
+        <button class="icon-btn ripple" id="">
+          <i class="mdi mdi-table-edit icon-edit"></i>
+        </button>
+      </td>
+      <td>
+        <button class="icon-btn ripple" id="">
+          <i class="mdi mdi-delete icon-delete"></i>
+        </button>
+      </td>
+    </tr>
+    <!-- Other table rows -->
+    </tbody>
+  </table>
+</div>
