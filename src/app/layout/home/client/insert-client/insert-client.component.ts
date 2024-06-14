@@ -21,7 +21,7 @@ export class InsertClientComponent {
 
   submitForm() {
     const data = {
-      
+
     };
   }
 }
