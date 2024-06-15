@@ -16,6 +16,7 @@ export class ListClientComponent implements OnInit{
     nom: '',
     ageMin: '',
     ageMax: '',
+    numero:''
   }
   ngOnInit() {
     this.getAllClient();
@@ -55,10 +56,11 @@ export class ListClientComponent implements OnInit{
       const matchesLastName = filter.nom && filter.nom !== '' ? client.nom.includes(filter.nom) : true;
       const matchesAgeMin = filter.ageMin && filter.ageMin !== '' ? age >= Number(filter.ageMin) : true;
       const matchesAgeMax = filter.ageMax && filter.ageMax !== '' ? age <= Number(filter.ageMax) : true;
+      const matchesNumero = filter.numero && filter.numero !== '' ? client.numero.includes(filter.numero) : true;
 
       return (
           matchesFirstName && matchesLastName &&
-          matchesAgeMin && matchesAgeMax
+          matchesAgeMin && matchesAgeMax && matchesNumero
       );
     });
   }
