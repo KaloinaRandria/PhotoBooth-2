@@ -7,7 +7,7 @@
   <div class="col-lg-7">
       <h1 class="titre">INSERT CLIENT</h1>
 
-      <form action="" method="">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
       <!-- nom prenom dtn        -->
         <div class="form-row">
           <div class="col-md-4 mb-3">

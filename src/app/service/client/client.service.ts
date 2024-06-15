@@ -16,4 +16,8 @@ export class ClientService extends BaseService{
     const api = 'client/save';
     return this.req(formBody, api , 'post');
   }
+
+  getAll(api : string) {
+    return this.req(null,api,'get');
+  }
 }
