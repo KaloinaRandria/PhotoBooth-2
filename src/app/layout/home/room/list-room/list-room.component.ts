@@ -11,7 +11,12 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./list-room.component.css']
 })
 export class ListRoomComponent implements OnInit {
+  roomsInitial: any[] = [];
   rooms: any[] = [];
+
+  filter: any = {
+    room: ''
+  }
 
   constructor(private roomService: RoomService,private snackBar:MatSnackBar) {}
 
@@ -26,6 +31,7 @@ export class ListRoomComponent implements OnInit {
       (response: any) => {
         if (response.success) {
           this.rooms = response.data;
+          this.roomsInitial = response.data;
         } else {
           console.error('Failed to fetch rooms');
         }
@@ -52,5 +58,29 @@ export class ListRoomComponent implements OnInit {
         Display.alert(this.snackBar,error,"close",6000);
       }
     );
+  }
+
+  filterPro(
+      roomList: any[],
+      filter: any
+  ): any[] {
+    return roomList.filter(room => {
+
+      const matchesNumber = filter.room && filter.room !== '' ?
+          (room.numero && room.numero === Number(filter.room)) : true;
+
+      return (
+          matchesNumber
+      );
+    });
+  }
+
+  filterFunc() {
+    const filterTab = this.filterPro(this.roomsInitial, this.filter);
+    this.rooms = filterTab;
+  }
+
+  initial() {
+    this.rooms = this.roomsInitial;
   }
 }

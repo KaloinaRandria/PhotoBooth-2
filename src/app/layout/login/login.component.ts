@@ -17,8 +17,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   title: string = Constants.APP_TITLE;
   form : FormGroup;
+  loading: boolean = false;
   ngOnInit() {
     this.renderer.addClass(document.body, 'login');
+    this.startTyping();
+
     // if (User.verify()) {
     //   this.router.navigate(['/home/dashboard']).then(r => true);
     // }
@@ -40,16 +43,24 @@ export class LoginComponent implements OnInit, OnDestroy {
       username : this.form.get('username')?.value,
       mot_de_passe : this.form.get('password')?.value
     }
+
+
+    this.loading = true;
     this.loginService.login(data,"/membre/connect").subscribe({
       next:(valiny)=> {
         console.log(valiny);
         User.setUserAuth(DataSecurity.encryptData(valiny.data, 'auth'));
+        this.loading = false;
         this.addFadeOutAnimation().then(() => {
           this.router.navigate(['/home/dashboard']).then(r => true);
         });
       },
       error:(err) => {
-        console.log(err);
+        this.loading = false;
+        if (err.status === 0) {
+          Display.alert(this.alert , 'Server unavailable',"close",3000);
+          return;
+        }
         Display.alert(this.alert , err.error.message,"close",3000);
       }
     });
@@ -75,6 +86,36 @@ export class LoginComponent implements OnInit, OnDestroy {
         resolve();
       }, 1000);
     });
+  }
+
+  slogans: string[] = [
+    "Magic in front, and behind the camera",
+    "Capture Your Best Moments Instantly!",
+    "Smile, Snap, Repeat!"
+  ];
+
+  currentSloganIndex: number = 0;
+  currentCharIndex: number = 0;
+  sloganInterval: any;
+  sloganDelay: number = 100; // Délai entre chaque caractère (en millisecondes)
+
+  sloganText: string = '';
+
+  startTyping() {
+    this.sloganInterval = setInterval(() => {
+      if (this.currentCharIndex < this.slogans[this.currentSloganIndex].length) {
+        this.sloganText += this.slogans[this.currentSloganIndex].charAt(this.currentCharIndex);
+        this.currentCharIndex++;
+      } else {
+        clearInterval(this.sloganInterval);
+        setTimeout(() => {
+          this.currentCharIndex = 0;
+          this.sloganText = '';
+          this.currentSloganIndex = (this.currentSloganIndex + 1) % this.slogans.length; // Boucle à l'infini sur les slogans
+          this.startTyping(); // Reprendre l'affichage du prochain slogan
+        }, 2000); // Délai entre les slogans (en millisecondes)
+      }
+    }, this.sloganDelay);
   }
 }
 

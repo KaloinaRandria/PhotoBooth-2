@@ -1,9 +1,10 @@
 <div class="row">
   <form action="" method="" class="row g-1">
     <div class="col">
-        <input name="intitule" type="text" class="form-control" placeholder="label">
+        <input name="intitule" [(ngModel)]="filter.intitule" type="text" class="form-control" placeholder="label">
       </div>
-    <button class="btn btn-light submit-button" type="submit">Filter</button>
+    <button class="btn btn-light submit-button" (click)="filterFunc()" type="submit">Filter</button>
+      <button class="btn btn-light submit-button" (click)="initial()" type="submit">Initial</button>
   </form>
 </div><br>
 
@@ -14,7 +15,7 @@
     <thead class="header">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Room number</th>
+      <th scope="col">Intitule</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
