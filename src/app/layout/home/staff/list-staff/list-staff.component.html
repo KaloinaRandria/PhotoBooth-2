@@ -1,38 +1,37 @@
 <div class="row">
-  <form class="row g-1">
-    <div class="col"> 
-        <div class="input-group">
-          <input name="username" [(ngModel)]="filter.username" type="search" class="form-control" placeholder="username"
-                 aria-describedby="inputGroupPrepend2" required>
+    <form class="row g-1">
+        <div class="col">
+            <div class="input-group">
+                <input name="username" [(ngModel)]="filter.username" type="search" class="form-control" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <input name="age_min" [(ngModel)]="filter.ageMin" type="number" class="form-control" placeholder="age_min" required>
-      </div>
+        <div class="col">
+            <input name="age_min" [(ngModel)]="filter.ageMin" type="number" class="form-control" placeholder="Age min" required>
+        </div>
+        <div class="col">
+            <input name="age_max" [(ngModel)]="filter.ageMax" type="number" class="form-control" placeholder="Age max" required>
+        </div>
+        <div class="col">
+            <select name="post" [(ngModel)]="filter.poste" class="form-control selectpicker">
+                <option *ngFor="let poste of posteList" [value]="poste.id_poste">{{ poste.intitule }}</option>
+            </select>
+        </div>
+        <div class="col">
+            <select name="role" [(ngModel)]="filter.role" class="form-control selectpicker">
+                <option *ngFor="let role of roleList" [value]="role.id_role">{{ role.intitule }}</option>
+            </select>
+        </div>
+        <div class="col">
+            <input name="salaire" [(ngModel)]="filter.salaire" type="number" class="form-control" placeholder="Salaire" required>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-light submit-button filter" (click)="filterFunc()">Filter</button>
+            <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
+        </div>
+    </form>
 
-      <div class="col">
-        <input name="age_max" [(ngModel)]="filter.ageMax" type="number" class="form-control" placeholder="age_max" required>
-      </div>
-
-      <div class="col">
-          <select name="post" [(ngModel)]="filter.poste" class="form-control">
-              <option *ngFor="let poste of posteList" value="{{ poste.id_poste }}">{{ poste.intitule }}</option>
-          </select>
-      </div>
-      <div class="col">
-          <select  name="role" [(ngModel)]="filter.role" class="form-control">
-              <option *ngFor="let role of roleList"  value="{{ role.id_role }}">{{ role.intitule }}</option>
-          </select>
-      </div>
-      <div class="col">
-        <input name="salaire" [(ngModel)]="filter.salaire" type="number" class="form-control " placeholder="salaire" required>
-      </div>
-
-    <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
-      <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
-  </form>
 </div><br>
-<div class="row info table-responsive">
+<div class="row info table-responsive nicescroll">
       <h1 class="titre">STAFF LIST</h1>
 
       <table class="table">

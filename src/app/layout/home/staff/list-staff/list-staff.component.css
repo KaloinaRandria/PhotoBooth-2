@@ -143,5 +143,53 @@ table tr th td{
   top: 5%;
 }
 
+/* Style pour le formulaire de recherche */
+.row.g-1 {
+  margin-bottom: 20px; /* Espacement en bas du formulaire */
+}
+
+.input-group {
+  width: 100%; /* Largeur maximale pour s'adapter à la colonne */
+}
+
+.form-control {
+  border-radius: 8px; /* Coins arrondis pour les champs de formulaire */
+  box-shadow: none; /* Supprime l'ombre par défaut */
+}
+
+.submit-button {
+  margin-top: 10px; /* Espacement en haut des boutons */
+  margin-left: 5px; /* Espacement entre les boutons */
+}
+
+/* Style pour les options des selects */
+.selectpicker {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.selectpicker:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.submit-button {
+  height: 100%;
+  margin-top: unset !important;
+}
+
+.filter {
+  background-color: #dcc78d;
+}
+
 
 
