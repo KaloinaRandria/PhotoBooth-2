@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {ClientService} from "../../../../service/client/client.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Display} from "../../../../class/util/display";
 
 @Component({
   selector: 'app-insert-client',
@@ -8,7 +11,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 })
 export class InsertClientComponent {
   form : FormGroup;
-  constructor(private fBuilder : FormBuilder) {
+  constructor(private fBuilder : FormBuilder , private clientService : ClientService , private snackBar : MatSnackBar) {
     this.form = fBuilder.group({
       prenom : [''],
       nom : [''],
@@ -27,6 +30,13 @@ export class InsertClientComponent {
       num_telephone : this.form.get('numero')?.value
     };
     console.log(data);
-    this
+    this.clientService.formulaireSend(data).subscribe({
+       next:()=> {
+        Display.alert(this.snackBar , "Sended Succesfully","close",3000,"succes-snackbar");
+      },
+      error:(exception) => {
+        Display.alert(this.snackBar,(exception.error.message),"close",6000);
+      }
+    });
   }
 }
