@@ -10,6 +10,13 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class ListClientComponent implements OnInit{
   client : any[] = [];
+  initialClient : any[] = [];
+  filter : any = {
+    prenom: '',
+    nom: '',
+    ageMin: '',
+    ageMax: '',
+  }
   ngOnInit() {
     this.getAllClient();
   }
@@ -36,5 +43,31 @@ export class ListClientComponent implements OnInit{
     const diffMs = Date.now() - dob.getTime();
     const ageDt = new Date(diffMs);
     return Math.abs(ageDt.getUTCFullYear() - 1970);
+  }
+  filterClient(
+      clientList : any[],
+      filter: any
+  ): any[] {
+    return clientList.filter(client => {
+      const age = this.calculateAge(client.date_de_naissance);
+
+      const matchesFirstName = filter.prenom && filter.prenom !== '' ? client.prenom.includes(filter.prenom) : true;
+      const matchesLastName = filter.nom && filter.nom !== '' ? client.nom.includes(filter.nom) : true;
+      const matchesAgeMin = filter.ageMin && filter.ageMin !== '' ? age >= Number(filter.ageMin) : true;
+      const matchesAgeMax = filter.ageMax && filter.ageMax !== '' ? age <= Number(filter.ageMax) : true;
+
+      return (
+          matchesFirstName && matchesLastName &&
+          matchesAgeMin && matchesAgeMax
+      );
+    });
+  }
+
+  filterFunc() {
+    const filterTab = this.filterClient(this.initialClient, this.filter);
+    this.client = filterTab;
+  }
+  initial() {
+    this.client = this.initialClient;
   }
 }
