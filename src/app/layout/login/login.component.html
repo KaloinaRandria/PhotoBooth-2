@@ -9,7 +9,14 @@
   <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
     <app-input-style [type]="'text'" [name]="'username'" [placeholder]="'Username'" [formGroup]="form"></app-input-style>
     <app-input-style [type]="'password'" [name]="'password'" [placeholder]="'Password'" [formGroup]="form"></app-input-style>
-    <button class="btn">Login</button>
+    <button [disabled]="loading" id="login-btn" class="btn">Login</button>
+      <div class="loader" [style.visibility]="loading ? 'visible' : 'hidden'">
+          <mat-spinner
+              class="custom-spinner"
+              diameter="50"
+              strokeWidth="5">
+          </mat-spinner>
+      </div>
   </form>
 </div>
 

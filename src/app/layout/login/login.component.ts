@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   title: string = Constants.APP_TITLE;
   form : FormGroup;
+  loading: boolean = false;
   ngOnInit() {
     this.renderer.addClass(document.body, 'login');
     // if (User.verify()) {
@@ -40,16 +41,24 @@ export class LoginComponent implements OnInit, OnDestroy {
       username : this.form.get('username')?.value,
       mot_de_passe : this.form.get('password')?.value
     }
+
+
+    this.loading = true;
     this.loginService.login(data,"/membre/connect").subscribe({
       next:(valiny)=> {
         console.log(valiny);
         User.setUserAuth(DataSecurity.encryptData(valiny.data, 'auth'));
+        this.loading = false;
         this.addFadeOutAnimation().then(() => {
           this.router.navigate(['/home/dashboard']).then(r => true);
         });
       },
       error:(err) => {
-        console.log(err);
+        this.loading = false;
+        if (err.status === 0) {
+          Display.alert(this.alert , 'Server unavailable',"close",3000);
+          return;
+        }
         Display.alert(this.alert , err.error.message,"close",3000);
       }
     });

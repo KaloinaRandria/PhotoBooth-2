@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="3883ae6b-7ec6-4706-b6f8-d75a3327c991" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/insert-client/insert-client.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/client/insert-client/insert-client.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/insert-client/insert-client.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/client/insert-client/insert-client.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/class/util/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/class/util/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/list-staff.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/list-staff.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/list-staff.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/list-staff.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/dashboard/dashboard.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/dashboard/dashboard.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +26,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -25,22 +37,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Integration&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/kaloina/Documents/GitHub/PhotoBooth-2/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Integration",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.Angular CLI Server.executor": "Run",
+    "ts.external.directory.path": "C:\\itu\\s4\\MmeBaovola\\gitClone\\PhotoBooth-2\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
@@ -55,14 +67,6 @@
       <envs />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
