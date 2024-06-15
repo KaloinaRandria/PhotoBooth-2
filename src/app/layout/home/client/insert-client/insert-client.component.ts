@@ -28,6 +28,7 @@ export class InsertClientComponent {
       prenom : this.form.get('prenom')?.value,
       email : this.form.get('mail')?.value,
       num_telephone : this.form.get('numero')?.value
+      //mbola mila date de naissance avy any am back
     };
     console.log(data);
     this.clientService.formulaireSend(data).subscribe({
