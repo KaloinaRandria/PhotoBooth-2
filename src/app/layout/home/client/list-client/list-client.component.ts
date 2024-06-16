@@ -72,4 +72,23 @@ export class ListClientComponent implements OnInit{
   initial() {
     this.client = this.initialClient;
   }
+
+  delete(client:any):void {
+    const api = '/client/delete/' + client.id_Client;
+    this.clientService.delete(api).subscribe({
+      next:(response:any)=> {
+        if (response.success) {
+          const index = this.client.findIndex(clt => clt.id_Client === client.id_Client);
+          Display.alert(this.snackBar,"Deleted succesfully","close",3000,"succes-snackbar");
+          this.client.splice(index,1);
+        } else {
+          console.error('Failed to delete categorie');
+        }
+      },
+      error:(err) => {
+        console.error(err);
+        Display.alert(this.snackBar,err,"close",6000);
+      }
+    });
+  }
 }

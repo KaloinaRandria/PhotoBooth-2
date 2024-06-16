@@ -37,6 +37,7 @@ const routes: Routes = [
       { path: 'material/insert', component: InsertMaterialComponent },
       { path: 'material/list', component: ListMaterialComponent },
       { path: 'theme/insert', component: InsertThemeComponent },
+      { path: 'theme/insert/materiel', component: MaterialThemeComponent },
       { path: 'theme/list', component: ListThemeComponent },
       { path: 'reservation/insert', component: InsertReservationComponent },
       { path: 'reservation/list', component: ListReservationComponent },
