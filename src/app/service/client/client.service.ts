@@ -17,7 +17,11 @@ export class ClientService extends BaseService{
     return this.req(formBody, api , 'post');
   }
 
-  getAll(api : string) {
+  getAll(api : string): Observable<any> {
     return this.req(null,api,'get');
+  }
+
+  delete(api : string):Observable<any> {
+    return this.req(null,api,'delete');
   }
 }
