@@ -1,10 +1,13 @@
 import {INavbardata} from "./helper";
 
+const role: string[] = ['role1' , 'role2', 'role3'];
+
 export const navData: INavbardata[] = [
   {
     routeLink: 'dashboard',
     icon: 'mdi mdi-speedometer',
-    label: 'Dashboard'
+    label: 'Dashboard',
+    access: role
   },
   {
     routeLink: 'staff',
@@ -14,11 +17,13 @@ export const navData: INavbardata[] = [
     items: [
       {
         routeLink: 'staff/insert',
-        label: 'Insert'
+        label: 'Insert',
+        access: [role[0], role[2]]
       },
       {
         routeLink: 'staff/list',
-        label: 'List'
+        label: 'List',
+        access: [role[1]]
       }
     ]
   },
@@ -30,15 +35,18 @@ export const navData: INavbardata[] = [
     items: [
       {
         routeLink: 'revenue/profit',
-        label: 'Profit'
+        label: 'Profit',
+        access: role
       },
       {
         routeLink: 'revenue/Expense',
-        label: 'Expense'
+        label: 'Expense',
+        access: role
       },
       {
         routeLink: 'revenue/statistics',
-        label: 'Statistics'
+        label: 'Statistics',
+        access: role
       }
     ]
 
@@ -51,11 +59,13 @@ export const navData: INavbardata[] = [
     items: [
       {
         routeLink: 'room/insert',
-        label: 'Insert'
+        label: 'Insert',
+        access: role
       },
       {
         routeLink: 'room/list',
-        label: 'List'
+        label: 'List',
+        access: role
       }
     ]
   },
@@ -67,11 +77,13 @@ export const navData: INavbardata[] = [
     items: [
       {
         routeLink: 'category/insert',
-        label: 'Insert'
+        label: 'Insert',
+        access: role
       },
       {
         routeLink: 'category/list',
-        label: 'List'
+        label: 'List',
+        access: role
       }
     ]
   },
@@ -84,15 +96,18 @@ export const navData: INavbardata[] = [
     items: [
       {
         routeLink: 'theme/insert',
-        label: 'Insert'
+        label: 'Insert',
+        access: role
       },
       {
         routeLink: 'theme/list',
-        label: 'List'
+        label: 'List',
+        access: role
       },
       {
         routeLink: 'theme/statistics',
-        label: 'Statistics'
+        label: 'Statistics',
+        access: role
       }
     ]
   },
@@ -104,15 +119,18 @@ export const navData: INavbardata[] = [
     items: [
       {
         routeLink: 'reservation/insert',
-        label: 'Inserer'
+        label: 'Inserer',
+        access: role
       },
       {
         routeLink: 'reservation/list',
-        label: 'List'
+        label: 'List',
+        access: role
       },
       {
         routeLink: 'reservation/statistics',
-        label: 'Statistics'
+        label: 'Statistics',
+        access: role
       }
     ]
   },
@@ -124,11 +142,13 @@ export const navData: INavbardata[] = [
     items: [
       {
         routeLink: 'material/insert',
-        label: 'Insert'
+        label: 'Insert',
+        access: role
       },
       {
         routeLink: 'material/list',
-        label: 'List'
+        label: 'List',
+        access: role
       }
     ]
   },
@@ -140,15 +160,18 @@ export const navData: INavbardata[] = [
     items: [
       {
         routeLink: 'client/insert',
-        label: 'Insert'
+        label: 'Insert',
+        access: role
       },
       {
         routeLink: 'client/list',
-        label: 'List'
+        label: 'List',
+        access: role
       },
       {
         routeLink: 'reservation/statistics',
-        label: 'Statistics'
+        label: 'Statistics',
+        access: role
       }
     ]
   },
