@@ -7,19 +7,19 @@
 
   </div>
   <div class="col-lg-7 ">
-    <h1 class="titre">INSERT STAFF</h1>
+    <h1 class="titre">INSERT THEME</h1>
 
-      <form action="" method="">
+      <form [formGroup]="form"(ngSubmit)="submitForm()">
         <!-- intitule categorie -->
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="">Label</label>
-            <input name="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
+            <input formControlName="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
           </div>
           <div class="col-md-6 mb-3">
             <label for="">Category</label>
-            <select name="categorie" class="form-control">
-              <option>default</option>
+            <select formControlName="categorie" class="form-control">
+              <option *ngFor="let categorie of categories" value="{{categorie.id_theme_category}}">{{categorie.intitule}}</option>
             </select>
           </div>
         </div>
@@ -27,18 +27,18 @@
         <div class="form-row">
           <div class="col-md-12 mb-12">
             <label for="">Description</label>
-            <textarea name="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
+            <textarea formControlName="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
           </div>
           <!--  pic salle -->
           <div class="col-md-6 mb-3">
             <label for="imageUpload">Upload Image</label>
-            <input type="file" name="image" class="form-control" id="imageUpload" accept="image/*" required>
+            <input type="file" formControlName="image" class="form-control" id="imageUpload" (change)="onFileSelected($event)" accept="image/*" required>
           </div>
 
           <div class="col-md-6 mb-3">
             <label for="">Room</label>
-            <select name="salle" class="form-control">
-              <option>default</option>
+            <select formControlName="salle" class="form-control">
+              <option *ngFor="let room of rooms" value="{{room.id_salle}}">{{ room.numero }}</option>
             </select>
           </div>
 
@@ -49,12 +49,12 @@
 
           <div class="col-md-6 mb-3">
             <label for="">Start date</label>
-            <input name="debut" type="date" class="form-control" id="" placeholder="" value="" required>
+            <input formControlName="debut" type="date" class="form-control" id="" placeholder="" value="" required>
           </div>
 
           <div class="col-md-6 mb-3">
             <label for="">End date</label>
-            <input name="fin" type="date" class="form-control" id="" placeholder="" value="" required>
+            <input formControlName="fin" type="date" class="form-control" id="" placeholder="" value="" required>
           </div>
 
         </div>
