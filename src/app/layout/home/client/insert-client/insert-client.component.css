@@ -44,3 +44,8 @@
 .submit-button{
   margin-top: 6%;
 }
+
+.submit-button:hover{
+  background-color: #261d15;
+  color: white;
+}
