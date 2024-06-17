@@ -2,6 +2,7 @@
   <div class="col-lg-6 ">
     <h4 class="card-title text-center">Theme</h4>
     <div class="carousel-div row">
+<<<<<<< Updated upstream
       <div class="col-lg-2">
         <button class="carousel-control-prev" type="button" data-target="#myCarousel" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -31,13 +32,23 @@
               <p class="contenu-description-image">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium est .</p>
             </div>
           </div>
+=======
+      <div class="col-lg-6">
+        <div class="container mt-5">
+          <carousel>
+            <slide *ngFor="let slide of themeList; let index = index">
+              <img [src]="getSource(slide)" alt="Slide {{ index }}" style="display: block; width: 100%;">
+              <div class="carousel-caption">
+                <h3>{{ slide.intitule }}</h3>
+                <p>{{ slide.description }}</p>
+              </div>
+            </slide>
+          </carousel>
+>>>>>>> Stashed changes
         </div>
       </div>
-      </div>
-      <div class="col-lg-2">
-        <button class="carousel-control-next" type="button" data-target="#myCarousel" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
+      <div class="col-lg-6">
+        
       </div>
     </div>
   </div>
