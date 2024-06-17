@@ -48,6 +48,7 @@ export class ListRoomComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching rooms', error);
+        Display.alert(this.snackBar,error.error.message,"close",6000);
       }
     );
   }
@@ -60,12 +61,13 @@ export class ListRoomComponent implements OnInit {
           Display.alert(this.snackBar,"Deleted succesfully","close",3000,"succes-snackbar");
           this.rooms.splice(index,1);
         } else{
-          console.error('Failed to delete room')
+          console.error('Failed to delete room');
+          Display.alert(this.snackBar,'Failed to delete room',"close",6000);
         }
       },
       (error)=>{
         console.error(error);
-        Display.alert(this.snackBar,error,"close",6000);
+        Display.alert(this.snackBar,error.error.message,"close",6000);
       }
     );
   }
