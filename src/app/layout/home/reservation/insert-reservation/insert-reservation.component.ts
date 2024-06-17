@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {ReservationService} from "../../../../service/reservation/reservation.service";
 import {Display} from "../../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {ClientService} from "../../../../service/client/client.service";
+import {subtract} from "ngx-bootstrap/chronos";
 
 @Component({
   selector: 'app-insert-reservation',
@@ -11,7 +13,9 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class InsertReservationComponent {
   form : FormGroup;
-  constructor(private formBuilder : FormBuilder, private reservationService : ReservationService , private snackBar : MatSnackBar) {
+  clientList : any[]=[];
+  serviceList : any[]=[];
+  constructor(private formBuilder : FormBuilder, private reservationService : ReservationService , private snackBar : MatSnackBar , private clientService : ClientService) {
     this.form = formBuilder.group({
       client : [''],
       service : [''],
@@ -44,5 +48,15 @@ export class InsertReservationComponent {
       }
     });
   }
-  
+
+  getClient() {
+    this.clientService.getAll('/client/all').subscribe({
+      next:(response:any) => {
+        this.clientList = response.data;
+      },
+      error:(exception) => {
+          Display.alert(this.snackBar,(exception.error.message),"close",6000);
+      }
+    });
+  }
 }
