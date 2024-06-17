@@ -3,8 +3,16 @@
 /* GSAP */
 
 /*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');*/
+
+
+
 @import '@angular/cdk/overlay-prebuilt.css';
 @import "animate.css/animate.min.css";
+
+@font-face {
+  font-family: 'Audrey';
+  src: url('assets/fonts/audrey/Audrey-Normal.otf') format('truetype');
+}
 
 * {
   margin: 0;
@@ -12,30 +20,21 @@
   box-sizing: border-box;
 }
 
-.marginPopUp{
-  padding: 50px;
-}
-
 html, body { height: 100%; }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /*font-family: Roboto, "Helvetica Neue", sans-serif;*/
+  font-family: 'Audrey', "Helvetica Neue";
+
   position: relative;
 
   background: #E7DAB5;
 }
 
-.modale{
-  padding: 50px;
-}
-
 body.login {
   overflow: hidden;
   background: #261D15 !important;
-}
-::-webkit-scrollbar{
-  display: none;
 }
 .info{
   color: #261D15;
@@ -72,3 +71,38 @@ table tr td{
   }
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Sélecteur pour Firefox */
+.nicescroll::-webkit-scrollbar {
+  width: 12px; /* Largeur de la scrollbar */
+}
+
+/* Bouton de défilement sur Firefox */
+.nicescroll::-webkit-scrollbar-thumb {
+  background-color: #888; /* Couleur de fond de la thumb */
+  border-radius: 6px; /* Coins arrondis */
+}
+
+/* Track de la scrollbar sur Firefox */
+.nicescroll::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Couleur de fond du track */
+}
+
+/* Sélecteur pour Edge et IE */
+.nicescroll {
+  scrollbar-width: thin; /* Largeur de la scrollbar */
+  scrollbar-color: #888 #dad0b2; /* Couleur thumb et track */
+}
+
+/* Sélecteur pour Chrome, Safari, et Edge basé sur Chromium */
+.nicescroll::-webkit-scrollbar-thumb {
+  background-color: #888; /* Couleur de fond de la thumb */
+  border-radius: 6px; /* Coins arrondis */
+}
+
+.nicescroll::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Couleur de fond du track */
+}

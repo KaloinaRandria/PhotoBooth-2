@@ -44,8 +44,8 @@ import { InsertRoomComponent } from './layout/home/room/insert-room/insert-room.
 import { ListRoomComponent } from './layout/home/room/list-room/list-room.component';
 import { InsertCategoryComponent } from './layout/home/category/insert-category/insert-category.component';
 import { ListCategoryComponent } from './layout/home/category/list-category/list-category.component';
-import { PopUpContentComponent } from './layout/home/staff/list-staff/pop-up-content/pop-up-content.component';
-import { PopUpComponent } from './layout/home/theme/list-theme/pop-up/pop-up.component';
+import {MatProgressSpinner} from "@angular/material/progress-spinner";
+import { MaterialThemeComponent } from './layout/home/theme/material-theme/material-theme.component';
 
 @NgModule({
   declarations: [
@@ -79,31 +79,31 @@ import { PopUpComponent } from './layout/home/theme/list-theme/pop-up/pop-up.com
     ListRoomComponent,
     InsertCategoryComponent,
     ListCategoryComponent,
-    PopUpContentComponent,
-    PopUpComponent
+    MaterialThemeComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    MatSnackBarModule,
-    FontAwesomeModule,
-    NgOptimizedImage,
-    CdkMenu,
-    CdkMenuTrigger,
-    OverlayModule,
-    CdkMenuModule,
-    BaseChartDirective,
-    MatIcon,
-    MatFabButton,
-    MatCard,
-    MatCardHeader,
-    MatCardActions,
-    MatButton,
-    MatCardModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        FontAwesomeModule,
+        NgOptimizedImage,
+        CdkMenu,
+        CdkMenuTrigger,
+        OverlayModule,
+        CdkMenuModule,
+        BaseChartDirective,
+        MatIcon,
+        MatFabButton,
+        MatCard,
+        MatCardHeader,
+        MatCardActions,
+        MatButton,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatProgressSpinner
+    ],
   providers: [
     provideAnimationsAsync(),
     provideHttpClient()
