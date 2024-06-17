@@ -1,21 +1,20 @@
 <div class="row">
   <form action="" method="" class="row g-1">
     <div class="col">
-        <input name="intitule" [(ngModel)]="filter.intitule" type="text" class="form-control" placeholder="label">
+        <input name="intitule" type="text" class="form-control" placeholder="label">
       </div>
-    <button class="btn btn-light submit-button" (click)="filterFunc()" type="submit">Filter</button>
-      <button class="btn btn-light submit-button" (click)="initial()" type="submit">Initial</button>
+    <button class="btn btn-light submit-button" type="submit">Filter</button>
   </form>
 </div><br>
 
 <div class="row info">
   <h1 class="titre">THEME CATEGORY LIST</h1>
 
-  <table class="table table-hover">
+  <table class="table">
     <thead class="header">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Intitule</th>
+      <th scope="col">Room number</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
@@ -25,7 +24,7 @@
       <th scope="row">{{categorie.id_categorie_theme}}</th>
       <td>{{categorie.intitule}}</td>
       <td>
-        <button class="icon-btn ripple" id="">
+        <button class="icon-btn ripple" id="" (click)="popUp()">
           <i class="mdi mdi-table-edit icon-edit"></i>
         </button>
       </td>
