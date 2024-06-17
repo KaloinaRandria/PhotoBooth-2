@@ -4,6 +4,7 @@ import { CategoryService } from '../../../../service/category/category.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Display } from '../../../../class/util/display';
 import { RoomService } from '../../../../service/room/room.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-insert-theme',
@@ -15,13 +16,12 @@ export class InsertThemeComponent implements OnInit {
   categories: any[] = [];
   rooms: any[] = [];
 
-  constructor(private categoryService: CategoryService,private formBuilder: FormBuilder, private snackBar: MatSnackBar, private roomService: RoomService) {
+  constructor(private categoryService: CategoryService,private formBuilder: FormBuilder, private snackBar: MatSnackBar, private roomService: RoomService, private router: Router, private alert: MatSnackBar) {
     this.form = this.formBuilder.group({
       intitule: [''],
       categorie: [''],
       description: [''],
-      image: [null],
-      room: [''],
+      salle: [''],
       debut: [''],
       fin: ['']
     });
@@ -66,36 +66,35 @@ export class InsertThemeComponent implements OnInit {
     );
   }
 
-  onFileSelected(event: any) {
-    const file: File = event.target.files[0];
-    if (file) {
-      this.form.patchValue({ image: file });
-    }
-  }
+ 
 
   submitForm() {
     const formData = new FormData();
 
-    formData.append('intitule', this.form.get('intitule')?.value);
-    formData.append('id_categorie_theme', this.form.get('categorie')?.value);
-    formData.append('description', this.form.get('description')?.value);
-
-    const imageFile = this.form.get('image')?.value as File;
-    if (imageFile) {
-      formData.append('image', imageFile);
+    const info = {
+      intitule: this.form.get('intitule')?.value,
+      categorie_theme: {id_categorie_theme: this.form.get('categorie')?.value} ,
+      description: this.form.get('description')?.value,
+      salle: {id_salle:this.form.get('salle')?.value} ,
+      date_debut: this.form.get('debut')?.value,
+      date_fin: this.form.get('fin')?.value
     }
 
-    formData.append('id_salle', this.form.get('room')?.value);
-    formData.append('debut', this.form.get('debut')?.value);
-    formData.append('fin', this.form.get('fin')?.value);
+    if(!this.verifiate(info)) {
+      Display.alert(this.alert , 'complete all input',"close",3000);
+      return;
+    }
 
-    this.categoryService.save(formData, "/categ/save").subscribe({
-      next: () => {
-        Display.alert(this.snackBar, "Sent successfully", "close", 3000, "success-snackbar");
-      },
-      error: (exception) => {
-        Display.alert(this.snackBar, (exception.error.message), "close", 6000);
-      }
-    });
+    localStorage.setItem('info', JSON.stringify(info));
+
+    this.router.navigate(['home/theme/insert/materiel']).then(r => true);
+  }
+
+  private verifiate(info: any): boolean {
+    return !Object.values(info).some(value => 
+      value === null || 
+      value === undefined || 
+      (typeof value === 'string' && value.trim() === '')
+    );
   }
 }
