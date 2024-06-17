@@ -2,54 +2,15 @@
   <div class="col-lg-6 ">
     <h4 class="card-title text-center">Theme</h4>
     <div class="carousel-div row">
-<<<<<<< Updated upstream
-      <div class="col-lg-2">
-        <button class="carousel-control-prev" type="button" data-target="#myCarousel" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button> 
-      </div>
-      <div class="col-lg-8">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item text-center active">
-            <img src="assets/images/theme/strange.jpg" class="figure-img img-fluid rounded" alt="...">
-            <div class="carousel-caption d-none d-md-block description-image-theme">
-              <h5 class="titre-description-image">strange house</h5>
-              <p class="contenu-description-image">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium est .</p>
-            </div>
+      <carousel>
+        <slide *ngFor="let slide of themeList; let index = index">
+          <img [src]="getSource(slide)" alt="Slide {{ index }}" style="display: block; width: 100%;">
+          <div class="carousel-caption">
+            <h3>{{ slide.intitule }}</h3>
+            <p>{{ slide.description }}</p>
           </div>
-          <div class="carousel-item text-center">
-            <img src="assets/images/theme/cloudy.jpg" class="figure-img img-fluid rounded" alt="...">
-            <div class="carousel-caption d-none d-md-block description-image-theme">
-              <h5 class="titre-description-image">cloudy house</h5>
-              <p class="contenu-description-image">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium est .</p>
-            </div>
-          </div>
-          <div class="carousel-item text-center">
-            <img src="assets/images/theme/slide3.png" class="figure-img img-fluid rounded" alt="...">
-            <div class="carousel-caption d-none d-md-block description-image-theme">
-              <h5 class="titre-description-image">Aesthetic livingroom</h5>
-              <p class="contenu-description-image">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium est .</p>
-            </div>
-          </div>
-=======
-      <div class="col-lg-6">
-        <div class="container mt-5">
-          <carousel>
-            <slide *ngFor="let slide of themeList; let index = index">
-              <img [src]="getSource(slide)" alt="Slide {{ index }}" style="display: block; width: 100%;">
-              <div class="carousel-caption">
-                <h3>{{ slide.intitule }}</h3>
-                <p>{{ slide.description }}</p>
-              </div>
-            </slide>
-          </carousel>
->>>>>>> Stashed changes
-        </div>
-      </div>
-      <div class="col-lg-6">
-        
-      </div>
+        </slide>
+      </carousel>
     </div>
   </div>
   <div class="col-lg-6">
