@@ -19,6 +19,7 @@ import {InsertRoomComponent} from "./layout/home/room/insert-room/insert-room.co
 import {InsertCategoryComponent} from "./layout/home/category/insert-category/insert-category.component";
 import {ListCategoryComponent} from "./layout/home/category/list-category/list-category.component";
 import {MaterialThemeComponent} from "./layout/home/theme/material-theme/material-theme.component";
+import { StatisticComponent } from './layout/home/theme/statistic/statistic.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'theme/insert', component: InsertThemeComponent },
       { path: 'theme/insert/materiel', component: MaterialThemeComponent },
       { path: 'theme/list', component: ListThemeComponent },
+      { path: 'theme/statistics', component: StatisticComponent },
       { path: 'reservation/insert', component: InsertReservationComponent },
       { path: 'reservation/list', component: ListReservationComponent },
       { path: 'room/list', component: ListRoomComponent },

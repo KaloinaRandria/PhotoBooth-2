@@ -48,6 +48,7 @@ import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import { MaterialThemeComponent } from './layout/home/theme/material-theme/material-theme.component';
 import { PopUpComponent } from './layout/home/staff/list-staff/pop-up/pop-up.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { StatisticComponent } from './layout/home/theme/statistic/statistic.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     InsertCategoryComponent,
     ListCategoryComponent,
     MaterialThemeComponent,
-    PopUpComponent
+    PopUpComponent,
+    StatisticComponent
   ],
     imports: [
         BrowserModule,
