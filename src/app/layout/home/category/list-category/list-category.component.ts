@@ -3,8 +3,6 @@ import {CategoryService} from "../../../../service/category/category.service";
 import {Constants} from "../../../../class/util/constants";
 import {Display} from "../../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {MatDialog} from "@angular/material/dialog";
-import {PopUpComponent} from "./pop-up/pop-up.component";
 
 @Component({
   selector: 'app-list-category',
@@ -12,19 +10,14 @@ import {PopUpComponent} from "./pop-up/pop-up.component";
   styleUrls: ['./list-category.component.css']
 })
 export class ListCategoryComponent implements OnInit {
+  categoriesInitial: any[] = [];
   categories: any[] = [];
 
-  constructor(private categoryService: CategoryService,private snackbar:MatSnackBar,private dialog: MatDialog) {}
+  filter: any = {
+    intitule: ''
+  };
 
-  popUp() {
-
-    const dialogRef = this.dialog.open(PopUpComponent, {
-      width: '100vh',
-      height:'90vh',
-      data: {}
-    });
-
-  }
+  constructor(private categoryService: CategoryService,private snackbar:MatSnackBar) {}
 
   ngOnInit(): void {
     this.loadCategories();
@@ -37,6 +30,8 @@ export class ListCategoryComponent implements OnInit {
       (response: any) => {
         if (response.success) {
           this.categories = response.data;
+          this.categoriesInitial = response.data;
+          console.log(this.categories);
         } else {
           console.error('Failed to fetch categories');
         }
@@ -64,5 +59,26 @@ export class ListCategoryComponent implements OnInit {
         Display.alert(this.snackbar,error,"close",6000);
       }
     );
+  }
+
+  filterPro(
+      categList: any[],
+      filter: any
+  ): any[] {
+    return categList.filter(categ => {
+      const matchesIntitule = filter.intitule && filter.intitule !== '' ? categ.intitule.includes(filter.intitule) : true;
+      return (
+          matchesIntitule
+      );
+    });
+  }
+
+  filterFunc() {
+    const filterTab = this.filterPro(this.categoriesInitial, this.filter);
+    this.categories = filterTab;
+  }
+
+  initial() {
+    this.categories = this.categoriesInitial;
   }
 }

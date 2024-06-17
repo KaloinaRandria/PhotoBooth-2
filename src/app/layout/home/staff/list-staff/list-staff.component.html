@@ -1,47 +1,49 @@
 <div class="row">
-  <form action="" method="" class="row g-1">
-    <div class="col">
-        <div class="input-group">
-          <input name="username" type="search" class="form-control" id="" placeholder="username"
-                 aria-describedby="inputGroupPrepend2" required>
+    <form class="row g-1">
+        <div class="col">
+            <div class="input-group">
+                <input name="username" [(ngModel)]="filter.username" type="search" class="form-control" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <input name="age_min" type="number" class="form-control" id="" placeholder="age_min" required>
-      </div>
+        <div class="col">
+            <input name="age_min" [(ngModel)]="filter.ageMin" type="number" class="form-control" placeholder="Age min" required>
+        </div>
+        <div class="col">
+            <input name="age_max" [(ngModel)]="filter.ageMax" type="number" class="form-control" placeholder="Age max" required>
+        </div>
+        <div class="col">
+            <select name="post" [(ngModel)]="filter.poste" class="form-control selectpicker">
+                <option *ngFor="let poste of posteList" [value]="poste.id_poste">{{ poste.intitule }}</option>
+            </select>
+        </div>
+        <div class="col">
+            <select name="role" [(ngModel)]="filter.role" class="form-control selectpicker">
+                <option *ngFor="let role of roleList" [value]="role.id_role">{{ role.intitule }}</option>
+            </select>
+        </div>
+        <div class="col">
+            <input name="salaire" [(ngModel)]="filter.salaire" type="number" class="form-control" placeholder="Salaire" required>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-light submit-button filter" (click)="filterFunc()">Filter</button>
+            <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
+        </div>
+    </form>
 
-      <div class="col">
-        <input name="age_max" type="number" class="form-control" id="" placeholder="age_max" required>
-      </div>
-
-      <div class="col">
-        <select name="post" class="form-control">
-          <option>post</option>
-        </select>
-      </div>
-      <div class="col">
-        <select name="role" class="form-control">
-          <option>role</option>
-        </select>
-      </div>
-      <div class="col">
-        <input name="salaire" type="number" class="form-control " id="" placeholder="salaire" required>
-      </div>
-
-    <button class="btn btn-light submit-button" type="submit">Filter</button>
-  </form>
 </div><br>
-<div class="row info">
+<div class="row info table-responsive nicescroll">
       <h1 class="titre">STAFF LIST</h1>
 
       <table class="table">
         <thead class="header">
         <tr>
           <th scope="col">#</th>
+            <th scope="col">Username</th>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
           <th scope="col">Age</th>
-          <th scope="col">Post</th>
+          <th scope="col">Poste</th>
+            <th scope="col">Role</th>
           <th scope="col">Hiring Date</th>
           <th scope="col">Salary</th>
           <th scope="col">Edit</th>
@@ -49,45 +51,25 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <button class="icon-btn ripple " id=""  (click)="popUp()">
-              <i class="mdi mdi-table-edit icon-edit "></i>
-
-            </button>
-          </td>
-          <td>
-            <button class="icon-btn ripple " id=""  >
-              <i class="mdi mdi-delete icon-delete "></i>
-
-            </button>
-          </td>
-        </tr>
         <tr *ngFor="let membre of staff">
-          <th scope="row">1</th>
+          <th scope="row">{{ membre.id_membre }}</th>
+            <td>{{ membre.username }}</td>
           <td>{{ membre.prenom }}</td>
           <td>{{ membre.nom }}</td>
-          <td>{{ membre.date_de_naissance }}</td>
+          <td>{{ calculateAge(membre.date_de_naissance) }}</td>
           <td>{{ membre.poste.intitule }}</td>
+            <td>{{ membre.role.intitule }}</td>
           <td>{{ membre.date_embauche }}</td>
-          <td>$5000</td>
+          <td>{{ getSalaire(membre.salaire) }}</td>
           <td>
-            <button class="icon-btn ripple " id=""  (click)="popUp()">
+            <button class="icon-btn ripple " >
               <i class="mdi mdi-table-edit icon-edit "></i>
 
             </button>
           </td>
           <td>
-            <button class="icon-btn ripple " id=""  >
+            <button class="icon-btn ripple " >
               <i class="mdi mdi-delete icon-delete "></i>
-
             </button>
           </td>
         </tr>

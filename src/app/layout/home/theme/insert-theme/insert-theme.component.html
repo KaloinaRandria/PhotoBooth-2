@@ -1,128 +1,68 @@
-<div class="base info">
-  <div class="row part1">
-    <div class="col-md-4">
-      <h3>Instruction</h3>
-      <p>| les champs obligatoire:</p>
-      <p>- First name <br>- Last name <br>- Date of birth</p>
-    </div>
-    <div class="col-lg-8 col-sm-2">
-      <h1 class="titre">INSERT STAFF</h1>
-        <form action="" method="">
-          <!-- intitule categorie -->
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="">Label</label>
-              <input name="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="">Category</label>
-              <select name="categorie" class="form-control">
-                <option>default</option>
-              </select>
-            </div>
-          </div>
+<div class="row justify-content-md-center info">
+  <div class="col-lg-3">
+    <h3>Instruction</h3>
+    <p>| les champs obligatoire:</p>
+    <p>- First name <br>- Last name <br>- Date of birth</p>
 
-          <div class="form-row">
-            <div class="col-md-12 mb-12">
-              <label for="">Description</label>
-              <textarea name="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
-            </div>
-            <!--  pic salle -->
-            <div class="col-md-6 mb-3">
-              <label for="imageUpload">Upload Image</label>
-              <input type="file" name="image" class="form-control" id="imageUpload" accept="image/*" required>
-            </div>
 
-            <div class="col-md-6 mb-3">
-              <label for="">Room</label>
-              <select name="salle" class="form-control">
-                <option>default</option>
-              </select>
-            </div>
-
-          </div>
-
-          <!--        debut fin-->
-          <div class="form-row">
-
-            <div class="col-md-6 mb-3">
-              <label for="">Start date</label>
-              <input name="debut" type="date" class="form-control" id="" placeholder="" value="" required>
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="">End date</label>
-              <input name="fin" type="date" class="form-control" id="" placeholder="" value="" required>
-            </div>
-
-          </div>
-          <a target="#part2" class="btn btn-light">next</a>
-        </form>
-
-    </div>
   </div>
-  <div class="row part2" id="part2">
-    <div class="col-md-4">
-      <h3>Instruction</h3>
-      <p>| les champs obligatoire:</p>
-      <p>- First name <br>- Last name <br>- Date of birth</p>
-    </div>
-    <div class="col-lg-8 col-sm-2">
-      <h1 class="titre">INSERT STAFF</h1>
-        <form action="" method="">
-          <!-- intitule categorie -->
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="">Label</label>
-              <input name="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="">Category</label>
-              <select name="categorie" class="form-control">
-                <option>default</option>
-              </select>
-            </div>
+  <div class="col-lg-7 ">
+    <h1 class="titre">INSERT THEME</h1>
+
+      <form [formGroup]="form"(ngSubmit)="submitForm()">
+        <!-- intitule categorie -->
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Label</label>
+            <input formControlName="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="">Category</label>
+            <select formControlName="categorie" class="form-control">
+              <option *ngFor="let categorie of categories" value="{{categorie.id_theme_category}}">{{categorie.intitule}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-md-12 mb-12">
+            <label for="">Description</label>
+            <textarea formControlName="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
+          </div>
+          <!--  pic salle -->
+          <div class="col-md-6 mb-3">
+            <label for="imageUpload">Upload Image</label>
+            <input type="file" formControlName="image" class="form-control" id="imageUpload" (change)="onFileSelected($event)" accept="image/*" required>
           </div>
 
-          <div class="form-row">
-            <div class="col-md-12 mb-12">
-              <label for="">Description</label>
-              <textarea name="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
-            </div>
-            <!--  pic salle -->
-            <div class="col-md-6 mb-3">
-              <label for="imageUpload">Upload Image</label>
-              <input type="file" name="image" class="form-control" id="imageUpload" accept="image/*" required>
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="">Room</label>
-              <select name="salle" class="form-control">
-                <option>default</option>
-              </select>
-            </div>
-
+          <div class="col-md-6 mb-3">
+            <label for="">Room</label>
+            <select formControlName="salle" class="form-control">
+              <option *ngFor="let room of rooms" value="{{room.id_salle}}">{{ room.numero }}</option>
+            </select>
           </div>
 
-  <!--        debut fin-->
-          <div class="form-row">
+        </div>
 
-            <div class="col-md-6 mb-3">
-              <label for="">Start date</label>
-              <input name="debut" type="date" class="form-control" id="" placeholder="" value="" required>
-            </div>
+<!--        debut fin-->
+        <div class="form-row">
 
-            <div class="col-md-6 mb-3">
-              <label for="">End date</label>
-              <input name="fin" type="date" class="form-control" id="" placeholder="" value="" required>
-            </div>
-
+          <div class="col-md-6 mb-3">
+            <label for="">Start date</label>
+            <input formControlName="debut" type="date" class="form-control" id="" placeholder="" value="" required>
           </div>
 
-          <button class="btn btn-light submit-button" type="submit">Submit form</button>
-        </form>
+          <div class="col-md-6 mb-3">
+            <label for="">End date</label>
+            <input formControlName="fin" type="date" class="form-control" id="" placeholder="" value="" required>
+          </div>
 
-    </div>
+        </div>
+
+        <!-- tsy submitena intsony itoo fa sauvegardena alony-->
+        <button class="btn btn-light submit-button" type="submit">Submit form</button>
+      </form>
+      <a routerLink="materiel"><button>next</button></a>
   </div>
 
 </div>

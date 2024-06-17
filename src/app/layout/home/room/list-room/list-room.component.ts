@@ -4,8 +4,6 @@ import {RoomService} from "../../../../service/room/room.service";
 import {Observable} from "rxjs";
 import {Display} from "../../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {PopUpContentComponent} from "../../staff/list-staff/pop-up-content/pop-up-content.component";
-import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-list-room',
@@ -13,19 +11,15 @@ import {MatDialog} from "@angular/material/dialog";
   styleUrls: ['./list-room.component.css']
 })
 export class ListRoomComponent implements OnInit {
+  roomsInitial: any[] = [];
   rooms: any[] = [];
 
-  constructor(private roomService: RoomService,private snackBar:MatSnackBar,private dialog: MatDialog) {}
-
-  popUp() {
-
-    const dialogRef = this.dialog.open(PopUpContentComponent, {
-      width: '100vh',
-      height:'90vh',
-      data: {}
-    });
-
+  filter: any = {
+    room: ''
   }
+
+  constructor(private roomService: RoomService,private snackBar:MatSnackBar) {}
+
   ngOnInit(): void {
     this.loadRooms();
   }
@@ -37,6 +31,7 @@ export class ListRoomComponent implements OnInit {
       (response: any) => {
         if (response.success) {
           this.rooms = response.data;
+          this.roomsInitial = response.data;
         } else {
           console.error('Failed to fetch rooms');
         }
@@ -63,5 +58,29 @@ export class ListRoomComponent implements OnInit {
         Display.alert(this.snackBar,error,"close",6000);
       }
     );
+  }
+
+  filterPro(
+      roomList: any[],
+      filter: any
+  ): any[] {
+    return roomList.filter(room => {
+
+      const matchesNumber = filter.room && filter.room !== '' ?
+          (room.numero && room.numero === Number(filter.room)) : true;
+
+      return (
+          matchesNumber
+      );
+    });
+  }
+
+  filterFunc() {
+    const filterTab = this.filterPro(this.roomsInitial, this.filter);
+    this.rooms = filterTab;
+  }
+
+  initial() {
+    this.rooms = this.roomsInitial;
   }
 }
