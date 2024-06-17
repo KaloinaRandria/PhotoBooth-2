@@ -15,27 +15,11 @@ import html2pdf from 'html2pdf.js';
 })
 export class DashboardComponent implements OnInit {
 
-  themeList: any[] = [];
   constructor(
-    private titleService: Title,
-    private dash: DashboardService,
-    private snackBar: MatSnackBar
+    private titleService: Title
   ) { }
 
   ngOnInit() {
     this.titleService.setTitle("PB | Dashboard");
-    this.getAllTheme();
-  }
-
-  getAllTheme() {
-    this.dash.getAllTheme('/theme/all').subscribe({
-      next:(response:any) => {
-        this.themeList = response.data;
-      },
-      error:(exception) => {
-        Display.alert(this.snackBar,(exception.error.message),"close",6000);
-        console.error(exception);
-      }
-    });
   }
 }

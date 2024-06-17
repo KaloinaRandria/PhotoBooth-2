@@ -189,13 +189,3 @@ body{
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
-
-.shadow {
-  box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.5) !important;
-
-}
-
-.slogan {
-  position: relative;
-  left: 10px;
-}

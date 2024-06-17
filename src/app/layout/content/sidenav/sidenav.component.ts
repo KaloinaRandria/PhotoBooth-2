@@ -3,7 +3,6 @@ import {navData} from "./nav-data";
 import {animate, animation, keyframes, style, transition, trigger} from "@angular/animations";
 import {fadeInOut, INavbardata} from "./helper";
 import {Router} from "@angular/router";
-import { SublevelMenuComponent } from './sublevel-menu.component';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -79,9 +78,5 @@ export class SidenavComponent implements OnInit{
         }
       }
     }
-  }
-
-  navigate(item: INavbardata) {
-    this.router.navigate(['home/' + item.routeLink]).then(r => true);
   }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MaterialThemeComponent } from './material-theme.component';
+import { PopUpComponent } from './pop-up.component';
 
-describe('MaterialThemeComponent', () => {
-  let component: MaterialThemeComponent;
-  let fixture: ComponentFixture<MaterialThemeComponent>;
+describe('PopUpComponent', () => {
+  let component: PopUpComponent;
+  let fixture: ComponentFixture<PopUpComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MaterialThemeComponent]
+      declarations: [PopUpComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MaterialThemeComponent);
+    fixture = TestBed.createComponent(PopUpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

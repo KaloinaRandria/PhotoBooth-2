@@ -1,0 +1,52 @@
+<form action="" method="" class="marginPopUp">
+  <!-- intitule categorie -->
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="">Label</label>
+      <input name="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="">Category</label>
+      <select name="categorie" class="form-control">
+        <option>default</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-12 mb-12">
+      <label for="">Description</label>
+      <textarea name="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
+    </div>
+    <!--  pic salle -->
+    <div class="col-md-6 mb-3">
+      <label for="imageUpload">Upload Image</label>
+      <input type="file" name="image" class="form-control" id="imageUpload" accept="image/*" required>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="">Room</label>
+      <select name="salle" class="form-control">
+        <option>default</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!--        debut fin-->
+  <div class="form-row">
+
+    <div class="col-md-6 mb-3">
+      <label for="">Start date</label>
+      <input name="debut" type="date" class="form-control" id="" placeholder="" value="" required>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="">End date</label>
+      <input name="fin" type="date" class="form-control" id="" placeholder="" value="" required>
+    </div>
+
+  </div>
+
+  <button class="btn btn-light submit-button" type="submit">Submit form</button>
+</form>

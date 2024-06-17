@@ -34,8 +34,4 @@ export class DashboardService extends BaseService{
     return this.req(null, api, 'get');
   }
 
-  getAllTheme(api: string) {
-    return this.req(null, api, 'get');
-  }
-
 }

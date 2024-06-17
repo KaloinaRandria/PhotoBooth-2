@@ -46,8 +46,19 @@
   margin-top: 6%;
 }
 
+.base{
+  position: relative;
+  max-width: 200vh;
+  width: 1500vh;
+  overflow: hidden;
+}
 
-.submit-button:hover{
-  background-color: #261d15;
-  color: white;
+.part1{
+  float: left;
+  width: 170vh;
+}
+.part2{
+  position: absolute;
+  left: 200vh;
+  width: 170vh;
 }

@@ -3,29 +3,28 @@
         <div class="form-row">
           <div class="col mb-1">
             <label for="">First name</label>
-            <input name="prenom" [(ngModel)]="filter.prenom" type="search" class="form-control" placeholder="First name" value="" required>
+            <input name="prenom" type="search" class="form-control" id="" placeholder="First name" value="" required>
           </div>
           <div class="col mb-1">
             <label for="">Last name</label>
-            <input name="nom" type="search" [(ngModel)]="filter.nom" class="form-control" placeholder="Last name"
+            <input name="nom" type="search" class="form-control" id="" placeholder="Last name"
                    value="" required>
           </div>
           <div class="col mb-1">
             <label for="">Phone number</label>
-            <input name="numero" type="tel" [(ngModel)]="filter.numero" class="form-control " placeholder="" value="+261" required>
+            <input name="numero" type="tel" class="form-control " id="" placeholder="" value="+261" required>
           </div>
           <div class="col mb-1">
             <label for="">Minimum age </label>
-            <input name="age_min" type="number" [(ngModel)]="filter.ageMin" class="form-control"  placeholder="" required>
+            <input name="age_min" type="number" class="form-control" id="" placeholder="" required>
           </div>
 
           <div class="col mb-1">
             <label for="">Maximum age </label>
-            <input name="age_max" type="number" [(ngModel)]="filter.ageMax" class="form-control"  placeholder="" required>
+            <input name="age_min" type="number" class="form-control" id="" placeholder="" required>
           </div>
         </div>
-            <button class="btn btn-light submit-button" type="submit" (click)="filterFunc()">Filter</button>
-            <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
+        <button class="btn btn-light submit-button" type="submit">Filter</button>
       </form>
 </div><br>
 
@@ -45,20 +44,21 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let clt of client">
-      <th scope="row">{{ clt.id_client }}</th>
-      <td>{{ clt.prenom }}</td>
-      <td>{{ clt.nom }}</td>
-      <td>{{ calculateAge(clt.date_de_naissance) }}</td>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>28</td>
       <td>
-        <button class="icon-btn ripple "   >
+        <button class="icon-btn ripple " id=""  (click)="popUp()">
           <i class="mdi mdi-table-edit icon-edit "></i>
 
         </button>
       </td>
       <td>
-        <button class="icon-btn ripple " id="" (click)="delete(client)" >
+        <button class="icon-btn ripple " id=""  >
           <i class="mdi mdi-delete icon-delete "></i>
+
         </button>
       </td>
     </tr>

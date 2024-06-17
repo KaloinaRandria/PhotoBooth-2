@@ -1,22 +1,15 @@
-<div class="base1 shadow"></div>
+<div class="base1 "></div>
 <div class="text animate__animated animate__fadeInLeft">
-  <h2 style="font-size: 60px;font-family: Audrey;font-weight: lighter;letter-spacing: 10px;">WELCOME</h2>
-  <p class="slogan" style="letter-spacing: 10px;">{{ sloganText }}</p>
+  <h2 style="font-size: 60px;font-family: poppins;font-weight: lighter;letter-spacing: 20px;">WELCOME</h2><br>
+  <p style="letter-spacing: 10px;">Magic in front, and behind the camera</p>
 </div>
-<div class="base2 shadow"></div>
+<div class="base2 "></div>
 <div class="formulaire animate__animated animate__fadeInRight">
   <img src="assets/images/logo/logo.png" alt="gogo" width="150" height="130"><br>
   <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
     <app-input-style [type]="'text'" [name]="'username'" [placeholder]="'Username'" [formGroup]="form"></app-input-style>
     <app-input-style [type]="'password'" [name]="'password'" [placeholder]="'Password'" [formGroup]="form"></app-input-style>
-    <button [disabled]="loading" id="login-btn" class="btn">Login</button>
-      <div class="loader" [style.visibility]="loading ? 'visible' : 'hidden'">
-          <mat-spinner
-              class="custom-spinner"
-              diameter="50"
-              strokeWidth="5">
-          </mat-spinner>
-      </div>
+    <button class="btn">Login</button>
   </form>
 </div>
 

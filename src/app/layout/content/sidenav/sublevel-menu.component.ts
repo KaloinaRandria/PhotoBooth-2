@@ -22,7 +22,7 @@ import {Router} from "@angular/router";
         </a>
         <a class="sublevel-nav-link"
            *ngIf="!item.items || (item.items && item.items.length === 0)"
-           (click)="navigate(item)"
+           [routerLink]="[item.routeLink]"
            routerLinkActive="active-sublevel"
            [routerLinkActiveOptions]="{exact: true}"
         >
@@ -90,9 +90,5 @@ export class SublevelMenuComponent implements OnInit{
 
   getActiveClass(item: INavbardata): string {
     return item.expanded && this.router.url.includes(item.routeLink) ? 'active-sublevel' : ''
-  }
-
-  navigate(item: INavbardata) {
-    this.router.navigate(['home/' + item.routeLink]).then(r => true);
   }
 }
