@@ -19,7 +19,7 @@
           <div class="col-md-6 mb-3">
             <label for="">Category</label>
             <select formControlName="categorie" class="form-control">
-              <option *ngFor="let categorie of categories" value="{{categorie.id_theme_category}}">{{categorie.intitule}}</option>
+              <option *ngFor="let categorie of categories" value="{{categorie.id_categorie_theme}}">{{categorie.intitule}}</option>
             </select>
           </div>
         </div>
@@ -29,11 +29,7 @@
             <label for="">Description</label>
             <textarea formControlName="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
           </div>
-          <!--  pic salle -->
-          <div class="col-md-6 mb-3">
-            <label for="imageUpload">Upload Image</label>
-            <input type="file" formControlName="image" class="form-control" id="imageUpload" (change)="onFileSelected($event)" accept="image/*" required>
-          </div>
+          
 
           <div class="col-md-6 mb-3">
             <label for="">Room</label>
@@ -59,10 +55,8 @@
 
         </div>
 
-        <!-- tsy submitena intsony itoo fa sauvegardena alony-->
-        <button class="btn btn-light submit-button" type="submit">Submit form</button>
       </form>
-      <a routerLink="materiel"><button>next</button></a>
+      <a class="btn btn-light" (click)="submitForm()"><button>next</button></a>
   </div>
 
 </div>
