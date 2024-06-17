@@ -45,3 +45,9 @@
 /*  position: relative;*/
 /*  left:50%;*/
 /*}*/
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}

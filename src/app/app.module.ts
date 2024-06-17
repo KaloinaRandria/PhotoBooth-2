@@ -47,7 +47,11 @@ import { ListCategoryComponent } from './layout/home/category/list-category/list
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import { MaterialThemeComponent } from './layout/home/theme/material-theme/material-theme.component';
 import { PopUpComponent } from './layout/home/staff/list-staff/pop-up/pop-up.component';
+<<<<<<< HEAD
 import {CarouselModule} from "ngx-bootstrap/carousel";
+=======
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+>>>>>>> main
 
 @NgModule({
   declarations: [
@@ -84,6 +88,7 @@ import {CarouselModule} from "ngx-bootstrap/carousel";
     MaterialThemeComponent,
     PopUpComponent
   ],
+<<<<<<< HEAD
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -108,6 +113,32 @@ import {CarouselModule} from "ngx-bootstrap/carousel";
     MatProgressSpinner,
     CarouselModule
   ],
+=======
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        FontAwesomeModule,
+        NgOptimizedImage,
+        CdkMenu,
+        CdkMenuTrigger,
+        OverlayModule,
+        CdkMenuModule,
+        BaseChartDirective,
+        MatIcon,
+        MatFabButton,
+        MatCard,
+        MatCardHeader,
+        MatCardActions,
+        MatButton,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatProgressSpinner,
+        CarouselModule.forRoot()
+    ],
+>>>>>>> main
   providers: [
     provideAnimationsAsync(),
     provideHttpClient()

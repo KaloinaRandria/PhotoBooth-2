@@ -22,6 +22,7 @@ export class ListThemeComponent implements OnInit {
     this.http.get(Constants.BACK_URL + '/theme/all').subscribe({
       next:(valiny: any)=> {
         this.themeList = valiny.data;
+        console.log(this.themeList);
       },
       error:(err) => {
         console.error(err);
