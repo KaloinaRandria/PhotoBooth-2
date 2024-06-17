@@ -2,18 +2,18 @@
   <div class="col-lg-6 ">
     <h4 class="card-title text-center">Theme</h4>
     <div class="carousel-div row">
-      <carousel>
-        <slide *ngFor="let slide of themeList; let index = index">
-          <img [src]="getSource(slide)" alt="Slide {{ index }}" style="display: block; width: 100%;">
-          <div class="carousel-caption">
-            <h3>{{ slide.intitule }}</h3>
-            <p>{{ slide.description }}</p>
-          </div>
-        </slide>
-      </carousel>
+          <carousel>
+            <slide *ngFor="let slide of themeList; let index = index">
+              <img [src]="getSource(slide)" alt="Slide {{ index }}" style="display: block; width: 100%;">
+              <div class="carousel-caption">
+                <h3>{{ slide.intitule }}</h3>
+                <p>{{ slide.description }}</p>
+              </div>
+            </slide>
+          </carousel>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        
+      </div>
     </div>
-  </div>
-  <div class="col-lg-6">
-    
-  </div>
-</div>
