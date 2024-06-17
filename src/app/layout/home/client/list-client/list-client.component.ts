@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ClientService} from "../../../../service/client/client.service";
 import {Display} from "../../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatDialog} from "@angular/material/dialog";
+import {PopUpComponent} from "./pop-up/pop-up.component";
 
 @Component({
   selector: 'app-list-client',
@@ -21,8 +23,19 @@ export class ListClientComponent implements OnInit{
   ngOnInit() {
     this.getAllClient();
   }
-  constructor(private clientService : ClientService , private snackBar : MatSnackBar) {
+  constructor(private clientService : ClientService , private snackBar : MatSnackBar,private dialog: MatDialog) {
   }
+
+  popUp() {
+
+    const dialogRef = this.dialog.open(PopUpComponent, {
+      width: '100vh',
+      height:'90vh',
+      data: {}
+    });
+
+  }
+
   getAllClient():void{
     const api = '/client/all';
     this.clientService.getAll(api).subscribe({

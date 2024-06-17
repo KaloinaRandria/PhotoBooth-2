@@ -32,6 +32,14 @@ body {
   background: #E7DAB5;
 }
 
+.modale{
+  padding: 50px;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
 body.login {
   overflow: hidden;
   background: #261D15 !important;

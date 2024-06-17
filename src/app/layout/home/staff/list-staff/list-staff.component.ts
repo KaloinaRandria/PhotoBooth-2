@@ -5,6 +5,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Constants} from "../../../../class/util/constants";
 import {HttpClient} from "@angular/common/http";
 import {RoleService} from "../../../../service/form/role.service";
+import {MatDialog} from "@angular/material/dialog";
+import {PopUpComponent} from "./pop-up/pop-up.component";
 
 @Component({
   selector: 'app-list-staff',
@@ -32,7 +34,17 @@ export class ListStaffComponent implements OnInit{
     this.getAllRole();
   }
 
-  constructor(private staffService : StaffService , private snackBar : MatSnackBar, private http: HttpClient, private roleService: RoleService) {
+  constructor(private staffService : StaffService , private snackBar : MatSnackBar, private http: HttpClient, private roleService: RoleService,private dialog: MatDialog) {
+  }
+
+  popUp() {
+
+    const dialogRef = this.dialog.open(PopUpComponent, {
+      width: '100vh',
+      height:'90vh',
+      data: {}
+    });
+
   }
   getAllStaff():void {
     const api = '/membre/all';

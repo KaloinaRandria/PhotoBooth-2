@@ -62,9 +62,8 @@
           <td>{{ membre.date_embauche }}</td>
           <td>{{ getSalaire(membre.salaire) }}</td>
           <td>
-            <button class="icon-btn ripple " >
+            <button class="icon-btn ripple " (click)="popUp()">
               <i class="mdi mdi-table-edit icon-edit "></i>
-
             </button>
           </td>
           <td>
