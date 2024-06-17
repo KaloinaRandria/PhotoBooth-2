@@ -9,19 +9,19 @@
   <div class="col-lg-7">
       <h1 class="titre">INSERT RESERVATION</h1>
 
-      <form action="" method="">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
         <div class="form-row">
           <!-- Select Client and Select Service -->
           <div class="col-md-6 mb-3">
             <label for="selectClient">Client</label>
-            <select name="client" class="form-control" id="selectClient" required>
+            <select formControlName="client" class="form-control" id="selectClient" required>
               <option value="">Select Client</option>
               <!-- Add client options here -->
             </select>
           </div>
           <div class="col-md-6 mb-3">
             <label for="selectService">Service</label>
-            <select name="service" class="form-control" id="selectService" required>
+            <select formControlName="service" class="form-control" id="selectService" required>
               <option value="">Select Service</option>
               <!-- Add service options here -->
             </select>
@@ -32,11 +32,11 @@
           <!-- Reservation Date and Reserved Date -->
           <div class="col-md-6 mb-3">
             <label for="reservationDate">Reservation Date</label>
-            <input name="date_reservation" type="date" class="form-control" id="reservationDate" required>
+            <input formControlName="date_reservation" type="date" class="form-control" id="reservationDate" required>
           </div>
           <div class="col-md-6 mb-3">
             <label for="reservedDate">Reserved Date</label>
-            <input name="date_reservee" type="date" class="form-control" id="reservedDate" required>
+            <input formControlName="date_reservee" type="date" class="form-control" id="reservedDate" required>
           </div>
         </div>
 
@@ -44,11 +44,11 @@
           <!-- Start Hour and End Hour -->
           <div class="col-md-6 mb-3">
             <label for="startHour">Start Hour</label>
-            <input name="heure_debut" type="time" class="form-control" id="startHour" required>
+            <input formControlName="heure_debut" type="time" class="form-control" id="startHour" required>
           </div>
           <div class="col-md-6 mb-3">
             <label for="endHour">End Hour</label>
-            <input name="heure_fin" type="time" class="form-control" id="endHour" required>
+            <input formControlName="heure_fin" type="time" class="form-control" id="endHour" required>
           </div>
         </div>
         <button class="btn btn-light submit-button" type="submit">Submit Reservation</button>

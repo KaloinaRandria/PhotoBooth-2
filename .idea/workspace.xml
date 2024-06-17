@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3883ae6b-7ec6-4706-b6f8-d75a3327c991" name="Changes" comment="chargement login et recharche multi critere staff" />
+    <list default="true" id="3883ae6b-7ec6-4706-b6f8-d75a3327c991" name="Changes" comment="chargement login et recharche multi critere staff">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +33,7 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "integration",
+    "git-widget-placeholder": "new-integration",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/WORK/S4/Gestion de Projet/PhotoBooth-2",
     "node.js.detected.package.eslint": "true",
@@ -57,6 +61,14 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,6 +84,7 @@
       <workItem from="1718344795252" duration="822000" />
       <workItem from="1718474758238" duration="1449000" />
       <workItem from="1718613630743" duration="312000" />
+      <workItem from="1718649079640" duration="412000" />
     </task>
     <servers />
   </component>
