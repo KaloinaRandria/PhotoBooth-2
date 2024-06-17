@@ -46,6 +46,7 @@ import { InsertCategoryComponent } from './layout/home/category/insert-category/
 import { ListCategoryComponent } from './layout/home/category/list-category/list-category.component';
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import { MaterialThemeComponent } from './layout/home/theme/material-theme/material-theme.component';
+import { PopUpComponent } from './layout/home/staff/list-staff/pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { MaterialThemeComponent } from './layout/home/theme/material-theme/mater
     ListRoomComponent,
     InsertCategoryComponent,
     ListCategoryComponent,
-    MaterialThemeComponent
+    MaterialThemeComponent,
+    PopUpComponent
   ],
     imports: [
         BrowserModule,
