@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f5ec4978-3129-4043-b286-9de0edcaa30d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/category/insert-category/insert-category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/category/insert-category/insert-category.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/insert-client/insert-client.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/client/insert-client/insert-client.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/material/insert-material/insert-material.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/material/insert-material/insert-material.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/room/insert-room/insert-room.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/room/insert-room/insert-room.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/staff/insert-staff/insert-staff.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/staff/insert-staff/insert-staff.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/theme/insert-theme/insert-theme.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/theme/insert-theme/insert-theme.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718686492727</updated>
-      <workItem from="1718686494097" duration="22343000" />
+      <workItem from="1718686494097" duration="23523000" />
     </task>
     <servers />
   </component>
