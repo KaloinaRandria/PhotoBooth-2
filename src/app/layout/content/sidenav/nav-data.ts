@@ -131,6 +131,11 @@ export const navData: INavbardata[] = [
         routeLink: 'reservation/statistics',
         label: 'Statistics',
         access: role
+      },
+      {
+        routeLink: 'reservation/calendar',
+        label: 'calendrier',
+        access: role
       }
     ]
   },
