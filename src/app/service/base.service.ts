@@ -31,4 +31,12 @@ export class BaseService {
         throw new Error(`Méthode HTTP non prise en charge : ${method}`);
     }
   }
+
+  sendData(data: any, api: string) {
+    return this.req(data, api, 'post');
+  }
+
+  updateData(data: any, api: string) {
+    return this.req(data, api, 'put');
+  }
 }

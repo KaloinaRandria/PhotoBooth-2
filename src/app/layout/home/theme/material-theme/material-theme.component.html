@@ -18,18 +18,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let item of materielsList; let i = index">
-                    <td class="material-name">{{ item.intitule }}</td>
-                    <td>
-                        <input type="checkbox" class="form-check-input checkbox" id="{{ 'item' + i }}" [(ngModel)]="item.checked" name="{{ 'item' + i }}" (change)="toggleQuantity(i)">
-                    </td>
-                    <td class="quantity">
-                        <input type="number" class="form-control input-quantity" [(ngModel)]="item.count" name="1" [disabled]="!item.checked" [min]="0" [max]="item.initialQuantite" (input)="updateQuantity(item)">
-                    </td>
-                    <td class="">
-                        <input type="number" class="form-control input-quantity" [(ngModel)]="item.quantite" name="2" [disabled]="true">
-                    </td>
-                </tr>
+                    <tr *ngFor="let item of materielsList; let i = index">
+                        <td class="material-name">{{ item.intitule }}</td>
+                        <td>
+                          <input type="checkbox" class="form-check-input checkbox" id="{{ 'item' + i }}" [(ngModel)]="item.checked" name="{{ 'item' + i }}" (change)="toggleQuantity(i)">
+                        </td>
+                        <td class="quantity">
+                          <input type="number" class="form-control input-quantity" [(ngModel)]="item.count" name="{{ 'count' + i }}" [disabled]="!item.checked" [min]="0" [max]="item.initialQuantite" (input)="updateQuantity(item)">
+                        </td>
+                        <td class="">
+                          <input type="number" class="form-control input-quantity" [(ngModel)]="item.quantite" name="{{ 'quantite' + i }}" [disabled]="true">
+                        </td>
+                      </tr>
+                      
                 </tbody>
             </table>
             <div class="col-md-6 mb-3">

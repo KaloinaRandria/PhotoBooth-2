@@ -1,56 +1,55 @@
 <div class="modale">
   <form >
+    <h2>{{staff.nom }}</h2>
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="">First name</label>
-        <input formControlName="prenom" type="text" class="form-control" placeholder="First name" value="" required>
+        <input type="text" [(ngModel)]="staff.prenom" name="first_name" class="form-control" placeholder="First name" required>
       </div>
       <div class="col-md-6 mb-3">
         <label for="">Last name</label>
-        <input formControlName="nom" type="text" class="form-control" placeholder="Last name"
+        <input type="text" [(ngModel)]="staff.nom" name="last_name" class="form-control" placeholder="Last name"
                value="" required>
       </div>
       <div class="col-md-6 mb-3">
         <label for="">Username</label>
         <div class="input-group">
-          <input formControlName="username" type="text" class="form-control" placeholder="username"
+          <input type="text" [(ngModel)]="staff.username" name="username" class="form-control" placeholder="username"
                  aria-describedby="inputGroupPrepend2" required>
         </div>
       </div>
       <div class="col-md-6 mb-3">
         <label for="">Date of birth</label>
-        <input formControlName="dtn" type="date" class="form-control" placeholder="" required>
+        <input type="date" [(ngModel)]="staff.date_de_naissance" name="dtn" class="form-control" placeholder="" required>
       </div>
     </div>
     <div class="form-row">
-      <!--          dtn mail mdp-->
       <div class="col-md-12 mb-3">
         <label for="">E-mail</label>
-        <input formControlName="mail" type="email" class="form-control " placeholder="e-mail" required>
+        <input type="email" [(ngModel)]="staff.mail" name="mail" class="form-control " placeholder="e-mail" required>
       </div>
       <div class="col-md-12 mb-3">
         <label for="">Password</label>
-        <input formControlName="mdp" type="password" class="form-control" placeholder="" required>
+        <input  type="password" [(ngModel)]="staff.mot_de_passe" name="mdp" class="form-control" placeholder="" required>
       </div>
     </div>
 
     <div class="form-row">
-      <!--          role post date embauche-->
       <div class="col-md-12 mb-3">
         <label for="">Role</label>
-        <select  formControlName="role" class="form-control">
-          <option >huuhhi</option>
+        <select class="form-control" [(ngModel)]="staff.role.id_role" name="role">
+          <option *ngFor="let item of roleList" [value]="item.id_role">{{ item.intitule }}</option>
         </select>
       </div>
       <div class="col-md-6 mb-3">
         <label for="">Post</label>
-        <select formControlName="post" class="form-control">
-          <option ></option>
+        <select class="form-control" [(ngModel)]="staff.poste.id_poste" name="post">
+          <option *ngFor="let item of posteList" [value]="item.id_poste">{{ item.intitule }}</option>
         </select>
       </div>
       <div class="col-md-6 mb-3">
         <label for="">Hiring date</label>
-        <input formControlName="date_embauche" type="date" class="form-control" placeholder="" required>
+        <input type="date" [(ngModel)]="staff.date_embauche" name="hire_date" class="form-control" placeholder="" required>
       </div>
     </div>
 
@@ -58,10 +57,10 @@
       <!--          role post date embauche-->
       <div class="col-md-6 mb-3">
         <label for="">Salary</label>
-        <input formControlName="salaire" type="number" class="form-control " id="" placeholder="" required>
+        <input type="number" [(ngModel)]="staff.salaire.montant" class="form-control" name="salary" placeholder="" required>
       </div>
     </div>
 
-    <button class="btn btn-light submit-button" type="submit">Submit form</button>
+    <button class="btn btn-light submit-button" (click)="update()">Submit form</button>
   </form>
 </div>

@@ -49,6 +49,7 @@ export class ListCategoryComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching categories', error);
+        Display.alert(this.snackbar,'error',"close",6000);
       }
     );
   }
@@ -67,7 +68,7 @@ export class ListCategoryComponent implements OnInit {
       },
       (error)=>{
         console.error(error);
-        Display.alert(this.snackbar,error,"close",6000);
+        Display.alert(this.snackbar,'error',"close",6000);
       }
     );
   }

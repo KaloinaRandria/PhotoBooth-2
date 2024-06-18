@@ -3,30 +3,23 @@
     <!-- intitule quantité      -->
     <div class="row g-1">
       <div class="col mb-1">
-        <label for="">Label</label>
-        <input name="intitule" type="search" class="form-control" id="" placeholder="Label" value="" required>
-      </div>
-
-      <div class="col mb-1">
-        <label for="">Status</label>
-        <select name="status" class="form-control">
-          <option>Available</option>
-          <option>Unavailable</option>
-        </select>
+        <label for="">Intitule</label>
+        <input name="intitule" type="search" [(ngModel)]="filter.intitule" class="form-control" placeholder="Label" value="" required>
       </div>
       <!-- Prix -->
       <div class="col mb-1">
         <label for="">Minimum price</label>
-        <input name="prix_min" type="number" class="form-control" id="" required>
+        <input name="prix_min" type="number" [(ngModel)]="filter.min" class="form-control" required>
       </div>
       <div class="col mb-1">
         <label for="">Maximum price</label>
-        <input name="prix_max" type="number" class="form-control" id="" required>
+        <input name="prix_max" type="number" [(ngModel)]="filter.max" class="form-control" required>
       </div>
 
     </div>
 
-    <button class="btn btn-light submit-button" type="submit">Filter</button>
+    <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
+    <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
   </form>
 </div><br>
 
@@ -38,23 +31,23 @@
     <thead class="header">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Label</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Status</th>
-      <th scope="col">Price</th>
-      <th scope="col">Edit</th>
+      <th scope="col">Intitule</th>
+      <th scope="col">Quantity (in use)</th>
+      <th scope="col">Price One</th>
+      <th scope="col">Achat</th>
+      <th scope="col">Add</th>
       <th scope="col">Delete</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td scope="row">1</td>
-      <td>Item 1</td>
-      <td>10</td>
-      <td>Available</td>
-      <td>$50</td>
+    <tr *ngFor="let item of materiels">
+      <td scope="row">{{ item.id_materiel }}</td>
+      <td>{{ item.intitule }}</td>
+      <td>{{ item.quantite }} ({{ item.inUsed }})</td>
+      <td>{{ item.prix }}</td>
+      <td>{{ item.prix_achat }}</td>
       <td>
-        <button class="icon-btn ripple" id="" (click)="popUp()">
+        <button class="icon-btn ripple" id="" (click)="popUp(item)">
           <i class="mdi mdi-table-edit icon-edit"></i>
         </button>
       </td>
@@ -64,7 +57,6 @@
         </button>
       </td>
     </tr>
-    <!-- Other table rows -->
     </tbody>
   </table>
 </div>

@@ -49,6 +49,9 @@ import { MaterialThemeComponent } from './layout/home/theme/material-theme/mater
 import { PopUpComponent } from './layout/home/staff/list-staff/pop-up/pop-up.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { StatisticComponent } from './layout/home/theme/statistic/statistic.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddComponent } from './layout/home/material/list-material/add/add.component';
+import { StatMaterielComponent } from './layout/home/material/stat-materiel/stat-materiel.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +87,9 @@ import { StatisticComponent } from './layout/home/theme/statistic/statistic.comp
     ListCategoryComponent,
     MaterialThemeComponent,
     PopUpComponent,
-    StatisticComponent
+    StatisticComponent,
+    AddComponent,
+    StatMaterielComponent
   ],
     imports: [
         BrowserModule,
@@ -108,7 +113,8 @@ import { StatisticComponent } from './layout/home/theme/statistic/statistic.comp
         MatCardModule,
         ReactiveFormsModule,
         MatProgressSpinner,
-        CarouselModule.forRoot()
+        CarouselModule.forRoot(),
+        MatDialogModule
     ],
   providers: [
     provideAnimationsAsync(),
