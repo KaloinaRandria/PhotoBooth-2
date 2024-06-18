@@ -118,6 +118,8 @@ export class MaterialThemeComponent implements OnInit {
       next:(valiny: any)=> {
         this.materielsList = valiny.data;
         this.addAttribute(this.materielsList);
+
+        console.log(this.materielsList);
       },
       error:(err) => {
         console.error(err);

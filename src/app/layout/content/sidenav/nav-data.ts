@@ -149,6 +149,11 @@ export const navData: INavbardata[] = [
         routeLink: 'material/list',
         label: 'List',
         access: role
+      },
+      {
+        routeLink: 'material/stat',
+        label: 'Stat',
+        access: role
       }
     ]
   },

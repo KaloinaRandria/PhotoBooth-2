@@ -20,6 +20,7 @@ import {InsertCategoryComponent} from "./layout/home/category/insert-category/in
 import {ListCategoryComponent} from "./layout/home/category/list-category/list-category.component";
 import {MaterialThemeComponent} from "./layout/home/theme/material-theme/material-theme.component";
 import { StatisticComponent } from './layout/home/theme/statistic/statistic.component';
+import { StatMaterielComponent } from './layout/home/material/stat-materiel/stat-materiel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path: 'client/list', component: ListClientComponent },
       { path: 'material/insert', component: InsertMaterialComponent },
       { path: 'material/list', component: ListMaterialComponent },
+      { path: 'material/stat', component: StatMaterielComponent },
       { path: 'theme/insert', component: InsertThemeComponent },
       { path: 'theme/insert/materiel', component: MaterialThemeComponent },
       { path: 'theme/list', component: ListThemeComponent },
