@@ -1,47 +1,40 @@
 <div class="row justify-content-md-center info">
-  <div class="col-lg-3">
-    <h3>Instruction</h3>
-    <p>| les champs obligatoire:</p>
-    <p>- First name <br>- Last name <br>- Date of birth</p>
-  </div>
-  <div class="col-lg-7">
-      <h1 class="titre">INSERT CLIENT</h1>
-
-      <form [formGroup]="form" (ngSubmit)="submitForm()">
-      <!-- nom prenom dtn        -->
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label>First name</label>
-            <input formControlName="prenom" type="text" class="form-control"  placeholder="First name" value="" required>
+    <div class="col-lg-12">
+      <div class="card">
+          <div class="card-body">
+              <h1 class="titre">INSERT CLIENT</h1>
+              <form [formGroup]="form" (ngSubmit)="submitForm()">
+                  <div class="form-row">
+                      <div class="col-md-4 mb-3">
+                          <label>First name</label>
+                          <input formControlName="prenom" type="text" class="form-control"  placeholder="First name" value="" required>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                          <label>Last name</label>
+                          <input formControlName="nom" type="text" class="form-control"  placeholder="Last name"
+                                 value="" required>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                          <label>Date of birth</label>
+                          <input formControlName="dtn" type="date" class="form-control"  placeholder=""
+                                 value="" required>
+                      </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-6 mb-6">
+                          <label>E-mail</label>
+                          <input formControlName="mail" type="email" class="form-control " placeholder="e-mail" required>
+                      </div>
+                      <div class="col-md-6 mb-6">
+                          <label>Phone number</label>
+                          <input formControlName="numero" type="tel" class="form-control " placeholder="" value="+261" required>
+                      </div>
+                  </div>
+                  <button class="btn btn-light submit-button" type="submit">Submit form</button>
+              </form>
           </div>
-          <div class="col-md-4 mb-3">
-            <label>Last name</label>
-            <input formControlName="nom" type="text" class="form-control"  placeholder="Last name"
-                   value="" required>
-          </div>
-          <div class="col-md-4 mb-3">
-          <label>Date of birth</label>
-            <input formControlName="dtn" type="date" class="form-control"  placeholder=""
-                   value="" required>
-        </div>
-
-        </div>
-        <div class="form-row">
-          <!--  mail num-->
-          <div class="col-md-6 mb-6">
-            <label>E-mail</label>
-            <input formControlName="mail" type="email" class="form-control " placeholder="e-mail" required>
-          </div>
-
-          <div class="col-md-6 mb-6">
-            <label>Phone number</label>
-            <input formControlName="numero" type="tel" class="form-control " placeholder="" value="+261" required>
-          </div>
-
-        </div>
-        <button class="btn btn-light submit-button" type="submit">Submit form</button>
-      </form>
       </div>
+    </div>
 </div>
 
 

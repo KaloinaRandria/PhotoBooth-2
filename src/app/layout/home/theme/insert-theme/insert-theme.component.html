@@ -1,64 +1,47 @@
 <div class="row justify-content-md-center info">
-  <div class="col-lg-3">
-    <h3>Instruction</h3>
-    <p>| les champs obligatoire:</p>
-    <p>- First name <br>- Last name <br>- Date of birth</p>
-
-
+  <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="form"(ngSubmit)="submitForm()">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="">Label</label>
+                            <input formControlName="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="">Category</label>
+                            <select formControlName="categorie" class="form-control">
+                                <option *ngFor="let categorie of categories" value="{{categorie.id_categorie_theme}}">{{categorie.intitule}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-12">
+                            <label for="">Description</label>
+                            <textarea formControlName="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="">Room</label>
+                            <select formControlName="salle" class="form-control">
+                                <option *ngFor="let room of rooms" value="{{room.id_salle}}">{{ room.numero }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="">Start date</label>
+                            <input formControlName="debut" type="date" class="form-control" id="" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="">End date</label>
+                            <input formControlName="fin" type="date" class="form-control" id="" placeholder="" value="" required>
+                        </div>
+                    </div>
+                </form>
+                <button class="btn btn-primary" (click)="submitForm()">next</button>
+            </div>
+        </div>
   </div>
-  <div class="col-lg-7 ">
-    <h1 class="titre">INSERT THEME</h1>
-
-      <form [formGroup]="form"(ngSubmit)="submitForm()">
-        <!-- intitule categorie -->
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="">Label</label>
-            <input formControlName="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Category</label>
-            <select formControlName="categorie" class="form-control">
-              <option *ngFor="let categorie of categories" value="{{categorie.id_categorie_theme}}">{{categorie.intitule}}</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="col-md-12 mb-12">
-            <label for="">Description</label>
-            <textarea formControlName="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
-          </div>
-          
-
-          <div class="col-md-6 mb-3">
-            <label for="">Room</label>
-            <select formControlName="salle" class="form-control">
-              <option *ngFor="let room of rooms" value="{{room.id_salle}}">{{ room.numero }}</option>
-            </select>
-          </div>
-
-        </div>
-
-<!--        debut fin-->
-        <div class="form-row">
-
-          <div class="col-md-6 mb-3">
-            <label for="">Start date</label>
-            <input formControlName="debut" type="date" class="form-control" id="" placeholder="" value="" required>
-          </div>
-
-          <div class="col-md-6 mb-3">
-            <label for="">End date</label>
-            <input formControlName="fin" type="date" class="form-control" id="" placeholder="" value="" required>
-          </div>
-
-        </div>
-
-      </form>
-      <a class="btn btn-light" (click)="submitForm()"><button>next</button></a>
-  </div>
-
 </div>
 
 
