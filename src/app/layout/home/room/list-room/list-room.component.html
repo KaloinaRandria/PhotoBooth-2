@@ -25,12 +25,12 @@
           <th scope="row">{{room.id_salle}}</th>
           <td>{{room.numero}}</td>
           <td>
-            <button class="icon-btn ripple" id="" (click)="popUp()">
+            <button class="icon-btn ripple"  (click)="popUp(room)">
               <i class="mdi mdi-table-edit icon-edit"></i>
             </button>
           </td>
           <td>
-            <button class="icon-btn ripple" id="" (click)="delete(room)">
+            <button class="icon-btn ripple" (click)="delete(room)">
               <i class="mdi mdi-delete icon-delete"></i>
             </button>
           </td>

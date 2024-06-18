@@ -1,0 +1,13 @@
+<div class="modale">
+    <form>
+        <h2>Room No-{{room.numero}}</h2>
+        <div class="form-row">
+            <!-- Select Client and Select Service -->
+            <div class="col-md-6 mb-3">
+                <label >Room number</label>
+                <input type="number" name="numero" [(ngModel)]="room.numero" class="form-control" placeholder="numero">
+            </div>
+        </div>
+        <button class="btn btn-light submit-button" (click)="update()">Submit</button>
+    </form>
+</div>
