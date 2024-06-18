@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3883ae6b-7ec6-4706-b6f8-d75a3327c991" name="Changes" comment="chargement login et recharche multi critere staff" />
+    <list default="true" id="f5ec4978-3129-4043-b286-9de0edcaa30d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PhotoBooth-2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,29 +21,27 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2hondcz9edOvMjNo6955qAzFeTN" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2i2R41iThEW0StQzlL4BNTlU3Tp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "integration",
+    "git-widget-placeholder": "frontend",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/WORK/S4/Gestion de Projet/PhotoBooth-2",
+    "last_opened_file_path": "C:/itu/s4/MmeBaovola/gitClone/PhotoBooth-BackEnd",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.Angular CLI Server.executor": "Run",
-    "ts.external.directory.path": "/home/kaloina/Documents/GitHub/PhotoBooth-2/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -60,37 +63,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3883ae6b-7ec6-4706-b6f8-d75a3327c991" name="Changes" comment="" />
-      <created>1718269386085</created>
+      <changelist id="f5ec4978-3129-4043-b286-9de0edcaa30d" name="Changes" comment="" />
+      <created>1718686492727</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1718269386085</updated>
-      <workItem from="1718269387211" duration="58000" />
-      <workItem from="1718275137644" duration="2947000" />
-      <workItem from="1718300789179" duration="23000" />
-      <workItem from="1718301191476" duration="978000" />
-      <workItem from="1718344795252" duration="822000" />
-      <workItem from="1718474758238" duration="1449000" />
-      <workItem from="1718613630743" duration="312000" />
+      <updated>1718686492727</updated>
+      <workItem from="1718686494097" duration="894000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="chargement login et recharche multi critere staff" />
-    <option name="LAST_COMMIT_MESSAGE" value="chargement login et recharche multi critere staff" />
   </component>
 </project>
