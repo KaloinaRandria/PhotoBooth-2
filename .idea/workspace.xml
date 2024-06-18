@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5ec4978-3129-4043-b286-9de0edcaa30d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PhotoBooth-2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/layout/home/client/list-client/modify-client/modify-client.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/layout/home/client/list-client/modify-client/modify-client.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/layout/home/client/list-client/modify-client/modify-client.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/insert-client/insert-client.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/client/insert-client/insert-client.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/list-client/list-client.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/client/list-client/list-client.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/list-client/list-client.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/client/list-client/list-client.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/list-client/list-client.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/client/list-client/list-client.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/list-client/pop-up/pop-up.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/list-client/pop-up/pop-up.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/list-client/pop-up/pop-up.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/client/list-client/modify-client/modify-client.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/client/list-client/pop-up/pop-up.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/client/client.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/client/client.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +37,16 @@
   "associatedIndex": 0
 }]]></component>
   <component name="ProjectId" id="2i2R41iThEW0StQzlL4BNTlU3Tp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "frontend",
@@ -42,7 +58,13 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.Angular CLI Server.executor": "Run",
+    "ts.external.directory.path": "C:\\itu\\s4\\MmeBaovola\\gitClone\\PhotoBooth-2.2\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -68,11 +90,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718686492727</updated>
-      <workItem from="1718686494097" duration="894000" />
+      <workItem from="1718686494097" duration="8703000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
