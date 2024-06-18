@@ -50,3 +50,17 @@
   background-color: #261d15;
   color: white;
 }
+
+.client-input {
+  width: 100%;
+}
+
+.sufix, .eg {
+  width: 100%;
+}
+
+.el {
+  display: flex;
+  width: 100% !important;
+  justify-content: center;
+}
