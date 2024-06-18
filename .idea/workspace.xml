@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5ec4978-3129-4043-b286-9de0edcaa30d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/layout/home/category/list-category/modify-categ/modify-categ.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/home/category/list-category/modify-categ/modify-categ.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/home/room/list-room/modify-room/modify-room.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/home/room/list-room/modify-room/modify-room.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/home/category/list-category/list-category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/category/list-category/list-category.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/category/list-category/list-category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/category/list-category/list-category.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/category/list-category/pop-up/pop-up.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/category/list-category/modify-categ/modify-categ.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/category/list-category/pop-up/pop-up.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/category/list-category/pop-up/pop-up.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/category/list-category/modify-categ/modify-categ.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/category/list-category/pop-up/pop-up.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/room/list-room/list-room.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/room/list-room/list-room.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/room/list-room/list-room.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/room/list-room/list-room.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/room/list-room/pop-up/pop-up.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/room/list-room/modify-room/modify-room.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/room/list-room/pop-up/pop-up.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/room/list-room/pop-up/pop-up.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/room/list-room/modify-room/modify-room.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/room/list-room/pop-up/pop-up.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718686492727</updated>
-      <workItem from="1718686494097" duration="10761000" />
+      <workItem from="1718686494097" duration="20517000" />
     </task>
     <servers />
   </component>

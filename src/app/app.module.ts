@@ -61,6 +61,11 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { ModifyClientComponent } from './layout/home/client/list-client/modify-client/modify-client.component';
 import { ModifyRoomComponent } from './layout/home/room/list-room/modify-room/modify-room.component';
 import { ModifyCategComponent } from './layout/home/category/list-category/modify-categ/modify-categ.component';
+import {MatDatepicker, MatDatepickerToggle} from "@angular/material/datepicker";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatInput} from "@angular/material/input";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -132,7 +137,12 @@ import { ModifyCategComponent } from './layout/home/category/list-category/modif
         MatSelect,
         MatAutocompleteModule,
         MatSelectModule,
-        NgxMatSelectSearchModule
+        NgxMatSelectSearchModule,
+        MatDatepickerToggle,
+        MatDatepicker,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatInput
     ],
   providers: [
     provideAnimationsAsync(),
