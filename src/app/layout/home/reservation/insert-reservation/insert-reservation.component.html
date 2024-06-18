@@ -54,3 +54,15 @@
         <button class="btn btn-light submit-button" type="submit">Submit Reservation</button>
       </form>
 </div>
+</div>
+
+<mat-form-field>
+    <mat-label>Choix</mat-label>
+    <mat-select [formControl]="myControl">
+        <ngx-mat-select-search [formControl]="searchControl" placeholderLabel="Rechercher..."></ngx-mat-select-search>
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.value">
+            {{ option.viewValue }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+

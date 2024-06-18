@@ -52,7 +52,13 @@ import { StatisticComponent } from './layout/home/theme/statistic/statistic.comp
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddComponent } from './layout/home/material/list-material/add/add.component';
 import { StatMaterielComponent } from './layout/home/material/stat-materiel/stat-materiel.component';
-
+import {MatFormField} from "@angular/material/form-field";
+import {MatAutocomplete, MatOption} from "@angular/material/autocomplete";
+import {MatSelect} from "@angular/material/select";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSelectModule } from '@angular/material/select';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { ModifyClientComponent } from './layout/home/client/list-client/modify-client/modify-client.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +95,8 @@ import { StatMaterielComponent } from './layout/home/material/stat-materiel/stat
     PopUpComponent,
     StatisticComponent,
     AddComponent,
-    StatMaterielComponent
+    StatMaterielComponent,
+    ModifyClientComponent,
   ],
     imports: [
         BrowserModule,
@@ -114,7 +121,14 @@ import { StatMaterielComponent } from './layout/home/material/stat-materiel/stat
         ReactiveFormsModule,
         MatProgressSpinner,
         CarouselModule.forRoot(),
-        MatDialogModule
+        MatDialogModule,
+        MatFormField,
+        MatAutocomplete,
+        MatOption,
+        MatSelect,
+        MatAutocompleteModule,
+        MatSelectModule,
+        NgxMatSelectSearchModule
     ],
   providers: [
     provideAnimationsAsync(),
