@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5ec4978-3129-4043-b286-9de0edcaa30d" name="Changes" comment="">
+    <list default="true" id="cf639e7b-da18-413f-a04b-3b6be5fce80d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,37 +21,27 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
+  "associatedIndex": 2
 }]]></component>
-  <component name="ProjectId" id="2i2R41iThEW0StQzlL4BNTlU3Tp" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2i3pQuC5iT5UtJBkXGVzDDFPkDI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "frontend",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/itu/s4/MmeBaovola/gitClone/PhotoBooth-BackEnd",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.Angular CLI Server.executor": "Run",
-    "ts.external.directory.path": "C:\\itu\\s4\\MmeBaovola\\gitClone\\PhotoBooth-2.2\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\itu\\s4\\MmeBaovola\\gitClone\\PhotoBooth-2.3\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
-    ]
   }
 }]]></component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -70,19 +62,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f5ec4978-3129-4043-b286-9de0edcaa30d" name="Changes" comment="" />
-      <created>1718686492727</created>
+      <changelist id="cf639e7b-da18-413f-a04b-3b6be5fce80d" name="Changes" comment="" />
+      <created>1718729103604</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1718686492727</updated>
-      <workItem from="1718686494097" duration="23523000" />
+      <updated>1718729103604</updated>
+      <workItem from="1718729107989" duration="664000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
