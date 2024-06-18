@@ -59,6 +59,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { ModifyClientComponent } from './layout/home/client/list-client/modify-client/modify-client.component';
+import { ModifyRoomComponent } from './layout/home/room/list-room/modify-room/modify-room.component';
+import { ModifyCategComponent } from './layout/home/category/list-category/modify-categ/modify-categ.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,6 +99,8 @@ import { ModifyClientComponent } from './layout/home/client/list-client/modify-c
     AddComponent,
     StatMaterielComponent,
     ModifyClientComponent,
+    ModifyRoomComponent,
+    ModifyCategComponent,
   ],
     imports: [
         BrowserModule,

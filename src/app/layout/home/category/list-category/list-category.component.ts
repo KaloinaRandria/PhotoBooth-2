@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from "../../../../service/category/category.service";
-import {Constants} from "../../../../class/util/constants";
 import {Display} from "../../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
-import {PopUpComponent} from "./pop-up/pop-up.component";
+import {ModifyCategComponent} from "./modify-categ/modify-categ.component";
 
 @Component({
   selector: 'app-list-category',
@@ -21,14 +20,12 @@ export class ListCategoryComponent implements OnInit {
 
   constructor(private categoryService: CategoryService,private snackbar:MatSnackBar,private dialog: MatDialog) {}
 
-  popUp() {
-
-    const dialogRef = this.dialog.open(PopUpComponent, {
+  popUp(categorie: any) {
+    const dialogRef = this.dialog.open(ModifyCategComponent, {
       width: '100vh',
       height:'90vh',
-      data: {}
+      data: {categ: categorie}
     });
-
   }
   ngOnInit(): void {
     this.loadCategories();

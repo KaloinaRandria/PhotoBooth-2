@@ -1,0 +1,12 @@
+<div class="modale">
+    <form>
+        <h2>Categ.Intitule : {{categ.intitule}}</h2>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label >Intitule</label>
+                <input name="intitule" [(ngModel)]="categ.intitule" type="text" class="form-control" placeholder="intitule ">
+            </div>
+        </div>
+        <button class="btn btn-light submit-button" (click)="update()">Submit</button>
+    </form>
+</div>
