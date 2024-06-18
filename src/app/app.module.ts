@@ -65,6 +65,10 @@ import {MatDatepicker, MatDatepickerToggle} from "@angular/material/datepicker";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInput} from "@angular/material/input";
+import { CalendarComponent } from './layout/home/reservation/calendar/calendar.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
+import dayGridPlugin from '@fullcalendar/daygrid'; // Importez le plugin dayGrid
+
 
 @NgModule({
   declarations: [
@@ -106,6 +110,7 @@ import {MatInput} from "@angular/material/input";
     ModifyClientComponent,
     ModifyRoomComponent,
     ModifyCategComponent,
+    CalendarComponent,
   ],
     imports: [
         BrowserModule,
@@ -142,7 +147,8 @@ import {MatInput} from "@angular/material/input";
         MatDatepicker,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatInput
+        MatInput,
+        FullCalendarModule,
     ],
   providers: [
     provideAnimationsAsync(),
