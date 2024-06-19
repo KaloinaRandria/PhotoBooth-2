@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cf639e7b-da18-413f-a04b-3b6be5fce80d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/content/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/header/header.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,23 +35,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;frontend&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\itu\\s4\\MmeBaovola\\gitClone\\PhotoBooth-2.3\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "frontend",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/itu/s4/AngularTemplate",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.Angular CLI Server.executor": "Run",
+    "ts.external.directory.path": "C:\\itu\\s4\\MmeBaovola\\gitClone\\PhotoBooth-2.3\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
@@ -81,7 +79,7 @@
       <workItem from="1718729107989" duration="6756000" />
       <workItem from="1718741680866" duration="803000" />
       <workItem from="1718781179268" duration="12947000" />
-      <workItem from="1718803362064" duration="1131000" />
+      <workItem from="1718803362064" duration="2314000" />
     </task>
     <servers />
   </component>
