@@ -8,6 +8,8 @@ import {DashboardService} from "../../../service/dashboard/dashboard.service";
 import {BrowserModule, Title} from "@angular/platform-browser";
 import html2pdf from 'html2pdf.js';
 import { Constants } from '../../../class/util/constants';
+import {Chart, registerables} from "chart.js";
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-dashboard',
@@ -30,6 +32,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.titleService.setTitle("PB | Dashboard");
     this.getAllTheme();
+    this.renderChart();
   }
 
   getAllTheme() {
@@ -50,4 +53,37 @@ export class DashboardComponent implements OnInit {
     { image: 'https://picsum.photos/id/701/900/500', captionTitle: 'Second Slide', captionText: 'This is the second slide' },
     { image: 'https://picsum.photos/id/702/900/500', captionTitle: 'Third Slide', captionText: 'This is the third slide' }
   ];
+
+  renderChart() {
+
+    new Chart("linechart", {
+      type: 'line',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Cyan', 'Magenta', 'Lime', 'Pink'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3, 8, 14, 6, 9],
+          backgroundColor: 'rgba(21,9,1,0.5)', // couleur avec transparence
+          borderColor: 'rgb(21,9,1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          x: {
+            ticks: {
+              padding: 20 // Augmenter l'espace entre les labels de l'axe x
+            }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 2, // Ajuste l'intervalle entre les valeurs des ticks
+              padding: 20 // Augmenter l'espace entre les labels de l'axe y
+            }
+          }
+        }
+      }
+    });
+  }
 }
