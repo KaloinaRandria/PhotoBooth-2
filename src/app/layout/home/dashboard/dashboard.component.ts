@@ -16,7 +16,6 @@ import { Constants } from '../../../class/util/constants';
 })
 export class DashboardComponent implements OnInit {
   getSource(item: any) {
-    console.log(item.imageThemes[0].image_url);
     return Constants.BACK_URL + item.imageThemes[0].image_url;
   }
 
