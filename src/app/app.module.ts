@@ -66,8 +66,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInput} from "@angular/material/input";
 import {FullCalendarModule} from "@fullcalendar/angular";
+import { MatRadioModule } from '@angular/material/radio';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import { CalendrierComponent } from './layout/home/calendrier/calendrier.component'; // Importez le plugin dayGrid
+import { CalendrierComponent } from './layout/home/calendrier/calendrier.component';
+import { StatRevenueComponent } from './layout/home/revenue/stat-revenue/stat-revenue.component'; // Importez le plugin dayGrid
 
 
 @NgModule({
@@ -111,6 +113,7 @@ import { CalendrierComponent } from './layout/home/calendrier/calendrier.compone
     ModifyRoomComponent,
     ModifyCategComponent,
     CalendrierComponent,
+    StatRevenueComponent,
   ],
     imports: [
         BrowserModule,
@@ -149,6 +152,7 @@ import { CalendrierComponent } from './layout/home/calendrier/calendrier.compone
         MatNativeDateModule,
         MatInput,
         FullCalendarModule,
+        MatRadioModule
     ],
   providers: [
     provideAnimationsAsync(),

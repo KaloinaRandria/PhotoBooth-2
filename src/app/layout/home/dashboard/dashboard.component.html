@@ -1,11 +1,29 @@
-<div class="container mt-5">
-  <carousel>
-    <slide *ngFor="let slide of themeList; let index = index">
-      <img [src]="getSource(slide)" alt="Slide {{ index }}" style="display: block; width: 100%;">
-      <div class="carousel-caption">
-        <h3>{{ slide.intitule }}</h3>
-        <p>{{ slide.description }}</p>
-      </div>
-    </slide>
-  </carousel>
+<div class="row">
+  <div class="col-md-6 card">
+    <carousel>
+      <slide *ngFor="let slide of themeList; let index = index">
+        <div
+          class="img"
+          [ngStyle]="{'background-image': 'url(' + getSource(slide) + ')', 'background-size': 'cover', 'background-position': 'center'}">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{ slide.intitule }}</h3>
+          <p>{{ slide.description }}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="col-md-6">
+    <div class="row-fluid card">
+      <p >oke oke </p>
+    </div>
+    <br>
+    <div class="card">
+      <h2>Line Chart</h2>
+      <canvas id="linechart"></canvas>
+    </div>
+  </div>
+  <div class="col-md-12 card footer">
+    photoBooth - manina manina
+  </div>
 </div>
