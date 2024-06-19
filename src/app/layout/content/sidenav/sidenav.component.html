@@ -20,13 +20,12 @@
           ></i>
         </a>
 
-        <a class="sidenav-nav-link"
-           *ngIf="!data.items || (data.items && data.items.length === 0)"
-           [routerLink]="data.routeLink"
-           routerLinkActive="active"
-           [routerLinkActiveOptions]="{exact: true}"
-           (click)="shrinkItems(data)"
-        >
+          <a class="sidenav-nav-link"
+             *ngIf="!data.items || (data.items && data.items.length === 0)"
+             [class.active]="activeItem?.routeLink === data.routeLink"
+             (click)="shrinkItems(data)">
+
+
           <i class="sidenav-link-icon" [class]="data.icon"></i>
           <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
         </a>

@@ -2,6 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {fadeInOut, INavbardata} from "./helper";
 import {animate, animation, state, style, transition, trigger} from "@angular/animations";
 import {Router} from "@angular/router";
+import {Display} from "../../../class/util/display";
+import {PageAccess} from "../../../class/util/pageAccess";
+import {User} from "../../../class/model/user/user";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-sublevel-menu',
@@ -69,7 +73,7 @@ export class SublevelMenuComponent implements OnInit{
   @Input() expanded: boolean | undefined;
   @Input() multiple: boolean = false;
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private alert: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -93,6 +97,23 @@ export class SublevelMenuComponent implements OnInit{
   }
 
   navigate(item: INavbardata) {
-    this.router.navigate(['home/' + item.routeLink]).then(r => true);
+    const route = 'home/' + item.routeLink;
+    if (this.checkUserRole(item, route)) {
+      this.router.navigate([route]).then(r => true);
+    } else {
+      Display.alert(this.alert,'You do not have permission to access this page!',"close",4000);
+    }
+  }
+
+  checkUserRole(item: INavbardata, routeLink: string): boolean {
+    const userConnected = User.getUserAuth();
+    if (!userConnected) {
+      return true;
+    }
+
+    const role = userConnected.role.intitule;
+    const route = routeLink;
+
+    return PageAccess.verifiate(route, role);
   }
 }

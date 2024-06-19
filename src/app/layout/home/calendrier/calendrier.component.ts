@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {CalendarOptions} from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import {Router} from "@angular/router";
+import {PageAccess} from "../../../class/util/pageAccess";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-calendrier',
@@ -11,7 +14,13 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 export class CalendrierComponent implements OnInit{
   calendarOptions: CalendarOptions | undefined;
 
+  constructor(private router: Router, private location: Location) {
+  }
+
   ngOnInit() {
+    if(!PageAccess.autoVerifiatePermission(this.router)) {
+      this.location.back();
+    }
     this.initializeCalendarOptions();
   }
 

@@ -74,6 +74,7 @@ import { StatRevenueComponent } from './layout/home/revenue/stat-revenue/stat-re
 import { InsertRecordComponent } from './layout/home/record/insert-record/insert-record.component';
 import { ListRecordComponent } from './layout/home/record/list-record/list-record.component';
 import { PopUpEditRecordComponent } from './layout/home/record/list-record/pop-up-edit-record/pop-up-edit-record.component';
+import { LogoutPopUpComponent } from './layout/content/header/logout-pop-up/logout-pop-up.component';
 
 
 @NgModule({
@@ -122,6 +123,7 @@ import { PopUpEditRecordComponent } from './layout/home/record/list-record/pop-u
     InsertRecordComponent,
     ListRecordComponent,
     PopUpEditRecordComponent,
+    LogoutPopUpComponent,
   ],
     imports: [
         BrowserModule,
