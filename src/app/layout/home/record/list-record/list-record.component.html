@@ -1,0 +1,73 @@
+<div class="row">
+    <form>
+        <div class="row g-1">
+            <!-- Filtrage par room -->
+            <div class="col mb-1">
+                <label for="searchRoom">Room</label>
+                <input name="room" type="text" class="form-control" id="searchRoom" placeholder="Search Room">
+            </div>
+            <!-- Filtrage par start time -->
+            <div class="col mb-1">
+                <label for="searchStartTime">Start Time</label>
+                <input name="start_time" type="time" class="form-control" id="searchStartTime">
+            </div>
+            <!-- Filtrage par end time -->
+            <div class="col mb-1">
+                <label for="searchEndTime">End Time</label>
+                <input name="end_time" type="time" class="form-control" id="searchEndTime">
+            </div>
+            <!-- Filtrage par amount min -->
+            <div class="col mb-1">
+                <label for="searchAmountMin">Amount Min</label>
+                <input name="amount_min" type="number" class="form-control" id="searchAmountMin">
+            </div>
+            <!-- Filtrage par amount max -->
+            <div class="col mb-1">
+                <label for="searchAmountMax">Amount Max</label>
+                <input name="amount_max" type="number" class="form-control" id="searchAmountMax">
+            </div>
+            <!-- Bouton de soumission pour le filtrage -->
+            <div class="col mb-1">
+                <button type="button" class="btn btn-light submit-button filter-btn" (click)="filter()">Filter</button>
+            </div>
+        </div>
+    </form>
+</div><br>
+
+<div class="row info">
+    <h1 class="titre">RECORD LIST</h1>
+
+    <table class="table">
+        <thead class="header">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Room</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Remplacer cet exemple par une boucle sur les données insérées -->
+        <tr *ngFor="let reservation of insertedReservations; let i = index">
+            <td scope="row">{{ i + 1 }}</td>
+            <td>{{ reservation.room }}</td>
+            <td>{{ reservation.startTime }}</td>
+            <td>{{ reservation.endTime }}</td>
+            <td>{{ reservation.amount }}</td>
+            <td>
+                <button class="icon-btn ripple" (click)="popUp()">
+                    <i class="mdi mdi-table-edit icon-edit"></i>
+                </button>
+            </td>
+            <td>
+                <button class="icon-btn ripple " (click)="deleteReservation(reservation)">
+                    <i class="mdi mdi-delete icon-delete"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

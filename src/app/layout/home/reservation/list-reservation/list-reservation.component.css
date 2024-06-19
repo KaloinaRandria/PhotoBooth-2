@@ -126,7 +126,7 @@ table tr td{
   color : #6c1515;
 }
 .icon-btn:hover{
-  background-color: #ff3333;
+  background-color: #771010;
   color: white;
 }
 
@@ -140,6 +140,17 @@ table tr td{
   font-size: x-large;
   position: relative;
   top: 5%;
+}
+
+.icon-check{
+  font-size: x-large;
+  position: relative;
+  top: 5%;
+}
+
+.confirmed {
+  background-color: #88ea4a;
+  color: white/* Change la couleur de l'icône à verte lorsque confirmé */
 }
 
 

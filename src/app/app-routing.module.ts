@@ -23,6 +23,8 @@ import { StatisticComponent } from './layout/home/theme/statistic/statistic.comp
 import { StatMaterielComponent } from './layout/home/material/stat-materiel/stat-materiel.component';
 import {CalendrierComponent} from "./layout/home/calendrier/calendrier.component";
 import {StatRevenueComponent} from "./layout/home/revenue/stat-revenue/stat-revenue.component";
+import { InsertRecordComponent } from './layout/home/record/insert-record/insert-record.component';
+import { ListRecordComponent } from './layout/home/record/list-record/list-record.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -51,7 +53,10 @@ const routes: Routes = [
       { path: 'room/insert', component: InsertRoomComponent },
       { path: 'category/insert', component: InsertCategoryComponent },
       { path: 'category/list', component: ListCategoryComponent },
-      { path: 'revenue/statistics', component: StatRevenueComponent }
+      { path: 'revenue/statistics', component: StatRevenueComponent },
+      { path: 'record/insert', component: InsertRecordComponent },
+      { path: 'record/list', component: ListRecordComponent },
+
     ]
   },
   { path: '**', component: BadRequestComponent }

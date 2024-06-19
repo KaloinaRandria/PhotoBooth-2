@@ -58,6 +58,24 @@ export const navData: INavbardata[] = [
 
   },
   {
+    routeLink: 'record',
+    icon: 'mdi mdi-account-card-details',
+    label: 'Financial record',
+    expanded: false,
+    items: [
+      {
+        routeLink: 'record/insert',
+        label: 'Insert',
+        access: [role[0], role[2]]
+      },
+      {
+        routeLink: 'record/list',
+        label: 'List',
+        access: [role[1]]
+      }
+    ]
+  },
+  {
     routeLink: 'room',
     icon: 'mdi mdi-home-map-marker',
     label: 'Room',
