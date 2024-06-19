@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {PopUpComponent} from "./pop-up/pop-up.component";
+import { PopUpConfirmationComponent } from './pop-up-confirmation/pop-up-confirmation.component'; // Importez le plugin dayGrid
+
 
 @Component({
   selector: 'app-list-reservation',
@@ -11,6 +13,8 @@ export class ListReservationComponent {
   constructor(private dialog: MatDialog) {
   }
 
+  isConfirmed: boolean = false;
+
   popUp() {
 
     const dialogRef = this.dialog.open(PopUpComponent, {
@@ -19,5 +23,17 @@ export class ListReservationComponent {
       data: {}
     });
 
+  }
+
+  popUpConfirm() {
+    const dialogRef = this.dialog.open(PopUpConfirmationComponent, {
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.isConfirmed = true;
+      }
+    });
   }
 }

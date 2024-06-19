@@ -66,10 +66,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInput} from "@angular/material/input";
 import {FullCalendarModule} from "@fullcalendar/angular";
-import dayGridPlugin from '@fullcalendar/daygrid'; // Importez le plugin dayGrid
 import { MatRadioModule } from '@angular/material/radio';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import { CalendrierComponent } from './layout/home/calendrier/calendrier.component'; // Importez le plugin dayGrid
+import { CalendrierComponent } from './layout/home/calendrier/calendrier.component';
+import { PopUpConfirmationComponent } from './layout/home/reservation/list-reservation/pop-up-confirmation/pop-up-confirmation.component'; // Importez le plugin dayGrid
 
 
 @NgModule({
@@ -113,6 +113,7 @@ import { CalendrierComponent } from './layout/home/calendrier/calendrier.compone
     ModifyRoomComponent,
     ModifyCategComponent,
     CalendrierComponent,
+    PopUpConfirmationComponent
   ],
     imports: [
         BrowserModule,
