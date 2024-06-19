@@ -70,6 +70,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { CalendrierComponent } from './layout/home/calendrier/calendrier.component';
 import { PopUpConfirmationComponent } from './layout/home/reservation/list-reservation/pop-up-confirmation/pop-up-confirmation.component'; // Importez le plugin dayGrid
+import { StatRevenueComponent } from './layout/home/revenue/stat-revenue/stat-revenue.component'; // Importez le plugin dayGrid
 
 
 @NgModule({
@@ -113,7 +114,8 @@ import { PopUpConfirmationComponent } from './layout/home/reservation/list-reser
     ModifyRoomComponent,
     ModifyCategComponent,
     CalendrierComponent,
-    PopUpConfirmationComponent
+    PopUpConfirmationComponent,
+    StatRevenueComponent
   ],
     imports: [
         BrowserModule,
