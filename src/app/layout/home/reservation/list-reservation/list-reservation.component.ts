@@ -18,8 +18,6 @@ export class ListReservationComponent {
   popUp() {
 
     const dialogRef = this.dialog.open(PopUpComponent, {
-      width: '100vh',
-      height:'90vh',
       data: {}
     });
 

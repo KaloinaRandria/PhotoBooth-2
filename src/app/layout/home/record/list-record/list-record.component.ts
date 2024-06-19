@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import { PopUpEditRecordComponent } from './pop-up-edit-record/pop-up-edit-record.component';
 
 @Component({
   selector: 'app-list-record',
@@ -11,6 +13,16 @@ export class ListRecordComponent {
     { room: 'Room 2', startTime: '13:00', endTime: '15:00', amount: '$150' },
     // Autres réservations insérées...
   ];
+
+  constructor(private dialog: MatDialog) {
+  }
+  popUp() {
+
+    const dialogRef = this.dialog.open(PopUpEditRecordComponent, {
+      data: {}
+    });
+
+  }
 
   filter() {
     // Logique pour filtrer les réservations en fonction des critères spécifiés

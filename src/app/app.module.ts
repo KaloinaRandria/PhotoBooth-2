@@ -73,6 +73,7 @@ import { PopUpConfirmationComponent } from './layout/home/reservation/list-reser
 import { StatRevenueComponent } from './layout/home/revenue/stat-revenue/stat-revenue.component';
 import { InsertRecordComponent } from './layout/home/record/insert-record/insert-record.component';
 import { ListRecordComponent } from './layout/home/record/list-record/list-record.component';
+import { PopUpEditRecordComponent } from './layout/home/record/list-record/pop-up-edit-record/pop-up-edit-record.component';
 
 
 @NgModule({
@@ -120,6 +121,7 @@ import { ListRecordComponent } from './layout/home/record/list-record/list-recor
     StatRevenueComponent,
     InsertRecordComponent,
     ListRecordComponent,
+    PopUpEditRecordComponent,
   ],
     imports: [
         BrowserModule,
