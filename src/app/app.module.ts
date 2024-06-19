@@ -68,6 +68,7 @@ import {MatInput} from "@angular/material/input";
 import { CalendarComponent } from './layout/home/reservation/calendar/calendar.component';
 import {FullCalendarModule} from "@fullcalendar/angular";
 import dayGridPlugin from '@fullcalendar/daygrid'; // Importez le plugin dayGrid
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -149,6 +150,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'; // Importez le plugin dayGrid
         MatNativeDateModule,
         MatInput,
         FullCalendarModule,
+        MatRadioModule
     ],
   providers: [
     provideAnimationsAsync(),

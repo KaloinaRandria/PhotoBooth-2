@@ -64,3 +64,22 @@
   width: 100% !important;
   justify-content: center;
 }
+.pplNumber{
+  width: 100%;
+}
+
+::ng-deep .custom-radio .mat-radio-outer-circle {
+  border-color: #03ff16; /* Custom border color */
+}
+
+::ng-deep .custom-radio .mat-radio-inner-circle {
+  background-color: #06b62f; /* Custom inner circle color */
+}
+
+::ng-deep .custom-radio .mat-radio-ripple .mat-ripple-element {
+  background-color: rgba(67, 171, 85, 0.3); /* Custom ripple color */
+}
+
+::ng-deep .custom-radio .mat-radio-label-content {
+  color: #57f621; /* Custom label color */
+}
