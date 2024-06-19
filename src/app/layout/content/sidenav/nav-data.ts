@@ -10,6 +10,12 @@ export const navData: INavbardata[] = [
     access: role
   },
   {
+    routeLink: 'calendar',
+    icon: 'mdi mdi-calendar',
+    label: 'Calendar',
+    access: role
+  },
+  {
     routeLink: 'staff',
     icon: 'mdi mdi-account-card-details',
     label: 'Staff',
@@ -130,11 +136,6 @@ export const navData: INavbardata[] = [
       {
         routeLink: 'reservation/statistics',
         label: 'Statistics',
-        access: role
-      },
-      {
-        routeLink: 'reservation/calendar',
-        label: 'calendrier',
         access: role
       }
     ]

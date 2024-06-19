@@ -1,11 +1,22 @@
-<div class="container mt-5">
-  <carousel>
-    <slide *ngFor="let slide of themeList; let index = index">
-      <img [src]="getSource(slide)" alt="Slide {{ index }}" style="display: block; width: 100%;">
-      <div class="carousel-caption">
-        <h3>{{ slide.intitule }}</h3>
-        <p>{{ slide.description }}</p>
-      </div>
-    </slide>
-  </carousel>
+<div class="row">
+  <div class="col-md-6">
+    <div class="container mt-5">
+      <carousel>
+        <slide *ngFor="let slide of themeList; let index = index">
+          <div
+            class="carousel-slide"
+            [ngStyle]="{'background-image': 'url(' + getSource(slide) + ')', 'background-size': 'cover', 'background-position': 'center'}"
+            style="display: block; width: 100%; height: 400px;">
+          </div>
+          <div class="carousel-caption">
+            <h3>{{ slide.intitule }}</h3>
+            <p>{{ slide.description }}</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+  <div class="col-md-6">
+
+  </div>
 </div>
