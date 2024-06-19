@@ -1,4 +1,7 @@
-.image-carousel {
+.img{
+  height: 50vh;
+  width: 100%;
+  display: block;
 }
 
 .carousel-control-prev, .carousel-control-next{
@@ -20,10 +23,6 @@
 
   .carousel-item {
     height: -webkit-fill-available;
-
-    img {
-      height: -webkit-fill-available;
-    }
   }
 }
 
