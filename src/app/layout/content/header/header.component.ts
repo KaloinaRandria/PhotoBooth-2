@@ -2,6 +2,11 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {User} from "../../../class/model/user/user";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
+import {
+  PopUpConfirmationComponent
+} from "../../home/reservation/list-reservation/pop-up-confirmation/pop-up-confirmation.component";
+import {MatDialog} from "@angular/material/dialog";
+import {LogoutPopUpComponent} from "./logout-pop-up/logout-pop-up.component";
 
 @Component({
   selector: 'app-header',
@@ -15,7 +20,7 @@ export class HeaderComponent implements OnInit{
 
   canShowSearchAsOverlay = false;
   userConnected: any = undefined;
-  constructor(private snackBar: MatSnackBar, private router: Router) { }
+  constructor(private snackBar: MatSnackBar, private router: Router, private dialog: MatDialog) { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -45,9 +50,21 @@ export class HeaderComponent implements OnInit{
   }
 
   logOut() {
-    let snackBarRef = this.snackBar.open('Would you like to disconnect ?', 'Yes');
-    snackBarRef.onAction().subscribe(() => {
-      User.logOut(this.router);
+    const dialogRef = this.dialog.open(LogoutPopUpComponent, {
+      data: {}
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        User.logOut(this.router);
+      }
+    });
+  }
+
+  getNom() {
+    if (this.userConnected) {
+      return this.userConnected.nom;
+    }
+    return 'sudo';
   }
 }
