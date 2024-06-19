@@ -66,7 +66,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInput} from "@angular/material/input";
 import {FullCalendarModule} from "@fullcalendar/angular";
-import dayGridPlugin from '@fullcalendar/daygrid'; // Importez le plugin dayGrid
 import { MatRadioModule } from '@angular/material/radio';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { CalendrierComponent } from './layout/home/calendrier/calendrier.component';
