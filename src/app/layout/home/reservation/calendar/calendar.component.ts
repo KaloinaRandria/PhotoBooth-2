@@ -12,9 +12,11 @@ export class CalendarComponent {
     plugins: [dayGridPlugin], // Inclusion du plugin dayGrid ici
     initialView: 'dayGridMonth', // Vue initiale du calendrier (mois)
     events: [ // Exemple d'événements à afficher dans le calendrier
-      { title: 'Event 1', date: '2024-06-19' },
+
+      { title: ' tournage', date: '2024-06-19' },
+      { title: ' album', date: '2024-06-19' },
+      { title: ' bbb', date: '2024-06-19' },
       { title: 'Event 2', date: '2024-06-20' },
-      // Vous pouvez ajouter d'autres événements ici
     ]
   };
 }
