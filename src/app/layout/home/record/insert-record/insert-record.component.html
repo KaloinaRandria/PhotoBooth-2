@@ -1,0 +1,50 @@
+<div class="row justify-content-md-center info">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="titre">INSERT FINANCIAL RECORD</h1>
+
+                <form>
+                    <!-- Row 1: Start Time and End Time Inputs -->
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="startHour">Start Time</label>
+                            <input  name="startTime" type="time" class="form-control" id="startHour" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="endHour">End Time</label>
+                            <input  name="endTime" type="time" class="form-control" id="endHour" required>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Room Select and Price Number Input -->
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label >Room</label>
+                            <mat-form-field class="eg">
+                                <mat-select  name="room">
+                                    <!-- Replace with your actual room options -->
+                                    <mat-option value="room1">Room 1</mat-option>
+                                    <mat-option value="room2">Room 2</mat-option>
+                                    <mat-option value="room3">Room 3</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="priceInput">Price</label>
+                            <input  name="price" type="number" class="form-control" id="priceInput" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-6" >
+                            <button class="btn btn-light submit-button">Validate</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

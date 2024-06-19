@@ -70,7 +70,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { CalendrierComponent } from './layout/home/calendrier/calendrier.component';
 import { PopUpConfirmationComponent } from './layout/home/reservation/list-reservation/pop-up-confirmation/pop-up-confirmation.component'; // Importez le plugin dayGrid
-import { StatRevenueComponent } from './layout/home/revenue/stat-revenue/stat-revenue.component'; // Importez le plugin dayGrid
+import { StatRevenueComponent } from './layout/home/revenue/stat-revenue/stat-revenue.component';
+import { InsertRecordComponent } from './layout/home/record/insert-record/insert-record.component';
+import { ListRecordComponent } from './layout/home/record/list-record/list-record.component';
 
 
 @NgModule({
@@ -115,7 +117,9 @@ import { StatRevenueComponent } from './layout/home/revenue/stat-revenue/stat-re
     ModifyCategComponent,
     CalendrierComponent,
     PopUpConfirmationComponent,
-    StatRevenueComponent
+    StatRevenueComponent,
+    InsertRecordComponent,
+    ListRecordComponent,
   ],
     imports: [
         BrowserModule,
