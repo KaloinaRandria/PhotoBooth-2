@@ -3,6 +3,13 @@ import { FormControl } from "@angular/forms";
 import { map, Observable, startWith } from "rxjs";
 import { Constants } from "../../../../class/util/constants";
 import { HttpClient } from "@angular/common/http";
+import { MatDialog } from '@angular/material/dialog';
+import { CalendrierComponent } from '../../calendrier/calendrier.component';
+import { Display } from '../../../../class/util/display';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { BaseService } from '../../../../service/base.service';
+import {RoomService} from "../../../../service/room/room.service";
+
 
 @Component({
   selector: 'app-insert-reservation',
@@ -22,12 +29,14 @@ export class InsertReservationComponent implements OnInit {
     salle: '',
     date: '',
     debut: '',
-    fin: ''
+    fin: '',
+    nombre: '',
+    photograph: ''
   };
 
   available: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private dialog: MatDialog, private snackBar : MatSnackBar, private roomService: RoomService) {}
 
   ngOnInit() {
     this.getAllClient();
@@ -90,6 +99,7 @@ export class InsertReservationComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
+        Display.alert(this.snackBar , (err.error.message),"close",6000);
       }
     });
   }
@@ -100,5 +110,43 @@ export class InsertReservationComponent implements OnInit {
 
   check() {
     console.log(this.form);
+    const date = this.form.date;
+    const heureDebut = this.form.debut;
+    const heureFin = this.form.fin;
+
+    if (date == '' || heureDebut == '' || heureFin == '') {
+      Display.alert(this.snackBar , 'cannot check because interval hour is not complete',"close",5000);
+      return
+    }
+
+    const info = {
+      debut: this.getTimestamp(date, heureDebut),
+      fin: this.getTimestamp(date, heureFin)
+    };
+
+    const url = Constants.BACK_URL + '/resa/available';
+    this.http.post(url, info).subscribe({
+      next: (valiny: any) => {
+
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+  calendar() {
+    const dialogRef = this.dialog.open(CalendrierComponent, {
+      width: '900px',
+      height: '500px',
+      data: {vue: 'timeGridWeek'}
+    });
+  }
+
+  getTimestamp(dt: string, heure: string): string {
+    let date = new Date(dt);
+    let [hours, minutes] = heure.split(':').map(Number);
+    date.setHours(hours, minutes, 0, 0);
+
+    return date.toISOString();
   }
 }

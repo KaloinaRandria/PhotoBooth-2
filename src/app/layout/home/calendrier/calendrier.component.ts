@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {CalendarOptions} from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import {Router} from "@angular/router";
 import {PageAccess} from "../../../class/util/pageAccess";
 import {Location} from "@angular/common";
+import {MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-calendrier',
@@ -13,8 +14,11 @@ import {Location} from "@angular/common";
 })
 export class CalendrierComponent implements OnInit{
   calendarOptions: CalendarOptions | undefined;
+  initialView = 'dayGridMonth';
 
-  constructor(private router: Router, private location: Location) {
+  constructor(private router: Router,
+              private location: Location,
+  ) {
   }
 
   ngOnInit() {

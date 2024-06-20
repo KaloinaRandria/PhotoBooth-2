@@ -1,18 +1,22 @@
 <script src="../../reservation/insert-reservation/insert-reservation.component.ts"></script>
 <div class="row">
   <form action="" method="" class="row g-1">
-    <div class="col">
+    <div class="col-1">
         <input name="intitule" [(ngModel)]="filter.intitule" type="text" class="form-control" placeholder="label">
-      </div>
-    <button class="btn btn-light submit-button" (click)="filterFunc()" type="submit">Filter</button>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-light submit-button" (click)="filterFunc()" type="submit">Filter</button>
+    </div>
+    <div class="col-auto">
       <button class="btn btn-light submit-button" (click)="initial()" type="submit">Initial</button>
+    </div>
   </form>
 </div><br>
 
-<div class="row info">
+<div class="row info table-responsive nicescroll">
   <h1 class="titre">THEME CATEGORY LIST</h1>
 
-  <table class="table table-hover">
+  <table class="table table">
     <thead class="header">
     <tr>
       <th scope="col">#</th>
@@ -23,7 +27,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let categorie of categories">
-      <th scope="row">{{categorie.id_categorie_theme}}</th>
+      <td>{{categorie.id_categorie_theme}}</td>
       <td>{{categorie.intitule}}</td>
       <td>
         <button class="icon-btn ripple" (click)="popUp(categorie)">

@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit{
 
   ngOnInit() {
     this.checkCanShowSearchAsOverlay(window.innerWidth);
+    this.startTyping();
     try {
       this.userConnected = User.getUserAuth();
     } catch (e) {
@@ -66,5 +67,35 @@ export class HeaderComponent implements OnInit{
       return this.userConnected.nom;
     }
     return 'sudo';
+  }
+
+  slogans: string[] = [
+    "Magic in front, and behind the camera",
+    "Capture Your Best Moments Instantly!",
+    "Smile, Snap, Repeat!"
+  ];
+
+  currentSloganIndex: number = 0;
+  currentCharIndex: number = 0;
+  sloganInterval: any;
+  sloganDelay: number = 100; // Délai entre chaque caractère (en millisecondes)
+
+  sloganText: string = '';
+
+  startTyping() {
+    this.sloganInterval = setInterval(() => {
+      if (this.currentCharIndex < this.slogans[this.currentSloganIndex].length) {
+        this.sloganText += this.slogans[this.currentSloganIndex].charAt(this.currentCharIndex);
+        this.currentCharIndex++;
+      } else {
+        clearInterval(this.sloganInterval);
+        setTimeout(() => {
+          this.currentCharIndex = 0;
+          this.sloganText = '';
+          this.currentSloganIndex = (this.currentSloganIndex + 1) % this.slogans.length; // Boucle à l'infini sur les slogans
+          this.startTyping(); // Reprendre l'affichage du prochain slogan
+        }, 2000); // Délai entre les slogans (en millisecondes)
+      }
+    }, this.sloganDelay);
   }
 }

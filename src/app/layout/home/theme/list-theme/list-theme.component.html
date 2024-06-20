@@ -29,25 +29,29 @@
       </div>
 
       <div class="col mb-1">
-        <label for="">Minimum worth</label>
-        <input name="valeur_min" [(ngModel)]="filter.minWorth" type="number" class="form-control" id="" placeholder="Worth" value="">
+        <label >Minimum worth</label>
+        <input name="valeur_min" [(ngModel)]="filter.minWorth" type="number" class="form-control"  placeholder="Worth" value="">
       </div>
       <div class="col mb-1">
-        <label for="">Maximum worth</label>
-        <input name="valeur_max" type="number" [(ngModel)]="filter.maxWorth" class="form-control" id="" placeholder="Worth" value="">
+        <label >Maximum worth</label>
+        <input name="valeur_max" type="number" [(ngModel)]="filter.maxWorth" class="form-control"  placeholder="Worth" value="">
+      </div>
+      <div class="col-auto ">
+        <br>
+        <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
+      </div>
+      <div class="col-auto"><br>
+        <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
       </div>
 
     </div>
-
-    <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
-    <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
   </form>
 </div><br>
 
-<div class="row info">
+<div class="row info table-responsive nicescroll">
       <h1 class="titre">THEME LIST</h1>
 
-      <table class="table table-responsive">
+      <table class="table">
         <thead class="header">
         <tr>
           <th scope="col">#</th>
@@ -63,7 +67,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let item of themeList">
-          <th scope="row">{{ item.id_theme }}</th>
+          <td>{{ item.id_theme }}</td>
           <td>{{ item.intitule }}</td>
           <td>{{ item.categorie_theme.intitule }}</td>
           <td>{{ item.salle.numero }}</td>
@@ -71,12 +75,12 @@
           <td>{{ item.date_fin }}</td>
           <td>{{ item.worth }}</td>
           <td>
-            <button class="icon-btn ripple" id="">
+            <button class="icon-btn ripple" >
               <i class="mdi mdi-table-edit icon-edit"></i>
             </button>
           </td>
           <td>
-            <button class="icon-btn ripple" id="">
+            <button class="icon-btn ripple" >
               <i class="mdi mdi-delete icon-delete"></i>
             </button>
           </td>

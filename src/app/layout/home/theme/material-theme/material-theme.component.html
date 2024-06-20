@@ -1,46 +1,49 @@
 <div class="row justify-content-md-center info">
-    <div class="col-lg-3">
-        <h3>Instructions</h3>
-        <p>| Check the box next to the material to add it to the theme </p>
-        <p>| By default the quantity is one</p>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="titre">What materials were used for this theme?</h2>
+                <form (ngSubmit)="onSubmit()">
+                    <table class="table table-bordered">
+                        <thead class="">
+                        <tr>
+                            <th>Label</th>
+                            <th>Usage</th>
+                            <th>Quantity</th>
+                            <th>Stock (available)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of materielsList; let i = index">
+                            <td class="material-name">
+                                <div class="int">
+                                    <i class="icon-md mdi mdi-codepen"></i>
+                                    <span>{{ item.intitule }}</span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="checkbox" class="form-check-input checkbox" id="{{ 'item' + i }}" [(ngModel)]="item.checked" name="{{ 'item' + i }}" (change)="toggleQuantity(i)">
+                            </td>
+                            <td class="quantity">
+                                <input type="number" class="form-control input-quantity" [(ngModel)]="item.count" name="{{ 'count' + i }}" [disabled]="!item.checked" [min]="0" [max]="item.initialQuantite" (input)="updateQuantity(item)">
+                            </td>
+                            <td class="">
+                                <input type="number" class="form-control input-quantity" [(ngModel)]="item.quantite" name="{{ 'quantite' + i }}" [disabled]="true">
+                            </td>
+                        </tr>
 
-    </div>
-    <div class="col-lg-7 ">
-        <h2 class="titre">What materials were used for this theme?</h2>
-        <form (ngSubmit)="onSubmit()">
-            <table class="table table-bordered">
-                <thead class="">
-                <tr>
-                    <th>Label</th>
-                    <th>Usage</th>
-                    <th>Quantity</th>
-                    <th>Stock</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of materielsList; let i = index">
-                        <td class="material-name">{{ item.intitule }}</td>
-                        <td>
-                          <input type="checkbox" class="form-check-input checkbox" id="{{ 'item' + i }}" [(ngModel)]="item.checked" name="{{ 'item' + i }}" (change)="toggleQuantity(i)">
-                        </td>
-                        <td class="quantity">
-                          <input type="number" class="form-control input-quantity" [(ngModel)]="item.count" name="{{ 'count' + i }}" [disabled]="!item.checked" [min]="0" [max]="item.initialQuantite" (input)="updateQuantity(item)">
-                        </td>
-                        <td class="">
-                          <input type="number" class="form-control input-quantity" [(ngModel)]="item.quantite" name="{{ 'quantite' + i }}" [disabled]="true">
-                        </td>
-                      </tr>
-                      
-                </tbody>
-            </table>
-            <div class="col-md-6 mb-3">
-                <label for="imageUpload">Upload Image</label>
-                <input type="file"  class="form-control" id="imageUpload" (change)="onFileSelected($event)" accept="image/*" required>
-              </div>
-            <button type="submit" class="btn btn-light button "> Submit </button>
-        </form>
-    </div>
+                        </tbody>
+                    </table>
+                    <div class="col-md-6 mb-3">
+                        <label for="imageUpload"><i class="mdi mdi-file-image"></i>Upload Image</label>
 
+                        <input type="file"  class="form-control" id="imageUpload" (change)="onFileSelected($event)" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn btn-light button "> Submit </button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 
