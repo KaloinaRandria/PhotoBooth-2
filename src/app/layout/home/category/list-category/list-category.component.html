@@ -23,7 +23,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let categorie of categories">
-      <th scope="row">{{categorie.id_categorie_theme}}</th>
+      <td>{{categorie.id_categorie_theme}}</td>
       <td>{{categorie.intitule}}</td>
       <td>
         <button class="icon-btn ripple" (click)="popUp(categorie)">

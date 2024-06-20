@@ -89,7 +89,7 @@ table{
 }
 
 th{
-    color: #261d15 !important;
+    color: #f1ebd9 !important;
     font-size: 15px;
 }
 
@@ -102,6 +102,12 @@ th{
     width: 100%;
 }
 
+.int {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
 
 
 td{

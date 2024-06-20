@@ -24,7 +24,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let room of rooms">
-          <th scope="row">{{room.id_salle}}</th>
+          <td>{{room.id_salle}}</td>
           <td>{{room.numero}}</td>
           <td>
             <button class="icon-btn ripple"  (click)="popUp(room)">
@@ -37,7 +37,6 @@
             </button>
           </td>
         </tr>
-        <!-- Other table rows -->
         </tbody>
       </table>
 </div>
