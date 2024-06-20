@@ -1,55 +1,84 @@
 <div class="row justify-content-md-center info">
   <div class="col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <form [formGroup]="form"(ngSubmit)="submitForm()">
-                    <div class="form-row">
-                        <div class="col-md-6 mb-3">
-                            <label for="">Label</label>
-                            <input formControlName="intitule" type="text" class="form-control" id="" placeholder="Label" value="" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="">Category</label>
-                            <select formControlName="categorie" class="form-control">
-                                <option *ngFor="let categorie of categories" value="{{categorie.id_categorie_theme}}">{{categorie.intitule}}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-md-12 mb-12">
-                            <label for="">Description</label>
-                            <textarea formControlName="description" class="form-control" id="description" placeholder="Enter description here" required></textarea><br>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="">Room</label>
-                            <select formControlName="salle" class="form-control">
-                                <option *ngFor="let room of rooms" value="{{room.id_salle}}">{{ room.numero }}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-md-6 mb-3">
-                            <label for="">Start date</label>
-                            <input formControlName="debut" type="date" class="form-control" id="" placeholder="" value="" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="">End date</label>
-                            <input formControlName="fin" type="date" class="form-control" id="" placeholder="" value="" required>
-                        </div>
-                    </div>
-                </form>
-                <button class="btn btn-primary" (click)="submitForm()">next</button>
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="intitule">Label</label>
+              <input formControlName="intitule" id="intitule" type="text" class="form-control" placeholder="Label" required>
+              <div *ngIf="form.get('intitule')?.invalid && (form.get('intitule')?.dirty || form.get('intitule')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('intitule')?.errors?.['required']">
+                  Label is required.
+                </div>
+              </div>
             </div>
-        </div>
+            <div class="col-md-6 mb-3">
+              <label for="categorie">Category</label>
+              <select formControlName="categorie" id="categorie" class="form-control" required>
+                <option *ngFor="let categorie of categories" [value]="categorie.id_categorie_theme">{{categorie.intitule}}</option>
+              </select>
+              <div *ngIf="form.get('categorie')?.invalid && (form.get('categorie')?.dirty || form.get('categorie')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('categorie')?.errors?.['required']">
+                  Category is required.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12 mb-12">
+              <label for="description">Description</label>
+              <textarea formControlName="description" id="description" class="form-control" placeholder="Enter description here" required></textarea>
+              <div *ngIf="form.get('description')?.invalid && (form.get('description')?.dirty || form.get('description')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('description')?.errors?.['required']">
+                  Description is required.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="salle">Room</label>
+              <select formControlName="salle" id="salle" class="form-control" required>
+                <option *ngFor="let room of rooms" [value]="room.id_salle">{{ room.numero }}</option>
+              </select>
+              <div *ngIf="form.get('salle')?.invalid && (form.get('salle')?.dirty || form.get('salle')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('salle')?.errors?.['required']">
+                  Room is required.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="debut">Start date</label>
+              <input formControlName="debut" id="debut" type="date" class="form-control" placeholder="Start date" required>
+              <div *ngIf="form.get('debut')?.invalid && (form.get('debut')?.dirty || form.get('debut')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('debut')?.errors?.['required']">
+                  Start date is required.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fin">End date</label>
+              <input formControlName="fin" id="fin" type="date" class="form-control" placeholder="End date" required>
+              <div *ngIf="form.get('fin')?.invalid && (form.get('fin')?.dirty || form.get('fin')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('fin')?.errors?.['required']">
+                  End date is required.
+                </div>
+                <div *ngIf="form.get('fin')?.errors?.['dateRange']">
+                  End date cannot be earlier than start date.
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Next</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
