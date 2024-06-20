@@ -13,7 +13,7 @@ export class ClientService extends BaseService{
   }
 
   formulaireSend(formBody : any):Observable<any> {
-    const api = 'client/save';
+    const api = '/client/save';
     return this.req(formBody, api , 'post');
   }
 

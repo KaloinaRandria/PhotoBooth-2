@@ -3,7 +3,7 @@ import {ClientService} from "../../../../service/client/client.service";
 import {Display} from "../../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
-import {PopUpComponent} from "./pop-up/pop-up.component";
+import {ModifyClientComponent} from "./modify-client/modify-client.component";
 
 @Component({
   selector: 'app-list-client',
@@ -26,14 +26,12 @@ export class ListClientComponent implements OnInit{
   constructor(private clientService : ClientService , private snackBar : MatSnackBar,private dialog: MatDialog) {
   }
 
-  popUp() {
-
-    const dialogRef = this.dialog.open(PopUpComponent, {
+  popUp(client: any) {
+    const dialogRef = this.dialog.open(ModifyClientComponent, {
       width: '100vh',
       height:'90vh',
-      data: {}
+      data: {client}
     });
-
   }
 
   getAllClient():void{
@@ -42,6 +40,7 @@ export class ListClientComponent implements OnInit{
       next:(response : any) =>{
         if (response.success) {
           this.client = response.data;
+          this.initialClient = response.data;
           console.log(this.client);
         } else {
           Display.alert(this.snackBar,(response.message),"close",6000);
@@ -87,11 +86,11 @@ export class ListClientComponent implements OnInit{
   }
 
   delete(client:any):void {
-    const api = '/client/delete/' + client.id_Client;
+    const api = '/client/delete/' + client.id_client;
     this.clientService.delete(api).subscribe({
       next:(response:any)=> {
         if (response.success) {
-          const index = this.client.findIndex(clt => clt.id_Client === client.id_Client);
+          const index = this.client.findIndex(clt => clt.id_client === client.id_client);
           Display.alert(this.snackBar,"Deleted succesfully","close",3000,"succes-snackbar");
           this.client.splice(index,1);
         } else {

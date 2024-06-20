@@ -8,6 +8,8 @@
 
 @import '@angular/cdk/overlay-prebuilt.css';
 @import "animate.css/animate.min.css";
+/* Dans styles.scss ou styles.css */
+
 
 @font-face {
   font-family: 'Audrey';
@@ -29,7 +31,7 @@ body {
 
   position: relative;
 
-  background: #E7DAB5;
+  background: #E7DAB5 !important;
 }
 
 .modale{
@@ -114,3 +116,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .nicescroll::-webkit-scrollbar-track {
   background: #f1f1f1; /* Couleur de fond du track */
 }
+
+.card {
+  background: #ede4c9 !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

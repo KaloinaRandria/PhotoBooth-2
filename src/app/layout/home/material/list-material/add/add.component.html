@@ -1,0 +1,14 @@
+<div class="modale">
+    <form>
+      <h1>{{ materiel.intitule }}</h1>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="">Quantity</label>
+          <input name="quantite" type="number" [(ngModel)]="form.quantite" class="form-control" placeholder="Quantity"
+                 value="" required>
+        </div>
+      </div>
+      <button class="btn btn-light submit-button" (click)="add()">Submit form</button>
+    </form>
+  </div>
+  

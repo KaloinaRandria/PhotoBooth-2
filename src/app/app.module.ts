@@ -49,6 +49,33 @@ import { MaterialThemeComponent } from './layout/home/theme/material-theme/mater
 import { PopUpComponent } from './layout/home/staff/list-staff/pop-up/pop-up.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { StatisticComponent } from './layout/home/theme/statistic/statistic.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddComponent } from './layout/home/material/list-material/add/add.component';
+import { StatMaterielComponent } from './layout/home/material/stat-materiel/stat-materiel.component';
+import {MatFormField} from "@angular/material/form-field";
+import {MatAutocomplete, MatOption} from "@angular/material/autocomplete";
+import {MatSelect} from "@angular/material/select";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSelectModule } from '@angular/material/select';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { ModifyClientComponent } from './layout/home/client/list-client/modify-client/modify-client.component';
+import { ModifyRoomComponent } from './layout/home/room/list-room/modify-room/modify-room.component';
+import { ModifyCategComponent } from './layout/home/category/list-category/modify-categ/modify-categ.component';
+import {MatDatepicker, MatDatepickerToggle} from "@angular/material/datepicker";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatInput} from "@angular/material/input";
+import {FullCalendarModule} from "@fullcalendar/angular";
+import { MatRadioModule } from '@angular/material/radio';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import { CalendrierComponent } from './layout/home/calendrier/calendrier.component';
+import { PopUpConfirmationComponent } from './layout/home/reservation/list-reservation/pop-up-confirmation/pop-up-confirmation.component'; // Importez le plugin dayGrid
+import { StatRevenueComponent } from './layout/home/revenue/stat-revenue/stat-revenue.component';
+import { InsertRecordComponent } from './layout/home/record/insert-record/insert-record.component';
+import { ListRecordComponent } from './layout/home/record/list-record/list-record.component';
+import { PopUpEditRecordComponent } from './layout/home/record/list-record/pop-up-edit-record/pop-up-edit-record.component';
+import { LogoutPopUpComponent } from './layout/content/header/logout-pop-up/logout-pop-up.component';
+
 
 @NgModule({
   declarations: [
@@ -84,7 +111,19 @@ import { StatisticComponent } from './layout/home/theme/statistic/statistic.comp
     ListCategoryComponent,
     MaterialThemeComponent,
     PopUpComponent,
-    StatisticComponent
+    StatisticComponent,
+    AddComponent,
+    StatMaterielComponent,
+    ModifyClientComponent,
+    ModifyRoomComponent,
+    ModifyCategComponent,
+    CalendrierComponent,
+    PopUpConfirmationComponent,
+    StatRevenueComponent,
+    InsertRecordComponent,
+    ListRecordComponent,
+    PopUpEditRecordComponent,
+    LogoutPopUpComponent,
   ],
     imports: [
         BrowserModule,
@@ -108,7 +147,22 @@ import { StatisticComponent } from './layout/home/theme/statistic/statistic.comp
         MatCardModule,
         ReactiveFormsModule,
         MatProgressSpinner,
-        CarouselModule.forRoot()
+        CarouselModule.forRoot(),
+        MatDialogModule,
+        MatFormField,
+        MatAutocomplete,
+        MatOption,
+        MatSelect,
+        MatAutocompleteModule,
+        MatSelectModule,
+        NgxMatSelectSearchModule,
+        MatDatepickerToggle,
+        MatDatepicker,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatInput,
+        FullCalendarModule,
+        MatRadioModule
     ],
   providers: [
     provideAnimationsAsync(),

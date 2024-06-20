@@ -30,13 +30,13 @@ export class InsertClientComponent {
       num_telephone : this.form.get('numero')?.value,
       date_de_naissance: this.form.get('dtn')?.value
     };
-    console.log(data);
     this.clientService.formulaireSend(data).subscribe({
        next:()=> {
         Display.alert(this.snackBar , "Sended Succesfully","close",3000,"succes-snackbar");
       },
       error:(exception) => {
-        Display.alert(this.snackBar,(exception.error.message),"close",6000);
+         console.error(exception);
+        Display.alert(this.snackBar,'error',"close",6000);
       }
     });
   }

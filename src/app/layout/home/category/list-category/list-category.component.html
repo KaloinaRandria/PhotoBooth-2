@@ -1,3 +1,4 @@
+<script src="../../reservation/insert-reservation/insert-reservation.component.ts"></script>
 <div class="row">
   <form action="" method="" class="row g-1">
     <div class="col">
@@ -25,12 +26,12 @@
       <th scope="row">{{categorie.id_categorie_theme}}</th>
       <td>{{categorie.intitule}}</td>
       <td>
-        <button class="icon-btn ripple" id="" (click)="popUp()">
+        <button class="icon-btn ripple" (click)="popUp(categorie)">
           <i class="mdi mdi-table-edit icon-edit"></i>
         </button>
       </td>
       <td>
-        <button class="icon-btn ripple" id="" (click)="delete(categorie)">
+        <button class="icon-btn ripple" (click)="delete(categorie)">
           <i class="mdi mdi-delete icon-delete"></i>
         </button>
       </td>

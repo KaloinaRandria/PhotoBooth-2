@@ -67,8 +67,9 @@
           <th scope="col">Reserved Date</th>
           <th scope="col">Service</th>
           <th scope="col">Price</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
+            <th scope="col">Check</th>
+            <th scope="col">Edit</th>
+          <th scope="col">Cancel</th>
         </tr>
         </thead>
         <tbody>
@@ -80,6 +81,11 @@
           <td>2023-12-31</td>
           <td>Service 1</td>
           <td>$100</td>
+            <td>
+                <button class="icon-btn ripple" id="" (click)="popUpConfirm()" [ngClass]="{'confirmed': isConfirmed}">
+                    <i class="mdi mdi-bookmark-check icon-check" ></i>
+                </button>
+            </td>
           <td>
             <button class="icon-btn ripple" id="" (click)="popUp()">
               <i class="mdi mdi-table-edit icon-edit"></i>

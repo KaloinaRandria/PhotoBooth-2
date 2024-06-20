@@ -1,0 +1,37 @@
+<div class="modale">
+    <form>
+        <h2>Client : {{client.nom}} {{client.prenom}}</h2>
+        <!-- nom prenom dtn        -->
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label>First name</label>
+                <input [(ngModel)]="client.nom" name="nom" type="text" class="form-control"  placeholder="First name" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>Last name</label>
+                <input type="text" class="form-control"  placeholder="Last name"
+                       [(ngModel)]="client.prenom" name="prenom" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>Date of birth</label>
+                <input  type="date" class="form-control"  placeholder=""
+                        [(ngModel)]="client.date_de_naissance" name="dtn" required>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <!--  mail num-->
+            <div class="col-md-6 mb-6">
+                <label>E-mail</label>
+                <input type="email" [(ngModel)]="client.email" name="email" class="form-control " placeholder="e-mail" required>
+            </div>
+
+            <div class="col-md-6 mb-6">
+                <label>Phone number</label>
+                <input type="tel" class="form-control " [(ngModel)]="client.num_telephone" name="tel" placeholder="" value="+261" required>
+            </div>
+
+        </div>
+        <button class="btn btn-light submit-button" (click)="update()">Submit form</button>
+    </form>
+</div>

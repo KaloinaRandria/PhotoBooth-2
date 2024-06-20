@@ -37,14 +37,12 @@ export class ListStaffComponent implements OnInit{
   constructor(private staffService : StaffService , private snackBar : MatSnackBar, private http: HttpClient, private roleService: RoleService,private dialog: MatDialog) {
   }
 
-  popUp() {
-
+  popUp(staff: any) {
     const dialogRef = this.dialog.open(PopUpComponent, {
       width: '100vh',
       height:'90vh',
-      data: {}
+      data: {staff:staff, roleList: this.roleList, posteList: this.posteList }
     });
-
   }
   getAllStaff():void {
     const api = '/membre/all';
@@ -53,7 +51,6 @@ export class ListStaffComponent implements OnInit{
       if (response.success) {
         this.staff = response.data;
         this.initialStaff = response.data;
-        console.log(this.staff);
       }  else {
         Display.alert(this.snackBar,(response.message),"close",6000);
       }
@@ -75,12 +72,11 @@ export class ListStaffComponent implements OnInit{
   getAllPoste() {
     this.http.get(Constants.BACK_URL + '/poste/all').subscribe({
       next:(response:any) => {
-        console.log(response.data);
         this.posteList = response.data;
       },
       error:(exception) => {
         Display.alert(this.snackBar,(exception.error.message),"close",6000);
-        console.log(exception);
+        console.error(exception);
       }
     });
   }
@@ -88,13 +84,11 @@ export class ListStaffComponent implements OnInit{
   getAllRole() {
     this.roleService.getAll().subscribe({
       next:(response:any) => {
-        console.log(response.data);
         this.roleList = response.data;
-        console.log(this.roleList[0].intitule);
       },
       error:(exception) => {
         Display.alert(this.snackBar,(exception.error.message),"close",6000);
-        console.log(exception);
+        console.error(exception);
       }
     });
   }
@@ -122,7 +116,6 @@ export class ListStaffComponent implements OnInit{
       let matchesRoleIntitule = true;
       if (filter.role && filter.role !== '') {
         matchesRoleIntitule = staff.role.id_role.includes(filter.role);
-        console.log(matchesRoleIntitule);
       }
 
       let matchesPosteIntitule = true;

@@ -1,0 +1,75 @@
+
+.fc .fc-col-header-cell-cushion  {
+    display: inline-block;
+    padding: 2px 4px;
+    color: #261d15 !important;
+}
+
+.fc .fc-daygrid-day-number {
+    padding: 4px;
+    position: relative;
+    color: black;
+}
+
+.fc-theme-standard td, .fc-theme-standard th {
+    border: 1px solid #383838;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+    border: 1px solid #222121;
+}
+
+.fc .fc-button-group .fc-button {
+    background-color: #261d15;
+    margin: 0;
+    color: #ede4c9;
+}
+
+.fc .fc-button-primary {
+    background-color: #ede4c9;
+    border-color: #261d15;
+    color: #261d15;
+    opacity: 1;
+    border-width: 2px;
+}
+
+.fc .fc-button-primary:disabled {
+    background-color: #d9d1bc;
+    border-color: #261d15;
+    color: #261d15;
+    opacity: 1;
+}
+
+.fc .fc-toolbar-title {
+    font-size: 1.75em;
+    margin: 0px;
+    color: #261d15;
+}
+
+.fc .fc-event {
+    border: 0;
+    color: #ffffff;
+    padding: .5rem;
+    background: #261d15;
+}
+
+.fc-button-group {
+    gap: 2px;
+}
+
+
+
+.event-type-1 {
+    background-color: #FF6347 !important; /* Couleur pour le type 1 */
+    border-color: #FF6347 !important; /* Bordure de la même couleur */
+}
+
+.event-type-2 {
+    background-color: #4682B4 !important; /* Couleur pour le type 2 */
+    border-color: #4682B4 !important; /* Bordure de la même couleur */
+}
+
+.event-type-3 {
+    background-color: #32CD32 !important; /* Couleur pour le type 3 */
+    border-color: #32CD32 !important; /* Bordure de la même couleur */
+}

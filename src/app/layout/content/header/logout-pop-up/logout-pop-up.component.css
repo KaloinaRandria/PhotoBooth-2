@@ -1,0 +1,12 @@
+.mat-mdc-dialog-container .mdc-dialog__surface{
+    margin-left: 100% !important;
+    border-radius: 14px;
+    background: #261d15;
+    color: white !important;
+}
+
+.mat-mdc-dialog-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

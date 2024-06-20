@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Constants} from "../../../../class/util/constants";
 import {RoomService} from "../../../../service/room/room.service";
-import {Observable} from "rxjs";
 import {Display} from "../../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
-import {PopUpComponent} from "./pop-up/pop-up.component";
+import {ModifyRoomComponent} from "./modify-room/modify-room.component";
 
 @Component({
   selector: 'app-list-room',
@@ -21,12 +19,12 @@ export class ListRoomComponent implements OnInit {
   }
 
   constructor(private roomService: RoomService,private snackBar:MatSnackBar,private dialog: MatDialog) {}
-  popUp() {
+  popUp(room: any) {
 
-    const dialogRef = this.dialog.open(PopUpComponent, {
+    const dialogRef = this.dialog.open(ModifyRoomComponent, {
       width: '100vh',
       height:'90vh',
-      data: {}
+      data: {room}
     });
 
   }

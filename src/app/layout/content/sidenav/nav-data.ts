@@ -10,6 +10,12 @@ export const navData: INavbardata[] = [
     access: role
   },
   {
+    routeLink: 'calendar',
+    icon: 'mdi mdi-calendar',
+    label: 'Calendar',
+    access: role
+  },
+  {
     routeLink: 'staff',
     icon: 'mdi mdi-account-card-details',
     label: 'Staff',
@@ -50,6 +56,24 @@ export const navData: INavbardata[] = [
       }
     ]
 
+  },
+  {
+    routeLink: 'record',
+    icon: 'mdi mdi-account-card-details',
+    label: 'Financial record',
+    expanded: false,
+    items: [
+      {
+        routeLink: 'record/insert',
+        label: 'Insert',
+        access: [role[0], role[2]]
+      },
+      {
+        routeLink: 'record/list',
+        label: 'List',
+        access: [role[1]]
+      }
+    ]
   },
   {
     routeLink: 'room',
@@ -148,6 +172,11 @@ export const navData: INavbardata[] = [
       {
         routeLink: 'material/list',
         label: 'List',
+        access: role
+      },
+      {
+        routeLink: 'material/stat',
+        label: 'Stat',
         access: role
       }
     ]

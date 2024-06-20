@@ -4,45 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3883ae6b-7ec6-4706-b6f8-d75a3327c991" name="Changes" comment="chargement login et recharche multi critere staff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/reservation/insert-reservation/insert-reservation.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="cf1d6909-7194-4fcf-85e8-af1d76da28cf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2hondcz9edOvMjNo6955qAzFeTN" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2i6TTyIF7Dj3bCTzC2SHkWA9yWT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "new-integration",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/WORK/S4/Gestion de Projet/PhotoBooth-2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.Angular CLI Server.executor": "Run",
-    "ts.external.directory.path": "/home/kaloina/Documents/GitHub/PhotoBooth-2/node_modules/typescript/lib",
+    "ts.external.directory.path": "D:\\WORK\\S4\\Gestion de Projet\\PhotoBooth-2\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -61,49 +52,19 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3883ae6b-7ec6-4706-b6f8-d75a3327c991" name="Changes" comment="" />
-      <created>1718269386085</created>
+      <changelist id="cf1d6909-7194-4fcf-85e8-af1d76da28cf" name="Changes" comment="" />
+      <created>1718810040562</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1718269386085</updated>
-      <workItem from="1718269387211" duration="58000" />
-      <workItem from="1718275137644" duration="2947000" />
-      <workItem from="1718300789179" duration="23000" />
-      <workItem from="1718301191476" duration="978000" />
-      <workItem from="1718344795252" duration="822000" />
-      <workItem from="1718474758238" duration="1449000" />
-      <workItem from="1718613630743" duration="312000" />
-      <workItem from="1718649079640" duration="412000" />
+      <updated>1718810040562</updated>
+      <workItem from="1718810043981" duration="2538000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="chargement login et recharche multi critere staff" />
-    <option name="LAST_COMMIT_MESSAGE" value="chargement login et recharche multi critere staff" />
   </component>
 </project>
