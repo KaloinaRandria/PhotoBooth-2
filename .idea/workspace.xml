@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cf1d6909-7194-4fcf-85e8-af1d76da28cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/content/sidenav/sublevel-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/sidenav/sublevel-menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/category/list-category/list-category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/category/list-category/list-category.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/room/list-room/list-room.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/room/list-room/list-room.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/list-staff.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/list-staff.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/theme/material-theme/material-theme.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/theme/material-theme/material-theme.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/theme/material-theme/material-theme.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/theme/material-theme/material-theme.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
