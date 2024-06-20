@@ -1,48 +1,60 @@
 <div class="row justify-content-md-center info">
-    <div class="col-lg-12">
-      <div class="card">
-          <div class="card-body">
-              <h1 class="titre">INSERT CLIENT</h1>
-              <form [formGroup]="form" (ngSubmit)="submitForm()">
-                  <div class="form-row">
-                      <div class="col-md-4 mb-3">
-                          <label>First name</label>
-                          <input formControlName="prenom" type="text" class="form-control"  placeholder="First name" value="" required>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                          <label>Last name</label>
-                          <input formControlName="nom" type="text" class="form-control"  placeholder="Last name"
-                                 value="" required>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                          <label>Date of birth</label>
-                          <input formControlName="dtn" type="date" class="form-control"  placeholder=""
-                                 value="" required>
-                      </div>
-                  </div>
-                  <div class="form-row">
-                      <div class="col-md-6 mb-6">
-                          <label>E-mail</label>
-                          <input formControlName="mail" type="email" class="form-control " placeholder="e-mail" required>
-                      </div>
-                      <div class="col-md-6 mb-6">
-                          <label>Phone number</label>
-                          <input formControlName="numero" type="tel" class="form-control " placeholder="" value="+261" required>
-                      </div>
-                  </div>
-                  <button class="btn btn-light submit-button" type="submit">Submit form</button>
-              </form>
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="titre">INSERT CLIENT</h1>
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label>First name</label>
+              <input formControlName="prenom" type="text" class="form-control" placeholder="First name">
+              <div *ngIf="form.get('prenom')?.hasError('required') && form.get('prenom')?.touched" class="alert alert-danger">
+                First name is required.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Last name</label>
+              <input formControlName="nom" type="text" class="form-control" placeholder="Last name">
+              <div *ngIf="form.get('nom')?.hasError('required') && form.get('nom')?.touched" class="alert alert-danger">
+                Last name is required.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Date of birth</label>
+              <input formControlName="dtn" type="date" class="form-control">
+              <div *ngIf="form.get('dtn')?.hasError('required') && form.get('dtn')?.touched" class="alert alert-danger">
+                Date of birth is required.
+              </div>
+              <div *ngIf="form.get('dtn')?.hasError('futureDateOfBirth')" class="alert alert-danger">
+                Date of birth cannot be in the future.
+              </div>
+            </div>
           </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-6">
+              <label>E-mail</label>
+              <input formControlName="mail" type="email" class="form-control" placeholder="e-mail">
+              <div *ngIf="form.get('mail')?.hasError('required') && form.get('mail')?.touched" class="alert alert-danger">
+                Email is required.
+              </div>
+              <div *ngIf="form.get('mail')?.errors?.['email']" class="alert alert-danger">
+                Please enter a valid e-mail address.
+              </div>
+            </div>
+            <div class="col-md-6 mb-6">
+              <label>Phone number</label>
+              <input formControlName="numero" type="tel" class="form-control" placeholder="+261" pattern="^\d{2} \d{2} \d{3} \d{2}$">
+              <div *ngIf="form.get('numero')?.hasError('pattern') && form.get('numero')?.touched" class="alert alert-danger">
+                Phone number must be in the format XX XX XXX XX and contain only numbers.
+              </div>
+              <div *ngIf="form.get('numero')?.hasError('required') && form.get('numero')?.touched" class="alert alert-danger">
+                Phone number is required.
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-light submit-button" type="submit" [disabled]="!form.valid">Submit form</button>
+        </form>
       </div>
     </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-

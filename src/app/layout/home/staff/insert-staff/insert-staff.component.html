@@ -1,80 +1,129 @@
 <div class="row justify-content-md-center info">
   <div class="col-lg-12">
     <div class="card">
-        <div class="card-body">
-            <h1 class="titre">INSERT STAFF</h1>
-            <form [formGroup]="form" (ngSubmit)="submitForm()">
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label for="">First name</label>
-                        <input formControlName="prenom" type="text" class="form-control" placeholder="First name" value="" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="">Last name</label>
-                        <input formControlName="nom" type="text" class="form-control" placeholder="Last name"
-                               value="" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="">Username</label>
-                        <div class="input-group">
-                            <input formControlName="username" type="text" class="form-control" placeholder="username"
-                                   aria-describedby="inputGroupPrepend2" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="">Date of birth</label>
-                        <input formControlName="dtn" type="date" class="form-control" placeholder="" required>
-                    </div>
+      <div class="card-body">
+        <h1 class="titre">INSERT STAFF</h1>
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="prenom">First name</label>
+              <input formControlName="prenom" id="prenom" type="text" class="form-control" placeholder="First name">
+              <div *ngIf="form.get('prenom')?.invalid && (form.get('prenom')?.dirty || form.get('prenom')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('prenom')?.errors?.['required']">
+                  First name is required.
                 </div>
-                <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                        <label for="">E-mail</label>
-                        <input formControlName="mail" type="email" class="form-control " placeholder="e-mail" required>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label for="">Password</label>
-                        <input formControlName="mdp" type="password" class="form-control" placeholder="" required>
-                    </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="nom">Last name</label>
+              <input formControlName="nom" id="nom" type="text" class="form-control" placeholder="Last name">
+              <div *ngIf="form.get('nom')?.invalid && (form.get('nom')?.dirty || form.get('nom')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('nom')?.errors?.['required']">
+                  Last name is required.
                 </div>
-                <div class="form-row">
-                    <!--          role post date embauche-->
-                    <div class="col-md-12 mb-3">
-                        <label for="">Role</label>
-                        <select  formControlName="role" class="form-control">
-                            <option *ngFor="let role of roleList"  value="{{ role.id_role }}">{{ role.intitule }}</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="">Post</label>
-                        <select formControlName="post" class="form-control">
-                            <option *ngFor="let poste of posteList" value="{{ poste.id_poste }}">{{ poste.intitule }}</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="">Hiring date</label>
-                        <input formControlName="date_embauche" type="date" class="form-control" placeholder="" required>
-                    </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="username">Username</label>
+              <input formControlName="username" id="username" type="text" class="form-control" placeholder="Username">
+              <div *ngIf="form.get('username')?.invalid && (form.get('username')?.dirty || form.get('username')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('username')?.errors?.['required']">
+                  Username is required.
                 </div>
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label for="">Salary</label>
-                        <input formControlName="salaire" type="number" class="form-control " id="" placeholder="" required>
-                    </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="dtn">Date of birth</label>
+              <input formControlName="dtn" id="dtn" type="date" class="form-control" placeholder="Date of birth">
+              <div *ngIf="form.get('dtn')?.invalid && (form.get('dtn')?.dirty || form.get('dtn')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('dtn')?.errors?.['required']">
+                  Date of birth is required.
                 </div>
-                <button class="btn btn-light submit-button" type="submit">Submit form</button>
-            </form>
-
-        </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label for="mail">E-mail</label>
+              <input formControlName="mail" id="mail" type="email" class="form-control" placeholder="E-mail">
+              <div *ngIf="form.get('mail')?.invalid && (form.get('mail')?.dirty || form.get('mail')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('mail')?.errors?.['required']">
+                  E-mail is required.
+                </div>
+                <div *ngIf="form.get('mail')?.errors?.['email']">
+                  Please enter a valid e-mail address.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="mdp">Password</label>
+              <input formControlName="mdp" id="mdp" type="password" class="form-control" placeholder="Password">
+              <div *ngIf="form.get('mdp')?.invalid && (form.get('mdp')?.dirty || form.get('mdp')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('mdp')?.errors?.['required']">
+                  Password is required.
+                </div>
+                <div *ngIf="form.get('mdp')?.errors?.['minlength']">
+                  Password must be at least 8 characters long.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label for="role">Role</label>
+              <select formControlName="role" id="role" class="form-control">
+                <option *ngFor="let role of roleList" [value]="role.id_role">{{ role.intitule }}</option>
+              </select>
+              <div *ngIf="form.get('role')?.invalid && (form.get('role')?.dirty || form.get('role')?.touched)"
+                   class="alert alert-danger">
+                Role is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="post">Post</label>
+              <select formControlName="post" id="post" class="form-control">
+                <option *ngFor="let poste of posteList" [value]="poste.id_poste">{{ poste.intitule }}</option>
+              </select>
+              <div *ngIf="form.get('post')?.invalid && (form.get('post')?.dirty || form.get('post')?.touched)"
+                   class="alert alert-danger">
+                Post is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="date_embauche">Hiring date</label>
+              <input formControlName="date_embauche" id="date_embauche" type="date" class="form-control" placeholder="Hiring date">
+              <div *ngIf="form.get('date_embauche')?.invalid && (form.get('date_embauche')?.dirty || form.get('date_embauche')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('date_embauche')?.errors?.['required']">
+                  Hiring date is required.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="salaire">Salary</label>
+              <input formControlName="salaire" id="salaire" type="number" class="form-control" placeholder="Salary" min="0">
+              <div *ngIf="form.get('salaire')?.invalid && (form.get('salaire')?.dirty || form.get('salaire')?.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="form.get('salaire')?.errors?.['required']">
+                  Salary is required.
+                </div>
+                <div *ngIf="form.get('salaire')?.errors?.['min']">
+                  Salary must be greater than zero.
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-light submit-button" type="submit" [disabled]="!form.valid">Submit form</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
