@@ -1,6 +1,7 @@
 <div *ngIf="userConnected !== null" class="head" [ngClass]="getHeadClass()">
   <div class="head-content animate__animated animate__fadeIn animate__slow">
     <div class="head-content-left">
+        <p class="slogan" style="letter-spacing: 10px; margin: 0">{{ sloganText }}</p>
 <!--      <div class="search-container">-->
 <!--        <div *ngIf="!canShowSearchAsOverlay" class="normal-search">-->
 <!--          <input type="search" class="search" name="" id="" placeholder="Search...">-->
@@ -64,6 +65,7 @@
         </div>
 
       </div>
+
       <div class="username">
         <h4>{{getNom()}}</h4>
       </div>

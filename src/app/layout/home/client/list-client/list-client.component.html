@@ -28,8 +28,6 @@
             <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
       </form>
 </div><br>
-
-
 <div class="row info table-responsive nicescroll">
   <h1 class="titre">CLIENT LIST</h1>
 
@@ -47,7 +45,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let clt of client">
-      <th scope="row">{{ clt.id_client }}</th>
+      <td>{{ clt.id_client }}</td>
       <td>{{ clt.prenom }}</td>
       <td>{{ clt.nom }}</td>
       <td>{{ calculateAge(clt.date_de_naissance) }}</td>
@@ -63,7 +61,6 @@
         </button>
       </td>
     </tr>
-    <!-- Other table rows -->
     </tbody>
   </table>
 </div>

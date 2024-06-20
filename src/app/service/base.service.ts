@@ -12,6 +12,7 @@ export class BaseService {
 
   req(data: any, url: string, method: string): Observable<any> {
     const api = Constants.BACK_URL + url;
+    console.log(api);
     switch (method.toLowerCase()) {
       case 'get':
         return this.http.get<any>(api);

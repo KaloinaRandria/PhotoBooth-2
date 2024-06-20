@@ -22,7 +22,7 @@
                       <div class="col-md-6">
                           <mat-form-field class="number-input pplNumber">
                               <mat-label>Number of People</mat-label>
-                              <input matInput type="number" name="numberOfPeople" min="1">
+                              <input  matInput type="number" name="numberOfPeople" [(ngModel)]="form.nombre" min="1">
                           </mat-form-field>
                       </div>
 
@@ -76,14 +76,15 @@
                   <div class="form-row">
                       <div class="col-md-6">
                           <mat-label>Photographer </mat-label>
-                          <mat-radio-group [(ngModel)]="form.radioOption">
-                              <mat-radio-button  value="option1">yes</mat-radio-button>
-                              <mat-radio-button value="option2">no</mat-radio-button>
+                          <mat-radio-group [(ngModel)]="form.photograph" name="radioOption">
+                              <mat-radio-button  value="true" checked>yes</mat-radio-button>
+                              <mat-radio-button value="false">no</mat-radio-button>
                           </mat-radio-group>
                       </div>
                   </div>
 
                   <button class="btn btn-light submit-button" (click)="check()">Ckeck Availability</button>
+                  <button class="btn btn-light submit-button" (click)="calendar()">Calendar</button>
                   <button class="btn btn-light submit-button" *ngIf="available" (click)="submit()">Validate</button>
 
               </form>
