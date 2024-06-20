@@ -36,18 +36,22 @@
         <label for="">Maximum worth</label>
         <input name="valeur_max" type="number" [(ngModel)]="filter.maxWorth" class="form-control" id="" placeholder="Worth" value="">
       </div>
+      <div class="col-auto ">
+        <br>
+        <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
+      </div>
+      <div class="col-auto"><br>
+        <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
+      </div>
 
     </div>
-
-    <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
-    <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
   </form>
 </div><br>
 
-<div class="row info">
+<div class="row info table-responsive nicescroll">
       <h1 class="titre">THEME LIST</h1>
 
-      <table class="table table-responsive">
+      <table class="table">
         <thead class="header">
         <tr>
           <th scope="col">#</th>
