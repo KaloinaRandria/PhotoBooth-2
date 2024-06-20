@@ -46,6 +46,10 @@
     color: #261d15;
 }
 
+.fc-theme-standard th {
+    background-color: #e1d9c0 !important;
+}
+
 .fc .fc-event {
     border: 0;
     color: #ffffff;

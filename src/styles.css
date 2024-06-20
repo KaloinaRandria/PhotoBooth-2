@@ -7,7 +7,7 @@
 
 
 @import '@angular/cdk/overlay-prebuilt.css';
-@import "animate.css/animate.min.css";
+@import "animate.css/animate.css";
 /* Dans styles.scss ou styles.css */
 
 
@@ -120,5 +120,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .card {
   background: #ede4c9 !important;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
