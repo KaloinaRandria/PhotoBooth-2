@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf1d6909-7194-4fcf-85e8-af1d76da28cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/css/table.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/class/util/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/class/util/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/class/util/pageAccess.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/class/util/pageAccess.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/pop-up/pop-up.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/pop-up/pop-up.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/pop-up/pop-up.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/staff/list-staff/pop-up/pop-up.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/calendar/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/calendar/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/content/sidenav/sublevel-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/sidenav/sublevel-menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
