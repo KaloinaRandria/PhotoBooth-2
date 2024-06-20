@@ -106,7 +106,14 @@ export class SublevelMenuComponent implements OnInit{
   }
 
   checkUserRole(item: INavbardata, routeLink: string): boolean {
-    const userConnected = User.getUserAuth();
+
+    let userConnected = undefined;
+    try {
+      userConnected = User.getUserAuth();
+    } catch (e) {
+      return true;
+    }
+
     if (!userConnected) {
       return true;
     }

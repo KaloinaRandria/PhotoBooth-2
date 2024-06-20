@@ -28,6 +28,14 @@ export class CalendrierComponent implements OnInit{
     this.calendarOptions = {
       plugins: [dayGridPlugin, timeGridPlugin],
       initialView: 'dayGridMonth',
+      views: {
+        timeGridWeek: {
+          allDaySlot: false
+        },
+        timeGridDay: {
+          allDaySlot: false
+        }
+      },
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',

@@ -6,12 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="cf1d6909-7194-4fcf-85e8-af1d76da28cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/class/util/pageAccess.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/class/util/pageAccess.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/content/sidenav/sublevel-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/sidenav/sublevel-menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -34,6 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "frontend",
     "kotlin-language-version-configured": "true",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
