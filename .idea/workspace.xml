@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf1d6909-7194-4fcf-85e8-af1d76da28cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/content/sidenav/sublevel-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/content/sidenav/sublevel-menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/home/calendrier/calendrier.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="cf1d6909-7194-4fcf-85e8-af1d76da28cf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +45,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.Angular CLI Server.executor": "Run",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "D:\\WORK\\S4\\Gestion de Projet\\PhotoBooth-2\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

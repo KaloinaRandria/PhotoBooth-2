@@ -1,16 +1,18 @@
 <div class="row">
   <form action="" method="" class="row g-1">
-    <div class="col">
+    <div class="col-1">
         <input name="numero" [(ngModel)]="filter.room" type="number" class="form-control" placeholder="Room number">
     </div>
     <div class="col-auto">
       <button class="btn btn-light submit-button" (click)="filterFunc()" type="submit">Filter</button>
+    </div>
+    <div class="col-auto">
       <button class="btn btn-light submit-button" (click)="initial()" type="submit">Initial</button>
     </div>
   </form>
 </div><br>
 
-<div class="row info">
+<div class="row info ">
       <h1 class="titre">ROOM LIST</h1>
 
       <table class="table">

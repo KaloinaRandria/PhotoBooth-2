@@ -2,29 +2,33 @@
   <form action="" method="">
     <!-- intitule quantité      -->
     <div class="row g-1">
-      <div class="col mb-1">
+      <div class="col-auto mb-1">
         <label for="">Intitule</label>
         <input name="intitule" type="search" [(ngModel)]="filter.intitule" class="form-control" placeholder="Label" value="" required>
       </div>
       <!-- Prix -->
-      <div class="col mb-1">
+      <div class="col-auto mb-1">
         <label for="">Minimum price</label>
         <input name="prix_min" type="number" [(ngModel)]="filter.min" class="form-control" required>
       </div>
-      <div class="col mb-1">
+      <div class="col-auto mb-1">
         <label for="">Maximum price</label>
         <input name="prix_max" type="number" [(ngModel)]="filter.max" class="form-control" required>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
       </div>
 
     </div>
 
-    <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
-    <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
   </form>
 </div><br>
 
 
-<div class="row info">
+<div class="row info table-responsive nicescroll">
   <h1 class="titre">MATERIAL LIST</h1>
 
   <table class="table">
