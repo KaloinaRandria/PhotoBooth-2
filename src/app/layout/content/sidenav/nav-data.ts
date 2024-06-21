@@ -34,6 +34,24 @@ export const navData: INavbardata[] = [
     ]
   },
   {
+    routeLink: 'services',
+    icon: 'mdi mdi-library',
+    label: 'services',
+    expanded: false,
+    items: [
+      {
+        routeLink: 'services/insert',
+        label: 'Insert',
+        access: role
+      },
+      {
+        routeLink: 'services/list',
+        label: 'List',
+        access: role
+      }
+    ]
+  },
+  {
     routeLink: 'revenue',
     icon: 'mdi mdi-chart-bar',
     label: 'revenue',
@@ -59,7 +77,7 @@ export const navData: INavbardata[] = [
   },
   {
     routeLink: 'record',
-    icon: 'mdi mdi-account-card-details',
+    icon: 'mdi mdi-note-text',
     label: 'Financial record',
     expanded: false,
     items: [
