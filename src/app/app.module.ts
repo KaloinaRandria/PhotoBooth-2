@@ -78,6 +78,8 @@ import { LogoutPopUpComponent } from './layout/content/header/logout-pop-up/logo
 import { SuccessComponent } from './layout/home/reservation/insert-reservation/result/success/success.component';
 import { DangerComponent } from './layout/home/reservation/insert-reservation/result/danger/danger.component';
 import { SheduleComponent } from './layout/home/reservation/insert-reservation/result/shedule/shedule.component';
+import { InsertServicesComponent } from './layout/home/services/insert-services/insert-services.component';
+import { ListServicesComponent } from './layout/home/services/list-services/list-services.component';
 
 
 @NgModule({
@@ -130,6 +132,8 @@ import { SheduleComponent } from './layout/home/reservation/insert-reservation/r
     SuccessComponent,
     DangerComponent,
     SheduleComponent,
+    InsertServicesComponent,
+    ListServicesComponent,
   ],
     imports: [
         BrowserModule,
