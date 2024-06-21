@@ -1,0 +1,32 @@
+.ic {
+    font-size: larger;
+}
+
+.suc {
+    display: flex;
+    gap: 5px;
+    font-size: x-large;
+}
+
+.tb {
+    display: flex;
+    align-items: center;
+    font-size: large;
+    gap: 5px;
+    padding: 10px;
+}
+
+.alert-success hr {
+    border-top-color: #0f1010 !important;
+}
+
+.merged {
+    background: #decee9;
+    border-color: #952aa2;
+}
+
+.merged-btn {
+    background: #b25dba;
+    color: #562975;
+    border-color: #560a5c;
+}

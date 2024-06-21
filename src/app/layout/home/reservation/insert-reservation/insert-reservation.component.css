@@ -83,3 +83,54 @@
 ::ng-deep .custom-radio .mat-radio-label-content {
   color: #57f621; /* Custom label color */
 }
+
+.alert-dismissible {
+  padding-right: unset;
+}
+
+.cdr {
+  display: flex;
+  background: #261d15;
+  border-color: black;
+  transition: .2s all ease-in-out;
+  margin-bottom: 20px;
+}
+
+.cdr:hover {
+  background: #cac3ac;
+  border-color: #261d15;
+  color: #261d15;
+}
+
+.cdr:active {
+  background: #cac3ac;
+  border-color: #261d15;
+  color: #261d15;
+}
+
+.cdr:not(.btn-light):not(.btn-secondary):focus {
+  background: #cac3ac;
+  border-color: #261d15;
+  color: #261d15;
+}
+
+.chk {
+  display: flex;
+  margin-bottom: 20px;
+  background: #b6b19f;
+  border-color: #261d15;
+  color: #000000;
+  transition: .2s all ease-in-out;
+}
+
+.chk:hover {
+  background: #b2aa8d;
+  border-color: #261d15;
+  color: #2d2c2c;
+}
+
+.chk:not(.btn-light):not(.btn-secondary):focus {
+  background: #cac3ac;
+  border-color: #261d15;
+  color: #261d15;
+}
