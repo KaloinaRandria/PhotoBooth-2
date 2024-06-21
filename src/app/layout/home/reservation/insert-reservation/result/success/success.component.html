@@ -1,0 +1,21 @@
+<div class="alert alert-success alert-dismissible fade show {{className}}" role="alert">
+    <h4 class="alert-heading suc">Free <i class="mdi mdi-thumb-up-outline"></i></h4>
+    <hr>
+    <div class="row col-md-12">
+        <div class="col-md-6 tb">
+            <i class="mdi mdi-star-outline ic"></i> {{data.theme.intitule}} ({{data.theme.categorie_theme.intitule}})
+        </div>
+        <div class="col-md-6 tb">
+            <i class="mdi mdi-cash-multiple ic"></i> {{data.prix}} Ar
+        </div>
+        <div class="col-md-6 tb">
+            <i class="mdi mdi-access-point ic"></i> Room {{data.theme.salle.numero}}
+        </div>
+        <div class="col-md-6 tb">
+            <i class="mdi mdi-cube-outline ic"></i> {{data.service.intitule}}
+        </div>
+    </div>
+    <hr>
+    <button type="button" (click)="onButtonClick()" *ngIf="className != 'merged'" class="btn btn-outline-success">Confirm reservation</button>
+    <button type="button" *ngIf="className == 'merged'" disabled class="btn btn-outline-success merged-btn">Confirmed</button>
+</div>

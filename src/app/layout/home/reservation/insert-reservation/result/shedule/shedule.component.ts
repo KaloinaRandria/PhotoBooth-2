@@ -1,30 +1,35 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {CalendarOptions} from "@fullcalendar/core";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
 import {Router} from "@angular/router";
-import {PageAccess} from "../../../class/util/pageAccess";
 import {Location} from "@angular/common";
-import {MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import {Constants} from "../../../class/util/constants";
-import {Display} from "../../../class/util/display";
 import {HttpClient} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {PageAccess} from "../../../../../../class/util/pageAccess";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import {Constants} from "../../../../../../class/util/constants";
+import {Display} from "../../../../../../class/util/display";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
-  selector: 'app-calendrier',
-  templateUrl: './calendrier.component.html',
-  styleUrl: './calendrier.component.css'
+  selector: 'app-shedule',
+  templateUrl: './shedule.component.html',
+  styleUrl: './shedule.component.css'
 })
-export class CalendrierComponent implements OnInit{
+export class SheduleComponent {
+
+
   calendarOptions: CalendarOptions | undefined;
-  initialView = 'dayGridMonth';
+  date : string | undefined;
 
   constructor(private router: Router,
               private location: Location,
               private http: HttpClient,
-              private snackbar: MatSnackBar
+              private snackbar: MatSnackBar,
+              public dialogRef: MatDialogRef<SheduleComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any
   ) {
+    this.date = data.date;
   }
 
   ngOnInit() {
@@ -38,7 +43,8 @@ export class CalendrierComponent implements OnInit{
   initializeCalendarOptions() {
     this.calendarOptions = {
       plugins: [dayGridPlugin, timeGridPlugin],
-      initialView: 'dayGridMonth',
+      initialView: 'timeGridDay',
+      initialDate: this.date,
       views: {
         timeGridWeek: {
           allDaySlot: false

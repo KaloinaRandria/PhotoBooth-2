@@ -75,6 +75,9 @@ import { InsertRecordComponent } from './layout/home/record/insert-record/insert
 import { ListRecordComponent } from './layout/home/record/list-record/list-record.component';
 import { PopUpEditRecordComponent } from './layout/home/record/list-record/pop-up-edit-record/pop-up-edit-record.component';
 import { LogoutPopUpComponent } from './layout/content/header/logout-pop-up/logout-pop-up.component';
+import { SuccessComponent } from './layout/home/reservation/insert-reservation/result/success/success.component';
+import { DangerComponent } from './layout/home/reservation/insert-reservation/result/danger/danger.component';
+import { SheduleComponent } from './layout/home/reservation/insert-reservation/result/shedule/shedule.component';
 
 
 @NgModule({
@@ -124,6 +127,9 @@ import { LogoutPopUpComponent } from './layout/content/header/logout-pop-up/logo
     ListRecordComponent,
     PopUpEditRecordComponent,
     LogoutPopUpComponent,
+    SuccessComponent,
+    DangerComponent,
+    SheduleComponent,
   ],
     imports: [
         BrowserModule,
