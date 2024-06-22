@@ -27,7 +27,9 @@ import { InsertRecordComponent } from './layout/home/record/insert-record/insert
 import { ListRecordComponent } from './layout/home/record/list-record/list-record.component';
 import { InsertServicesComponent } from './layout/home/services/insert-services/insert-services.component';
 import { ListServicesComponent } from './layout/home/services/list-services/list-services.component';
-
+import { ProfitRevenueComponent } from './layout/home/revenue/profit-revenue/profit-revenue.component';
+import { StatisticsClientComponent } from './layout/home/client/statistics-client/statistics-client.component';
+import { StatisticsReservationComponent } from './layout/home/reservation/statistics-reservation/statistics-reservation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -60,7 +62,10 @@ const routes: Routes = [
       { path: 'record/insert', component: InsertRecordComponent },
       { path: 'record/list', component: ListRecordComponent },
       { path: 'services/insert', component: InsertServicesComponent },
-      { path: 'services/list', component:  ListServicesComponent}
+      { path: 'services/list', component:  ListServicesComponent},
+      { path: 'revenue/profit', component:  ProfitRevenueComponent},
+      { path: 'reservation/statistics', component:  StatisticsReservationComponent},
+      { path: 'client/statistics', component:  StatisticsClientComponent}
 
 
     ]

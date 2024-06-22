@@ -80,6 +80,9 @@ import { DangerComponent } from './layout/home/reservation/insert-reservation/re
 import { SheduleComponent } from './layout/home/reservation/insert-reservation/result/shedule/shedule.component';
 import { InsertServicesComponent } from './layout/home/services/insert-services/insert-services.component';
 import { ListServicesComponent } from './layout/home/services/list-services/list-services.component';
+import { ProfitRevenueComponent } from './layout/home/revenue/profit-revenue/profit-revenue.component';
+import { StatisticsClientComponent } from './layout/home/client/statistics-client/statistics-client.component';
+import { StatisticsReservationComponent } from './layout/home/reservation/statistics-reservation/statistics-reservation.component';
 
 
 @NgModule({
@@ -134,6 +137,9 @@ import { ListServicesComponent } from './layout/home/services/list-services/list
     SheduleComponent,
     InsertServicesComponent,
     ListServicesComponent,
+    ProfitRevenueComponent,
+    StatisticsClientComponent,
+    StatisticsReservationComponent,
   ],
     imports: [
         BrowserModule,

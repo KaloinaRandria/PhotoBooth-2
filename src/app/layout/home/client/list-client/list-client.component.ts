@@ -28,8 +28,6 @@ export class ListClientComponent implements OnInit{
 
   popUp(client: any) {
     const dialogRef = this.dialog.open(ModifyClientComponent, {
-      width: '100vh',
-      height:'90vh',
       data: {client}
     });
   }

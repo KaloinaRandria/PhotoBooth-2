@@ -22,8 +22,7 @@ export class ListCategoryComponent implements OnInit {
 
   popUp(categorie: any) {
     const dialogRef = this.dialog.open(ModifyCategComponent, {
-      width: '100vh',
-      height:'90vh',
+
       data: {categ: categorie}
     });
   }

@@ -36,6 +36,13 @@ body {
 
 .modale{
   padding: 50px;
+  background: #efe9d7;
+  color: black;
+}
+
+.icon-btn:hover {
+  background-color: #771010;
+  color: white;
 }
 
 ::-webkit-scrollbar{
