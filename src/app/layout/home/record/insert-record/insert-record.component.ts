@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './insert-record.component.css'
 })
 export class InsertRecordComponent {
+  submit() {
 
+  }
 }

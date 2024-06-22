@@ -78,7 +78,7 @@ export const navData: INavbardata[] = [
   {
     routeLink: 'record',
     icon: 'mdi mdi-note-text',
-    label: 'Financial record',
+    label: 'Expense',
     expanded: false,
     items: [
       {
