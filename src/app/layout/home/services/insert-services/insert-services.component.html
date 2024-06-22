@@ -10,7 +10,13 @@
                         <div class="col-md-12">
                             <mat-form-field class="label-input">
                                 <mat-label>Service Label</mat-label>
-                                <input matInput type="text" name="label">
+                                <input matInput type="text" [(ngModel)]="formulaire.label" name="label">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-12">
+                            <mat-form-field class="label-input">
+                                <mat-label>Icon</mat-label>
+                                <input matInput type="text" [(ngModel)]="formulaire.icon" name="icon">
                             </mat-form-field>
                         </div>
                     </div>
@@ -29,13 +35,7 @@
                                 <tr *ngFor="let value of valueRange">
                                     <td>{{ value.range_label }}</td>
                                     <td>
-                                        <input type="number" class="form-control" name="priceLessThan3" min="0" step="0.01">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3 or more</td>
-                                    <td>
-                                        <input type="number" class="form-control" name="price3OrMore" min="0" step="0.01">
+                                        <input type="number" class="form-control"  [(ngModel)]="value.price" name="priceLessThan3" min="0" step="0.01">
                                     </td>
                                 </tr>
                                 </tbody>
@@ -46,7 +46,7 @@
                     <!-- Submit Button -->
                     <div class="form-row">
                         <div class="col-md-12">
-                            <button class="btn btn-light submit-button" (click)="submit()">Validate</button>
+                            <button class="btn btn-light submit-button" (click)="submitForm()">Validate</button>
                         </div>
                     </div>
                 </form>
