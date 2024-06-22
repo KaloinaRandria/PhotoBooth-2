@@ -132,9 +132,20 @@ export class InsertReservationComponent implements OnInit {
     const id_salle = this.form.salle;
     const service = this.form.service;
     const nb = this.form.nombre;
-    if(date){
-      if(new Date(date)<new Date()){
-        Display.alert(this.snackBar,'Date cannot be before today',"close",3000);
+    if (date) {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth(); // Pas besoin de +1 ici
+      const day = today.getDate();
+
+
+      const todayMidnight = new Date(year, month, day, 0, 0, 0, 0);
+
+
+      const inputDate = new Date(date);
+
+      if (inputDate < todayMidnight) {
+        Display.alert(this.snackBar, 'Date cannot be before today', "close", 3000);
         return;
       }
     }
