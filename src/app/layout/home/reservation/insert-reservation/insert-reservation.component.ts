@@ -132,6 +132,31 @@ export class InsertReservationComponent implements OnInit {
     const id_salle = this.form.salle;
     const service = this.form.service;
     const nb = this.form.nombre;
+    if(date){
+      if(new Date(date)<new Date()){
+        Display.alert(this.snackBar,'Date cannot be before today',"close",3000);
+        return;
+      }
+    }
+    if (heureDebut && heureFin) {
+      const [debutheure, debutminute] = heureDebut.split(':').map(Number);
+      const [finheure, finminute] = heureFin.split(':').map(Number);
+
+      const now = new Date();
+      const timeDebut = new Date(now.getFullYear(), now.getMonth(), now.getDate(), debutheure, debutminute);
+      const timeFin = new Date(now.getFullYear(), now.getMonth(), now.getDate(), finheure, finminute);
+
+      if (timeFin < timeDebut) {
+        Display.alert(this.snackBar, 'End hour cannot be before start hour', "close", 5000);
+        return;
+      }
+    }
+    if(nb){
+      if(nb<=0){
+        Display.alert(this.snackBar, 'Number of people should be greater than 0', "close", 5000);
+        return;
+      }
+    }
 
     if(service == '') {
       Display.alert(this.snackBar , 'cannot check because service is not complete',"close",5000);

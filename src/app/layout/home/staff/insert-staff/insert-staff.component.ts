@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FormService} from "../../../../service/form/form.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Display} from "../../../../class/util/display";
 import {RoleService} from "../../../../service/form/role.service";
 import {Constants} from "../../../../class/util/constants";
 import {HttpClient} from "@angular/common/http";
+
 
 @Component({
   selector: 'app-insert-staff',
@@ -17,25 +18,25 @@ export class InsertStaffComponent implements OnInit{
   roleList : any[]=[];
   posteList : any[]=[];
   constructor(private fBuilder : FormBuilder , private formService : FormService , private snackBar : MatSnackBar , private roleService : RoleService , private http : HttpClient) {
-     this.form = fBuilder.group({
-       prenom : [''],
-       nom : [''],
-       username : [''],
-       dtn : [''],
-       mail : [''],
-       mdp : [''],
-       role : [''],
-       post : [''],
-       date_embauche : [''],
-       salaire : ['']
-     })
-   }
+    this.form = fBuilder.group({
+      prenom : ['',Validators.required],
+      nom : ['',Validators.required],
+      username : ['',Validators.required],
+      dtn : ['',Validators.required],
+      mail : ['',[Validators.required,Validators.email]],
+      mdp : ['',[Validators.required,Validators.minLength(8)]],
+      role : ['',Validators.required],
+      post : ['',Validators.required],
+      date_embauche : ['',Validators.required],
+      salaire : ['',[Validators.required,Validators.min(0)]]
+    })
+  }
 
-   ngOnInit() {
+  ngOnInit() {
     this.getRole();
     this.getPoste();
-   }
-   submitForm() {
+  }
+  submitForm() {
     const data ={
       prenom : this.form.get('prenom')?.value,
       nom : this.form.get('nom')?.value,
@@ -52,41 +53,43 @@ export class InsertStaffComponent implements OnInit{
       date_de_naissance : this.form.get('dtn')?.value,
       salaire: {montant: this.form.get('salaire')?.value}
     };
-
     console.log(data);
-    this.formService.formulaireSend(data).subscribe({
-      next:()=> {
-        Display.alert(this.snackBar , "Sended Succesfully","close",3000,"succes-snackbar");
+    if(this.form.valid){
+      this.formService.formulaireSend(data).subscribe({
+        next:()=> {
+          Display.alert(this.snackBar , "Sended Succesfully","close",3000,"succes-snackbar");
+        },
+        error:(exception) => {
+          Display.alert(this.snackBar,(exception.error.message),"close",6000);
+        }
+      });
+    }
+    }
+
+  getRole() {
+    this.roleService.getAll().subscribe({
+      next:(response:any) => {
+        console.log(response.data);
+        this.roleList = response.data;
       },
       error:(exception) => {
         Display.alert(this.snackBar,(exception.error.message),"close",6000);
+        console.log(exception);
       }
     });
-   }
-   getRole() {
-      this.roleService.getAll().subscribe({
-        next:(response:any) => {
-          console.log(response.data);
-          this.roleList = response.data;
-        },
-        error:(exception) => {
-          Display.alert(this.snackBar,(exception.error.message),"close",6000);
-          console.log(exception);
-        }
-      });
-   }
+  }
 
-   getPoste() {
-      this.http.get(Constants.BACK_URL + '/poste/all').subscribe({
-        next:(response:any) => {
-          console.log(response.data);
-          this.posteList = response.data;
-        },
-        error:(exception) => {
-          Display.alert(this.snackBar,(exception.error.message),"close",6000);
-          console.log(exception);
-        }
-      });
-   }
+  getPoste() {
+    this.http.get(Constants.BACK_URL + '/poste/all').subscribe({
+      next:(response:any) => {
+        console.log(response.data);
+        this.posteList = response.data;
+      },
+      error:(exception) => {
+        Display.alert(this.snackBar,(exception.error.message),"close",6000);
+        console.log(exception);
+      }
+    });
+  }
 
 }

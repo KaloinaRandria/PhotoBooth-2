@@ -6,18 +6,6 @@
                 <input type="text" name="label" class="form-control" placeholder="Search Label" required>
             </div>
             <div class="col-md-3 mb-3">
-                <input type="number" name="prix_min_less_than_3" class="form-control" placeholder="Min Price (Less than 3)" required>
-            </div>
-            <div class="col-md-3 mb-3">
-                <input type="number" name="prix_max_less_than_3" class="form-control" placeholder="Max Price (Less than 3)" required>
-            </div>
-            <div class="col-md-3 mb-3">
-                <input type="number" name="prix_min_3_or_more" class="form-control" placeholder="Min Price (3 or more)" required>
-            </div>
-            <div class="col-md-3 mb-3">
-                <input type="number" name="prix_max_3_or_more" class="form-control" placeholder="Max Price (3 or more)" required>
-            </div>
-            <div class="col-md-3 mb-3">
                 <button class="btn btn-light submit-button" type="submit">Filter</button>
             </div>
         </div>
@@ -32,28 +20,13 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Label</th>
-            <th scope="col">Less than 3 (Price)</th>
-            <th scope="col">3 or more (Price)</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td scope="row">1</td>
-            <td>Service Label 1</td>
-            <td>$50</td>
-            <td>$100</td>
-            <td>
-                <button class="icon-btn ripple" id="">
-                    <i class="mdi mdi-table-edit icon-edit"></i>
-                </button>
-            </td>
-            <td>
-                <button class="icon-btn ripple" id="">
-                    <i class="mdi mdi-delete icon-delete"></i>
-                </button>
-            </td>
+        <tr *ngFor="let svc of services">
+            <td scope="row">{{ svc.id }}</td>
+            <td>{{ svc.intitule }}</td>
         </tr>
         <!-- Other table rows -->
         </tbody>

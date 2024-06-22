@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Mise à jour de l'import
 import { CategoryService } from '../../../../service/category/category.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Display } from '../../../../class/util/display';
 import { RoomService } from '../../../../service/room/room.service';
 import { Router } from '@angular/router';
+import { dateRangeValidator } from '../../../../validators/date.validator'; // Assurez-vous d'importer correctement
 
 @Component({
   selector: 'app-insert-theme',
@@ -16,14 +17,16 @@ export class InsertThemeComponent implements OnInit {
   categories: any[] = [];
   rooms: any[] = [];
 
-  constructor(private categoryService: CategoryService,private formBuilder: FormBuilder, private snackBar: MatSnackBar, private roomService: RoomService, private router: Router, private alert: MatSnackBar) {
+  constructor(private categoryService: CategoryService, private formBuilder: FormBuilder, private snackBar: MatSnackBar, private roomService: RoomService, private router: Router, private alert: MatSnackBar) {
     this.form = this.formBuilder.group({
-      intitule: [''],
-      categorie: [''],
-      description: [''],
-      salle: [''],
-      debut: [''],
-      fin: ['']
+      intitule: ['', Validators.required],
+      categorie: ['', Validators.required],
+      description: ['', Validators.required],
+      salle: ['', Validators.required],
+      debut: ['', Validators.required],
+      fin: ['', Validators.required]
+    }, {
+      validators: dateRangeValidator() // Utilisez le validateur de manière correcte ici
     });
   }
 
@@ -66,35 +69,24 @@ export class InsertThemeComponent implements OnInit {
     );
   }
 
- 
-
   submitForm() {
-    const formData = new FormData();
+    if (this.form.valid) {
+      const formData = new FormData();
 
-    const info = {
-      intitule: this.form.get('intitule')?.value,
-      categorie_theme: {id_categorie_theme: this.form.get('categorie')?.value} ,
-      description: this.form.get('description')?.value,
-      salle: {id_salle:this.form.get('salle')?.value} ,
-      date_debut: this.form.get('debut')?.value,
-      date_fin: this.form.get('fin')?.value
+      const info = {
+        intitule: this.form.get('intitule')?.value,
+        categorie_theme: { id_categorie_theme: this.form.get('categorie')?.value },
+        description: this.form.get('description')?.value,
+        salle: { id_salle: this.form.get('salle')?.value },
+        date_debut: this.form.get('debut')?.value,
+        date_fin: this.form.get('fin')?.value
+      };
+
+      localStorage.setItem('info', JSON.stringify(info));
+
+      this.router.navigate(['home/theme/insert/materiel']).then(r => true);
+    } else {
+      Display.alert(this.alert, 'Complete all inputs', 'close', 3000);
     }
-
-    if(!this.verifiate(info)) {
-      Display.alert(this.alert , 'complete all input',"close",3000);
-      return;
-    }
-
-    localStorage.setItem('info', JSON.stringify(info));
-
-    this.router.navigate(['home/theme/insert/materiel']).then(r => true);
-  }
-
-  private verifiate(info: any): boolean {
-    return !Object.values(info).some(value => 
-      value === null || 
-      value === undefined || 
-      (typeof value === 'string' && value.trim() === '')
-    );
   }
 }

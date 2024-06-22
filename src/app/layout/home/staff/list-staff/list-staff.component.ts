@@ -140,5 +140,23 @@ export class ListStaffComponent implements OnInit{
   initial() {
     this.staff = this.initialStaff;
   }
+  delete(staff:any):void{
+    const url='/categ/delete/'+staff.id_membre;
+    this.staffService.delete(url).subscribe(
+      (response:any) =>{
+        if(response.success){
+          const index = this.staff.findIndex(s => s.id_membre === staff.id_membre);
+          Display.alert(this.snackBar,"Deleted succesfully","close",3000,"succes-snackbar");
+          this.staff.splice(index,1);
+        } else{
+          console.error('Failed to delete staff')
+        }
+      },
+      (error)=>{
+        console.error(error);
+        Display.alert(this.snackBar,'error',"close",6000);
+      }
+    );
+  }
 }
 
