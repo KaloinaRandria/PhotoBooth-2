@@ -1,0 +1,40 @@
+/* Modifier la couleur de fond et la couleur du texte des champs de saisie */
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    background-color: #f8f9fa; /* Couleur de fond claire */
+    color: #343a40; /* Couleur sombre pour le texte */
+    border: 1px solid #ced4da; /* Garde les bordures existantes */
+}
+
+/* Ajouter des styles de focus pour les champs de saisie et les listes déroulantes */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #80bdff; /* Couleur de bordure bleue lors de la mise au point */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Ombre bleue lors de la mise au point */
+}
+
+/* Modifier la couleur de fond des champs obligatoires */
+input:required,
+select:required {
+    background-color: #e9ecef; /* Couleur de fond légèrement différente pour les champs obligatoires */
+}
+.submit-button{
+    background-color: #261d15;
+    color: white;
+    margin-top: 10px !important;
+
+}
+.submit-button:hover{
+    background-color: #771010;
+
+    color: white;
+}

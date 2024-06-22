@@ -118,9 +118,6 @@ table tr th td{
 
 }
 
-
-
-
 .icon-btn {
   border-radius: 50%; /* Make it a circle */
   width: 40px; /* Adjust the width as needed */
@@ -131,7 +128,7 @@ table tr th td{
   color : #6c1515;
 }
 .icon-btn:hover{
-  background-color: #ff3333;
+  background-color: #771010;
   color: white;
 }
 

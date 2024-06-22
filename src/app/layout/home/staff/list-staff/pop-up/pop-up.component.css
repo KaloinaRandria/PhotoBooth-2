@@ -27,3 +27,13 @@ input:required,
 select:required {
     background-color: #e9ecef; /* Couleur de fond légèrement différente pour les champs obligatoires */
 }
+.submit-button{
+    background-color: #261d15;
+    color: white;
+
+}
+.submit-button:hover{
+    background-color: #771010;
+
+    color: white;
+}

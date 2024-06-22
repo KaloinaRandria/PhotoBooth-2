@@ -22,8 +22,6 @@ export class ListRoomComponent implements OnInit {
   popUp(room: any) {
 
     const dialogRef = this.dialog.open(ModifyRoomComponent, {
-      width: '100vh',
-      height:'90vh',
       data: {room}
     });
 

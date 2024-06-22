@@ -188,6 +188,7 @@ td{
     width: 200%;
 }
 
-.label-input{
+.label-input, .amount-input, .date-input{
     width: -webkit-fill-available;
 }
+

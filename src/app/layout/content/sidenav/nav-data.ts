@@ -63,11 +63,6 @@ export const navData: INavbardata[] = [
         access: role
       },
       {
-        routeLink: 'revenue/Expense',
-        label: 'Expense',
-        access: role
-      },
-      {
         routeLink: 'revenue/statistics',
         label: 'Statistics',
         access: role

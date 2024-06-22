@@ -28,8 +28,6 @@ export class ListMaterialComponent implements OnInit {
 
   popUp(item: any) {
     const dialogRef = this.dialog.open(AddComponent, {
-      width: '100vh',
-      height:'90vh',
       data: {item}
     });
   }
