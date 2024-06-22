@@ -146,10 +146,10 @@ export class ListThemeComponent implements OnInit {
   }
 
 
-  popUp() {
+  popUp(theme : any) {
 
     const dialogRef = this.dialog.open(ModiftThemeComponent, {
-      data: {}
+      data: {theme}
     });
 
   }
