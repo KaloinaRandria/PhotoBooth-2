@@ -83,6 +83,7 @@ import { ListServicesComponent } from './layout/home/services/list-services/list
 import { ProfitRevenueComponent } from './layout/home/revenue/profit-revenue/profit-revenue.component';
 import { StatisticsClientComponent } from './layout/home/client/statistics-client/statistics-client.component';
 import { StatisticsReservationComponent } from './layout/home/reservation/statistics-reservation/statistics-reservation.component';
+import { ModiftThemeComponent } from './layout/home/theme/list-theme/modift-theme/modift-theme.component';
 
 
 @NgModule({
@@ -140,6 +141,7 @@ import { StatisticsReservationComponent } from './layout/home/reservation/statis
     ProfitRevenueComponent,
     StatisticsClientComponent,
     StatisticsReservationComponent,
+    ModiftThemeComponent,
   ],
     imports: [
         BrowserModule,
