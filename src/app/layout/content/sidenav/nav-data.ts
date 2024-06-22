@@ -189,7 +189,7 @@ export const navData: INavbardata[] = [
       },
       {
         routeLink: 'material/stat',
-        label: 'Stat',
+        label: 'Statistics',
         access: role
       }
     ]
@@ -211,7 +211,7 @@ export const navData: INavbardata[] = [
         access: role
       },
       {
-        routeLink: 'reservation/statistics',
+        routeLink: 'client/statistics',
         label: 'Statistics',
         access: role
       }
