@@ -50,13 +50,13 @@ export class InsertServicesComponent implements OnInit {
   submitForm() {
    console.log(this.valueRange );
    console.log(this.formulaire);
+
    const info = {
      icon : this.formulaire.icon,
      label: this.formulaire.label,
      valueRange : this.valueRange
    };
-   const api = Constants.BACK_URL + '/tarif/info'
-   //api mbola tsy officiel
+   const api = Constants.BACK_URL + '/service/new'
    this.http.post(api,info).subscribe({
      next:() => {
        Display.alert(this.snackBar,"Sent Succesfully","close",3000);
@@ -64,6 +64,6 @@ export class InsertServicesComponent implements OnInit {
      error:(exception) => {
        Display.alert(this.snackBar,"Error","close",6000);
      }
-   }); 
+   });
   } 
 }
