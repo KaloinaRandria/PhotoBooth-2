@@ -22,7 +22,8 @@ export class InsertServicesComponent implements OnInit {
   price: any[] = [];
   formulaire : any = {
     label : '',
-    icon : ''
+    icon : '',
+    color: ''
   };
 
   constructor(private http : HttpClient ,private fBuilder : FormBuilder,private valueRangeService : ValueRangeService , private snackBar : MatSnackBar) {
@@ -54,12 +55,13 @@ export class InsertServicesComponent implements OnInit {
    const info = {
      icon : this.formulaire.icon,
      label: this.formulaire.label,
+     color: this.formulaire.color,
      valueRange : this.valueRange
    };
    const api = Constants.BACK_URL + '/service/new'
    this.http.post(api,info).subscribe({
      next:() => {
-       Display.alert(this.snackBar,"Sent Succesfully","close",3000);
+       Display.alert(this.snackBar,"Sent Succesfully","close",3000, "success-snackbar");
      },
      error:(exception) => {
        Display.alert(this.snackBar,"Error","close",6000);

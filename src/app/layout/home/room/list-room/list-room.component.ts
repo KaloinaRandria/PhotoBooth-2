@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {RoomService} from "../../../../service/room/room.service";
-import {Display} from "../../../../class/util/display";
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {MatDialog} from "@angular/material/dialog";
-import {ModifyRoomComponent} from "./modify-room/modify-room.component";
+import { RoomService } from "../../../../service/room/room.service";
+import { Display } from "../../../../class/util/display";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { MatDialog } from "@angular/material/dialog";
+import { ModifyRoomComponent } from "./modify-room/modify-room.component";
 
 @Component({
   selector: 'app-list-room',
@@ -16,23 +16,27 @@ export class ListRoomComponent implements OnInit {
 
   filter: any = {
     room: ''
-  }
+  };
 
-  constructor(private roomService: RoomService,private snackBar:MatSnackBar,private dialog: MatDialog) {}
-  popUp(room: any) {
+  constructor(
+    private roomService: RoomService,
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
+  ) {}
 
-    const dialogRef = this.dialog.open(ModifyRoomComponent, {
-      data: {room}
-    });
-
-  }
   ngOnInit(): void {
     this.loadRooms();
   }
 
+  popUp(room: any): void {
+    this.dialog.open(ModifyRoomComponent, {
+      data: { room }
+    });
+  }
+
   loadRooms(): void {
     const url = `/salle/all`;
-    console.log('Fetching categories from:', url);
+    console.log('Fetching rooms from:', url);
     this.roomService.getAll(url).subscribe(
       (response: any) => {
         if (response.success) {
@@ -40,55 +44,50 @@ export class ListRoomComponent implements OnInit {
           this.roomsInitial = response.data;
         } else {
           console.error('Failed to fetch rooms');
+          Display.alert(this.snackBar, 'Failed to fetch rooms', 'close', 6000);
         }
       },
       (error) => {
         console.error('Error fetching rooms', error);
-        Display.alert(this.snackBar,error.error.message,"close",6000);
+        Display.alert(this.snackBar, error.error.message, 'close', 6000);
       }
     );
   }
-  delete(room:any):void{
-    const url='/salle/delete/'+room.id_salle;
+
+  delete(room: any): void {
+    const url = `/salle/delete/${room.id_salle}`;
     this.roomService.delete(url).subscribe(
-      (response:any) =>{
-        if(response.success){
-          const index = this.rooms.findIndex(ro => ro.id_categorie_theme === room.id_salle);
-          Display.alert(this.snackBar,"Deleted succesfully","close",3000,"succes-snackbar");
-          this.rooms.splice(index,1);
-        } else{
+      (response: any) => {
+        if (response.success) {
+          const index = this.rooms.findIndex(ro => ro.id_salle === room.id_salle);
+          this.rooms.splice(index, 1);
+          Display.alert(this.snackBar, 'Deleted successfully', 'close', 3000, 'success-snackbar');
+        } else {
           console.error('Failed to delete room');
-          Display.alert(this.snackBar,'Failed to delete room',"close",6000);
+          Display.alert(this.snackBar, 'Failed to delete room', 'close', 6000);
         }
       },
-      (error)=>{
-        console.error(error);
-        Display.alert(this.snackBar,error.error.message,"close",6000);
+      (error) => {
+        console.error('Error deleting room', error);
+        Display.alert(this.snackBar, error.error.message, 'close', 6000);
       }
     );
   }
 
-  filterPro(
-      roomList: any[],
-      filter: any
-  ): any[] {
+  filterRooms(roomList: any[], filter: any): any[] {
     return roomList.filter(room => {
-
       const matchesNumber = filter.room && filter.room !== '' ?
-          (room.numero && room.numero === Number(filter.room)) : true;
+        (room.numero && room.numero === Number(filter.room)) : true;
 
-      return (
-          matchesNumber
-      );
+      return matchesNumber;
     });
   }
 
-  filterFunc() {
-    const filterTab = this.filterPro(this.roomsInitial, this.filter);
-    this.rooms = filterTab;
+  filterFunc(): void {
+    this.rooms = this.filterRooms(this.roomsInitial, this.filter);
   }
 
-  initial() {
+  initial(): void {
     this.rooms = this.roomsInitial;
   }
 }

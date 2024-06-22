@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Chart} from "chart.js";
+import {Constants} from "../../../../class/util/constants";
+import {HttpClient} from "@angular/common/http";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-stat-revenue',
@@ -8,9 +11,12 @@ import {Chart} from "chart.js";
 })
 export class StatRevenueComponent implements OnInit {
   ngOnInit() {
-    this.renderChart();
+    this.loadData();
   }
-  renderChart() {
+
+  constructor(private  http: HttpClient, private snackbar: MatSnackBar) {
+  }
+  renderChart(info: any) {
     new Chart("linechart", {
       type: 'line',
       data: {
@@ -18,21 +24,21 @@ export class StatRevenueComponent implements OnInit {
         datasets: [
           {
             label: 'Profit',
-            data: [12, 19, 3, 5, 2, 3, 8, 14, 6, 9, 10, 15],
+            data: info.benefice,
             backgroundColor: 'rgb(55,213,14)', // couleur avec transparence
             borderColor: 'rgb(55,213,14)',
             borderWidth: 1
           },
           {
             label: 'Expense',
-            data: [8, 14, 6, 9, 10, 15, 12, 19, 3, 5, 2, 3],
+            data: info.depense,
             backgroundColor: 'rgb(220,18,18)', // couleur avec transparence
             borderColor: 'rgb(220,18,18)',
             borderWidth: 1
           },
           {
             label: 'Revenue',
-            data: [15, 10, 12, 9, 5, 8, 14, 6, 19, 3, 2, 3],
+            data: info.chiffre,
             backgroundColor: 'rgb(19,26,157)', // couleur avec transparence
             borderColor: 'rgb(19,26,157)',
             borderWidth: 1
@@ -54,6 +60,19 @@ export class StatRevenueComponent implements OnInit {
             }
           }
         }
+      }
+    });
+  }
+
+  loadData() {
+    this.http.get(Constants.BACK_URL + '/stat/financial/2024').subscribe({
+      next:(valiny: any)=> {
+        const info = valiny.data.attributes;
+        this.renderChart(info);
+        console.log(valiny);
+      },
+      error:(err) => {
+        console.error(err);
       }
     });
   }

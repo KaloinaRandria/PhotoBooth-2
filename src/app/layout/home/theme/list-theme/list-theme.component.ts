@@ -5,15 +5,13 @@ import { Constants } from '../../../../class/util/constants';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Display } from '../../../../class/util/display';
 import { CategoryService } from '../../../../service/category/category.service';
-import {ModiftThemeComponent} from "./modift-theme/modift-theme.component";
-import {MatDialog} from "@angular/material/dialog";
-
-
+import { ModiftThemeComponent } from "./modift-theme/modift-theme.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-list-theme',
   templateUrl: './list-theme.component.html',
-  styleUrl: './list-theme.component.css'
+  styleUrls: ['./list-theme.component.css'] // Correction de 'styleUrl' en 'styleUrls'
 })
 export class ListThemeComponent implements OnInit {
 
@@ -29,30 +27,26 @@ export class ListThemeComponent implements OnInit {
 
   rooms: any[] = [];
   categories: any[] = [];
-
   themeList: any[] = [];
   initialThemes: any[] = [];
-  ngOnInit(): void {
-      
-  }
 
-  
-
-  constructor(private dialog: MatDialog,private http: HttpClient, private roomService : RoomService, private snackBar : MatSnackBar, private categoryService: CategoryService) {
+  constructor(private dialog: MatDialog, private http: HttpClient, private roomService: RoomService, private snackBar: MatSnackBar, private categoryService: CategoryService) {
     this.getAllTheme();
     this.loadRooms();
     this.loadCategories();
   }
 
+  ngOnInit(): void {}
+
   getAllTheme() {
     this.http.get(Constants.BACK_URL + '/theme/all').subscribe({
-      next:(valiny: any)=> {
+      next: (valiny: any) => {
         this.themeList = valiny.data;
         this.initialThemes = valiny.data;
       },
-      error:(err) => {
+      error: (err) => {
         console.error('Error fetching theme', err);
-        Display.alert(this.snackBar,err.error.message,"close",6000);
+        Display.alert(this.snackBar, err.error.message, "close", 6000);
       }
     });
   }
@@ -69,7 +63,7 @@ export class ListThemeComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching rooms', error);
-        Display.alert(this.snackBar,error.error.message,"close",6000);
+        Display.alert(this.snackBar, error.error.message, "close", 6000);
       }
     );
   }
@@ -86,7 +80,7 @@ export class ListThemeComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching categories', error);
-        Display.alert(this.snackBar,'error',"close",6000);
+        Display.alert(this.snackBar, 'error', "close", 6000);
       }
     );
   }
@@ -98,28 +92,27 @@ export class ListThemeComponent implements OnInit {
     return themeList.filter(theme => {
       const worth = theme.worth;
 
-      const matchesIntitule = filter.intitule && filter.intitule !== '' ? theme.intitule.includes(filter.intitule) : true;
+      const matchesIntitule = filter.intitule && filter.intitule !== '' ? theme.intitule.toLowerCase().includes(filter.intitule.toLowerCase()) : true;
       const matchesMinWorth = filter.minWorth && filter.minWorth !== '' ? worth >= Number(filter.minWorth) : true;
       const matchesMaxWorth = filter.maxWorth && filter.maxWorth !== '' ? worth <= Number(filter.maxWorth) : true;
 
-
       let matchesCategIntitule = true;
       if (filter.categorie && filter.categorie !== '') {
-        matchesCategIntitule = theme.categorie_theme.id_categorie_theme.includes(filter.categorie);
+        matchesCategIntitule = theme.categorie_theme.id_categorie_theme.toLowerCase().includes(filter.categorie.toLowerCase());
       }
 
       let matchesRoomIntitule = true;
       if (filter.room && filter.room !== '') {
-        matchesRoomIntitule = theme.salle.id_salle.includes(filter.room);
+        matchesRoomIntitule = theme.salle.id_salle.toLowerCase().includes(filter.room.toLowerCase());
       }
 
       let matchesStartDate = true;
       let matchesEndDate = true;
-  
+
       if (filter.startDate && filter.startDate !== '') {
         matchesStartDate = new Date(theme.date_debut) >= new Date(filter.startDate);
       }
-  
+
       if (filter.endDate && filter.endDate !== '') {
         matchesEndDate = new Date(theme.date_fin) <= new Date(filter.endDate);
       }
@@ -131,7 +124,7 @@ export class ListThemeComponent implements OnInit {
         matchesCategIntitule &&
         matchesRoomIntitule &&
         matchesStartDate &&
-        matchesEndDate     
+        matchesEndDate
       );
     });
   }
@@ -145,13 +138,9 @@ export class ListThemeComponent implements OnInit {
     this.themeList = this.initialThemes;
   }
 
-
-  popUp(theme : any) {
-
+  popUp(theme: any) {
     const dialogRef = this.dialog.open(ModiftThemeComponent, {
-      data: {theme}
+      data: { theme }
     });
-
   }
 }
-

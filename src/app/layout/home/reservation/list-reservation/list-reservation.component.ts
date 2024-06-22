@@ -130,20 +130,18 @@ export class ListReservationComponent implements OnInit{
   }
 
   filterStaff(
-      resaList: any[],
-      filter: any
+    resaList: any[],
+    filter: any
   ): any[] {
     return resaList.filter(resa => {
-
       const price = resa.prix;
-      const matchesClient = filter.clientS && filter.clientS !== '' ? resa.client.nom.includes(filter.clientS) : true;
+      const matchesClient = filter.clientS && filter.clientS !== '' ? resa.client.nom.toLowerCase().includes(filter.clientS.toLowerCase()) : true;
       const matchesPriceMin = filter.minPrice && filter.minPrice !== '' ? price >= Number(filter.minPrice) : true;
       const matchesPriceMax = filter.maxPrice && filter.maxPrice !== '' ? price <= Number(filter.maxPrice) : true;
 
-
       let matchesServIntitule = true;
       if (filter.service && filter.service !== '') {
-        matchesServIntitule = resa.service.id_comp_service.includes(filter.service);
+        matchesServIntitule = resa.service.id_comp_service.toLowerCase().includes(filter.service.toLowerCase());
       }
 
       let matchesReservationStartDate = true;
@@ -183,16 +181,16 @@ export class ListReservationComponent implements OnInit{
       }
 
       return (
-          matchesClient &&
-          matchesPriceMin &&
-          matchesPriceMax &&
-          matchesServIntitule &&
-          matchesReservationEndDate &&
-          matchesReservationStartDate &&
-          matchesStartDate &&
-          matchesEndDate &&
-          matchesReservedStartDate &&
-          matchesReservedEndDate
+        matchesClient &&
+        matchesPriceMin &&
+        matchesPriceMax &&
+        matchesServIntitule &&
+        matchesReservationEndDate &&
+        matchesReservationStartDate &&
+        matchesStartDate &&
+        matchesEndDate &&
+        matchesReservedStartDate &&
+        matchesReservedEndDate
       );
     });
   }
