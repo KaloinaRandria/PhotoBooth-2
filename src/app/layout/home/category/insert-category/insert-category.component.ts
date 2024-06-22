@@ -29,10 +29,10 @@ export class InsertCategoryComponent {
 
       this.categoryService.save(data, "/categ/save").subscribe({
         next: () => {
-          Display.alert(this.snackBar, "Envoyé avec succès", "Fermer", 3000, "succes-snackbar");
+          Display.alert(this.snackBar, "Successfully inserted", "Close", 3000, "succes-snackbar");
         },
         error: (exception) => {
-          Display.alert(this.snackBar, exception.error.message, "Fermer", 6000);
+          Display.alert(this.snackBar, exception.error.message, "Close", 6000);
         }
       });
     } else {

@@ -184,3 +184,8 @@ td{
     /*background-color: white !important;*/
 }
 
+.input-truc
+{
+    width: -webkit-fill-available;
+
+}
