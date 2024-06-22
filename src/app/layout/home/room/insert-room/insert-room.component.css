@@ -53,3 +53,9 @@
   background-color: #261d15;
   color: white;
 }
+
+.input-truc
+{
+  width: -webkit-fill-available;
+
+}
