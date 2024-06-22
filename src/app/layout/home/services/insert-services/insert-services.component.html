@@ -26,8 +26,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Less than 3</td>
+                                <tr *ngFor="let value of valueRange">
+                                    <td>{{ value.range_label }}</td>
                                     <td>
                                         <input type="number" class="form-control" name="priceLessThan3" min="0" step="0.01">
                                     </td>
