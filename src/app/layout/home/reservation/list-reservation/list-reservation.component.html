@@ -1,64 +1,54 @@
 <div class="row">
     <form action="" method="">
-        <div class="row g-1">
-            <!-- Première ligne: Prénom du client et Service -->
-            <div class="col-md-6 mb-1">
-                <label for="searchFirstName">Client Name</label>
-                <input name="client" [(ngModel)]="filter.clientS" type="text" class="form-control" id="searchFirstName" placeholder="Search First Name" required>
-            </div>
-            <div class="col-md-6 mb-1">
-                <label for="selectService">Service</label>
-                <select name="service" [(ngModel)]="filter.service" class="form-control" id="selectService" required>
-                    <option *ngFor="let serv of services" [value]="serv.id_comp_service">{{ serv.intitule }}</option>
-                </select>
-            </div>
-
-            <!-- Deuxième ligne: Date de réservation min et max -->
-            <div class="col-md-6 mb-1">
-                <label>Reservation Date Min</label>
-                <input name="date_reservation_min" [(ngModel)]="filter.reservationDateMin" type="date" class="form-control" required>
-            </div>
-            <div class="col-md-6 mb-1">
-                <label>Reservation Date Max</label>
-                <input name="date_reservation_max" [(ngModel)]="filter.reservationDateMax" type="date" class="form-control" required>
-            </div>
-
-            <!-- Troisième ligne: Date réservée min et max -->
-            <div class="col-md-6 mb-1">
-                <label>Reserved Date Min</label>
-                <input name="date_reservee_min" [(ngModel)]="filter.reservedDateMin" type="date" class="form-control" required>
-            </div>
-            <div class="col-md-6 mb-1">
-                <label>Reserved Date Max</label>
-                <input name="date_reservee_max" [(ngModel)]="filter.reservedDateMax" type="date" class="form-control" required>
-            </div>
-
-            <!-- Quatrième ligne: Heure de début et heure de fin -->
-            <div class="col-md-6 mb-1">
-                <label for="startHour">Start Hour</label>
-                <input name="heure_debut" [(ngModel)]="filter.start" type="time" class="form-control" id="startHour" required>
-            </div>
-            <div class="col-md-6 mb-1">
-                <label for="endHour">End Hour</label>
-                <input name="heure_fin" [(ngModel)]="filter.end" type="time" class="form-control" id="endHour" required>
-            </div>
-
-            <!-- Cinquième ligne: Prix min et max -->
-            <div class="col-md-6 mb-1">
-                <label>Minimum Price</label>
-                <input name="prix_min" [(ngModel)]="filter.minPrice" type="number" class="form-control" required>
-            </div>
-            <div class="col-md-6 mb-1">
-                <label>Maximum Price</label>
-                <input name="prix_max" [(ngModel)]="filter.maxPrice" type="number" class="form-control" required>
-            </div>
-
-            <div class="col-md-12 mb-1">
-                <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
-                <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
-            </div>
-        </div>
-    </form>
+      <div class="row g-1">
+          <!-- Première ligne: Prénom du client et Service -->
+          <div class="col-md-3 mb-1">
+              <input name="client" [(ngModel)]="filter.clientS" type="text" class="form-control" id="searchFirstName" placeholder="Client Name" required>
+          </div>
+          <div class="col-md-3 mb-1">
+              <select name="service" [(ngModel)]="filter.service" class="form-control" id="selectService" required>
+                  <option value="" disabled selected>Service</option>
+                  <option *ngFor="let serv of services" [value]="serv.id_comp_service">{{ serv.intitule }}</option>
+              </select>
+          </div>
+          <div class="col-md-3 mb-1">
+              <input name="date_reservation_min" [(ngModel)]="filter.reservationDateMin" type="date" class="form-control" placeholder="Reservation Date Min" required>
+          </div>
+          <div class="col-md-3 mb-1">
+              <input name="date_reservation_max" [(ngModel)]="filter.reservationDateMax" type="date" class="form-control" placeholder="Reservation Date Max" required>
+          </div>
+  
+          <!-- Deuxième ligne: Date réservée min et max et heures de début et de fin -->
+          <div class="col-md-3 mb-1">
+              <input name="date_reservee_min" [(ngModel)]="filter.reservedDateMin" type="date" class="form-control" placeholder="Reserved Date Min" required>
+          </div>
+          <div class="col-md-3 mb-1">
+              <input name="date_reservee_max" [(ngModel)]="filter.reservedDateMax" type="date" class="form-control" placeholder="Reserved Date Max" required>
+          </div>
+          <div class="col-md-3 mb-1">
+              <input name="heure_debut" [(ngModel)]="filter.start" type="time" class="form-control" id="startHour" placeholder="Start Hour" required>
+          </div>
+          <div class="col-md-3 mb-1">
+              <input name="heure_fin" [(ngModel)]="filter.end" type="time" class="form-control" id="endHour" placeholder="End Hour" required>
+          </div>
+  
+          <!-- Troisième ligne: Prix min et max -->
+          <div class="col-md-6 mb-1">
+              <input name="prix_min" [(ngModel)]="filter.minPrice" type="number" class="form-control" placeholder="Minimum Price" required>
+          </div>
+          <div class="col-md-6 mb-1">
+              <input name="prix_max" [(ngModel)]="filter.maxPrice" type="number" class="form-control" placeholder="Maximum Price" required>
+          </div>
+  
+          <div class="col-md-12 mb-1">
+            
+              <button class="btn btn-light submit-button filter " (click)="filterFunc()">Filter</button>
+              <button class="btn btn-light submit-button initial" (click)="initial()">Initial</button>
+          </div>
+      </div>
+  </form>
+  
+  
 
 </div><br>
 
