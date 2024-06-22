@@ -1,47 +1,61 @@
 <div class="row justify-content-md-center info">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-body">
-        <h1 class="titre">INSERT MATERIAL</h1>
-        <form [formGroup]="form" (ngSubmit)="submit()">
-          <div class="form-row">
-            <div class="col-md-4 mb-3">
-              <label for="intitule">Intitule</label>
-              <input id="intitule" formControlName="intitule" type="text" class="form-control" placeholder="Intitule" required>
-              <div *ngIf="form.get('intitule')?.invalid && (form.get('intitule')?.dirty || form.get('intitule')?.touched)" class="alert alert-danger">
-                <div *ngIf="form.get('intitule')?.errors?.['required']">Intitule is required.</div>
-              </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="titre">INSERT MATERIAL</h1>
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <mat-form-field class="full-width input-truc">
+                                <mat-label>Intitule</mat-label>
+                                <input matInput id="intitule" formControlName="intitule" type="text" placeholder="Intitule" required>
+                                <mat-error *ngIf="form.get('intitule')?.errors?.['required']">
+                                    Intitule is required.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <mat-form-field class="full-width input-truc">
+                                <mat-label>Quantity</mat-label>
+                                <input matInput id="quantite" formControlName="quantite" type="number" placeholder="Quantity" required>
+                                <mat-error *ngIf="form.get('quantite')?.errors?.['required']">
+                                    Quantity is required.
+                                </mat-error>
+                                <mat-error *ngIf="form.get('quantite')?.errors?.['min']">
+                                    Quantity cannot be less than 0.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-6">
+                            <mat-form-field class="full-width input-truc">
+                                <mat-label>Price (one item)</mat-label>
+                                <input matInput id="prix" formControlName="prix" type="number" required>
+                                <mat-error *ngIf="form.get('prix')?.errors?.['required']">
+                                    Price is required.
+                                </mat-error>
+                                <mat-error *ngIf="form.get('prix')?.errors?.['min']">
+                                    Price cannot be less than 0.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <mat-form-field class="full-width input-truc">
+                                <mat-label>Prix d'achat (one item)</mat-label>
+                                <input matInput id="prix_achat" formControlName="prix_achat" type="number" required>
+                                <mat-error *ngIf="form.get('prix_achat')?.errors?.['required']">
+                                    Prix d'achat is required.
+                                </mat-error>
+                                <mat-error *ngIf="form.get('prix_achat')?.errors?.['min']">
+                                    Prix d'achat cannot be less than 0.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-light submit-button" [disabled]="!form.valid">Submit form</button>
+                </form>
             </div>
-            <div class="col-md-4 mb-3">
-              <label for="quantite">Quantity</label>
-              <input id="quantite" formControlName="quantite" type="number" class="form-control" placeholder="Quantity" required>
-              <div *ngIf="form.get('quantite')?.invalid && (form.get('quantite')?.dirty || form.get('quantite')?.touched)" class="text-danger">
-                <div *ngIf="form.get('quantite')?.errors?.['required']" class="alert alert-danger">Quantity is required.</div>
-                <div *ngIf="form.get('quantite')?.errors?.['min']" class="alert alert-danger">Quantity cannot be less than 0.</div>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-6">
-              <label for="prix">Price (one item)</label>
-              <input id="prix" formControlName="prix" type="number" class="form-control" required>
-              <div *ngIf="form.get('prix')?.invalid && (form.get('prix')?.dirty || form.get('prix')?.touched)" class="text-danger">
-                <div *ngIf="form.get('prix')?.errors?.['required']" class="alert alert-danger">Price is required.</div>
-                <div *ngIf="form.get('prix')?.errors?.['min']" class="alert alert-danger">Price cannot be less than 0.</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="prix_achat">Prix d'achat (one item)</label>
-              <input id="prix_achat" formControlName="prix_achat" type="number" class="form-control" required>
-              <div *ngIf="form.get('prix_achat')?.invalid && (form.get('prix_achat')?.dirty || form.get('prix_achat')?.touched)" class="text-danger">
-                <div *ngIf="form.get('prix_achat')?.errors?.['required']" class="alert alert-danger">Prix d'achat is required.</div>
-                <div *ngIf="form.get('prix_achat')?.errors?.['min']" class="alert alert-danger">Prix d'achat cannot be less than 0.</div>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-light submit-button" [disabled]="!form.valid">Submit form</button>
-        </form>
-      </div>
+        </div>
     </div>
-  </div>
 </div>

@@ -1,22 +1,28 @@
 <div class="row justify-content-md-center info">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-body">
-        <h1 class="titre">INSERT CATEGORY</h1>
-        <form [formGroup]="form" (ngSubmit)="submitForm()">
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label>Intitule</label>
-              <input formControlName="intitule" type="text" class="form-control" placeholder="Intitulé" required>
-              <div *ngIf="form.get('intitule')?.invalid && (form.get('intitule')?.dirty || form.get('intitule')?.touched)"
-                   class="alert alert-danger">
-                <div *ngIf="form.get('intitule')?.hasError('required')">L'intitulé est requis.</div>
-              </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="titre">INSERT CATEGORY</h1>
+                <form [formGroup]="form" (ngSubmit)="submitForm()">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <mat-form-field class="full-width input-truc">
+                                <mat-label>Label</mat-label>
+                                <input matInput formControlName="intitule" placeholder="Intitulé" required>
+                            </mat-form-field>
+                            <div *ngIf="form.get('intitule')?.invalid && (form.get('intitule')?.dirty || form.get('intitule')?.touched)"
+                                 class="alert alert-danger">
+                                <div *ngIf="form.get('intitule')?.hasError('required')">The label is mandatory.</div>
+                            </div>
+                        </div>
+                        <!-- Placeholder for potential second field in the same row -->
+                        <div class="col-md-6 mb-3">
+                            <!-- Additional field can be added here -->
+                        </div>
+                    </div>
+                    <button class="btn btn-light submit-button" type="submit" [disabled]="form.invalid">Submit</button>
+                </form>
             </div>
-          </div>
-          <button class="btn btn-light submit-button" type="submit" [disabled]="form.invalid">Soumettre</button>
-        </form>
-      </div>
+        </div>
     </div>
-  </div>
 </div>
