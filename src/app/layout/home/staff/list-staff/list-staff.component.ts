@@ -11,7 +11,7 @@ import {PopUpComponent} from "./pop-up/pop-up.component";
 @Component({
   selector: 'app-list-staff',
   templateUrl: './list-staff.component.html',
-  styleUrl: './list-staff.component.css'
+  styleUrls: ['./list-staff.component.css'] // Correction de 'styleUrl' en 'styleUrls'
 })
 export class ListStaffComponent implements OnInit{
   initialStaff: any[]=[];
@@ -42,17 +42,18 @@ export class ListStaffComponent implements OnInit{
       data: {staff:staff, roleList: this.roleList, posteList: this.posteList }
     });
   }
+
   getAllStaff():void {
     const api = '/membre/all';
     this.staffService.getAll(api).subscribe({
       next:(response: any) => {
-      if (response.success) {
-        this.staff = response.data;
-        this.initialStaff = response.data;
-      }  else {
-        Display.alert(this.snackBar,(response.message),"close",6000);
-      }
-    },
+        if (response.success) {
+          this.staff = response.data;
+          this.initialStaff = response.data;
+        }  else {
+          Display.alert(this.snackBar,(response.message),"close",6000);
+        }
+      },
       error:(exception) => {
         Display.alert(this.snackBar, (exception.error.message), "close", 6000);
       }
@@ -99,35 +100,35 @@ export class ListStaffComponent implements OnInit{
   }
 
   filterStaff(
-      staffList: any[],
-      filter: any
+    staffList: any[],
+    filter: any
   ): any[] {
     return staffList.filter(staff => {
       const age = this.calculateAge(staff.date_de_naissance);
 
-      const matchesUsername = filter.username && filter.username !== '' ? staff.username.includes(filter.username) : true;
+      const matchesUsername = filter.username && filter.username !== '' ? staff.username.toLowerCase().includes(filter.username.toLowerCase()) : true;
       const matchesAgeMin = filter.ageMin && filter.ageMin !== '' ? age >= Number(filter.ageMin) : true;
       const matchesAgeMax = filter.ageMax && filter.ageMax !== '' ? age <= Number(filter.ageMax) : true;
       const matchesSalaire = filter.salaire && filter.salaire !== '' ?
-          (staff.salaire && staff.salaire.montant === Number(filter.salaire)) : true;
+        (staff.salaire && staff.salaire.montant === Number(filter.salaire)) : true;
 
       let matchesRoleIntitule = true;
       if (filter.role && filter.role !== '') {
-        matchesRoleIntitule = staff.role.id_role.includes(filter.role);
+        matchesRoleIntitule = staff.role.id_role.toLowerCase().includes(filter.role.toLowerCase());
       }
 
       let matchesPosteIntitule = true;
       if (filter.poste && filter.poste !== '') {
-        matchesPosteIntitule = staff.poste.id_poste.includes(filter.poste);
+        matchesPosteIntitule = staff.poste.id_poste.toLowerCase().includes(filter.poste.toLowerCase());
       }
 
       return (
-          matchesUsername &&
-          matchesAgeMin &&
-          matchesAgeMax &&
-          matchesRoleIntitule &&
-          matchesPosteIntitule &&
-          matchesSalaire
+        matchesUsername &&
+        matchesAgeMin &&
+        matchesAgeMax &&
+        matchesRoleIntitule &&
+        matchesPosteIntitule &&
+        matchesSalaire
       );
     });
   }
@@ -140,7 +141,8 @@ export class ListStaffComponent implements OnInit{
   initial() {
     this.staff = this.initialStaff;
   }
-  delete(staff:any):void{
+
+  delete(staff:any):void {
     const url='/categ/delete/'+staff.id_membre;
     this.staffService.delete(url).subscribe(
       (response:any) =>{
@@ -149,7 +151,7 @@ export class ListStaffComponent implements OnInit{
           Display.alert(this.snackBar,"Deleted succesfully","close",3000,"succes-snackbar");
           this.staff.splice(index,1);
         } else{
-          console.error('Failed to delete staff')
+          console.error('Failed to delete staff');
         }
       },
       (error)=>{
@@ -159,4 +161,3 @@ export class ListStaffComponent implements OnInit{
     );
   }
 }
-
