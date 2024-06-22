@@ -49,6 +49,13 @@ body {
   display: none;
 }
 
+.left{
+  margin-left: auto;
+}
+.right{
+  margin-right: auto;
+}
+
 body.login {
   overflow: hidden;
   background: #261D15 !important;

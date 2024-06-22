@@ -14,14 +14,30 @@ export class StatRevenueComponent implements OnInit {
     new Chart("linechart", {
       type: 'line',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Cyan', 'Magenta', 'Lime', 'Pink'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3, 8, 14, 6, 9],
-          backgroundColor: 'rgba(21,9,1,0.5)', // couleur avec transparence
-          borderColor: 'rgb(21,9,1)',
-          borderWidth: 1
-        }]
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [
+          {
+            label: 'Profit',
+            data: [12, 19, 3, 5, 2, 3, 8, 14, 6, 9, 10, 15],
+            backgroundColor: 'rgb(55,213,14)', // couleur avec transparence
+            borderColor: 'rgb(55,213,14)',
+            borderWidth: 1
+          },
+          {
+            label: 'Expense',
+            data: [8, 14, 6, 9, 10, 15, 12, 19, 3, 5, 2, 3],
+            backgroundColor: 'rgb(220,18,18)', // couleur avec transparence
+            borderColor: 'rgb(220,18,18)',
+            borderWidth: 1
+          },
+          {
+            label: 'Revenue',
+            data: [15, 10, 12, 9, 5, 8, 14, 6, 19, 3, 2, 3],
+            backgroundColor: 'rgb(19,26,157)', // couleur avec transparence
+            borderColor: 'rgb(19,26,157)',
+            borderWidth: 1
+          }
+        ]
       },
       options: {
         scales: {
