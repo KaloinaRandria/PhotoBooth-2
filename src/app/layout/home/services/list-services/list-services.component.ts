@@ -13,6 +13,25 @@ export class ListServicesComponent implements OnInit{
   constructor(private service : ServicesBoothService , private snackBar : MatSnackBar) {
   }
 
+  applyOpacity(color: string): string {
+    const rgbValue = this.hexToRgb(color);
+    const rgbaValue = `rgba(${rgbValue.r}, ${rgbValue.g}, ${rgbValue.b}, 0.2)`; // 0.2 correspond à 20% d'opacité
+    return rgbaValue;
+  }
+
+  private hexToRgb(hex: string): { r: number, g: number, b: number } {
+    // Supprimer le # du début s'il est présent
+    hex = hex.replace('#', '');
+
+    // Convertir en valeurs RGB
+    const bigint = parseInt(hex, 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+
+    return { r, g, b };
+  }
+
   ngOnInit() {
     this.getAllServices();
   }

@@ -7,17 +7,23 @@
                 <form>
                     <div class="form-row">
                         <!-- Input for Service Label -->
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
                             <mat-form-field class="full-width input-truc">
                                 <mat-label>Service Label</mat-label>
                                 <input matInput type="text" [(ngModel)]="formulaire.label" name="label">
                             </mat-form-field>
                         </div>
                         <!-- Input for Icon -->
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
                             <mat-form-field class="full-width input-truc">
                                 <mat-label>Icon</mat-label>
                                 <input matInput type="text" [(ngModel)]="formulaire.icon" name="icon">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <mat-form-field class="full-width input-truc">
+                                <mat-label>Color</mat-label>
+                                <input matInput type="color" [(ngModel)]="formulaire.color" name="icon">
                             </mat-form-field>
                         </div>
                     </div>

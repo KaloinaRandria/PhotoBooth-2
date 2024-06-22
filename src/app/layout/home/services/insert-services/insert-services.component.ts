@@ -22,7 +22,8 @@ export class InsertServicesComponent implements OnInit {
   price: any[] = [];
   formulaire : any = {
     label : '',
-    icon : ''
+    icon : '',
+    color: ''
   };
 
   constructor(private http : HttpClient ,private fBuilder : FormBuilder,private valueRangeService : ValueRangeService , private snackBar : MatSnackBar) {
@@ -54,6 +55,7 @@ export class InsertServicesComponent implements OnInit {
    const info = {
      icon : this.formulaire.icon,
      label: this.formulaire.label,
+     color: this.formulaire.color,
      valueRange : this.valueRange
    };
    const api = Constants.BACK_URL + '/service/new'
