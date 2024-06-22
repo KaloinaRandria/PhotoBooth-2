@@ -5,6 +5,10 @@ import { Constants } from '../../../../class/util/constants';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Display } from '../../../../class/util/display';
 import { CategoryService } from '../../../../service/category/category.service';
+import {ModiftThemeComponent} from "./modift-theme/modift-theme.component";
+import {MatDialog} from "@angular/material/dialog";
+
+
 
 @Component({
   selector: 'app-list-theme',
@@ -32,7 +36,9 @@ export class ListThemeComponent implements OnInit {
       
   }
 
-  constructor(private http: HttpClient, private roomService : RoomService, private snackBar : MatSnackBar, private categoryService: CategoryService) {
+  
+
+  constructor(private dialog: MatDialog,private http: HttpClient, private roomService : RoomService, private snackBar : MatSnackBar, private categoryService: CategoryService) {
     this.getAllTheme();
     this.loadRooms();
     this.loadCategories();
@@ -137,6 +143,15 @@ export class ListThemeComponent implements OnInit {
 
   initial() {
     this.themeList = this.initialThemes;
+  }
+
+
+  popUp() {
+
+    const dialogRef = this.dialog.open(ModiftThemeComponent, {
+      data: {}
+    });
+
   }
 }
 

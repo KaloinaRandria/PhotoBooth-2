@@ -76,12 +76,12 @@
           <td>{{ item.worth }}</td>
           <td>
             <button class="icon-btn ripple" >
-              <i class="mdi mdi-table-edit icon-edit"></i>
+              <i class="mdi mdi-table-edit icon-edit"  (click)="popUp()"></i>
             </button>
           </td>
           <td>
             <button class="icon-btn ripple" >
-              <i class="mdi mdi-delete icon-delete"></i>
+              <i class="mdi mdi-delete icon-delete"  (click)="popUpDelete()"></i>
             </button>
           </td>
         </tr>
