@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './pop-up-edit-record.component.css'
 })
 export class PopUpEditRecordComponent {
+  submit() {
 
+  }
 }

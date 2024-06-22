@@ -51,6 +51,7 @@ table tr td{
 
 
 .submit-button{
+    height: 38px;
 }
 
 
@@ -157,9 +158,4 @@ table tr td{
 .submit-button:hover{
     background-color: #261d15;
     color: white;
-}
-
-.filter-btn{
-    margin-top: 25% !important;
-    height: 37px;
 }
