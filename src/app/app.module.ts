@@ -84,6 +84,10 @@ import { ProfitRevenueComponent } from './layout/home/revenue/profit-revenue/pro
 import { StatisticsClientComponent } from './layout/home/client/statistics-client/statistics-client.component';
 import { StatisticsReservationComponent } from './layout/home/reservation/statistics-reservation/statistics-reservation.component';
 import { ModiftThemeComponent } from './layout/home/theme/list-theme/modift-theme/modift-theme.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginator} from "@angular/material/paginator";
+import {NgApexchartsModule} from "ng-apexcharts";
 
 
 @NgModule({
@@ -180,7 +184,11 @@ import { ModiftThemeComponent } from './layout/home/theme/list-theme/modift-them
         MatNativeDateModule,
         MatInput,
         FullCalendarModule,
-        MatRadioModule
+        MatRadioModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatPaginator,
+        NgApexchartsModule
     ],
   providers: [
     provideAnimationsAsync(),
