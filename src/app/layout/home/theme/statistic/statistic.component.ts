@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart, registerables} from "chart.js";
+import {Constants} from "../../../../class/util/constants";
+import {Display} from "../../../../class/util/display";
+import {HttpClient} from "@angular/common/http";
+import {MatSnackBar} from "@angular/material/snack-bar";
 Chart.register(...registerables);
 
 @Component({
@@ -10,41 +14,38 @@ Chart.register(...registerables);
 export class StatisticComponent implements OnInit {
 
   ngOnInit(): void {
-      this.renderChart();
+    this.loadthemes();
   }
 
-  renderChart() {
-    new Chart("piechart", {
+  themes: any[] = [];
+  initialThemes: any[] = [];
+
+  activeTheme: any = {
+    intitule: '',
+    categorie_theme: {intitule: ''},
+    gain: 0,
+    usedCount: 0,
+  };
+  currentIndex = 0;
+  taille: number = 0;
+  chart: Chart | null = null;
+
+  constructor(private http: HttpClient, private snackbar: MatSnackBar) {
+  }
+
+  renderChart(info: any) {
+    if (this.chart) {
+      this.chart.destroy();
+    }
+
+    this.chart = new Chart("piechart", {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Cyan', 'Magenta', 'Lime', 'Pink'],
+      labels: info.labels,
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3, 8, 14, 6, 9],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(0, 255, 255, 0.2)',
-          'rgba(255, 0, 255, 0.2)',
-          'rgba(0, 255, 0, 0.2)',
-          'rgba(255, 192, 203, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(0, 255, 255, 1)',
-          'rgba(255, 0, 255, 1)',
-          'rgba(0, 255, 0, 1)',
-          'rgba(255, 192, 203, 1)'
-        ],
+        label: "Theme par service",
+        data: info.data,
+        backgroundColor: info.colors,
         borderWidth: 1
       }]
     },
@@ -56,48 +57,66 @@ export class StatisticComponent implements OnInit {
       }
     }
   });
+  }
 
-  new Chart("linechart", {
-    type: 'line',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Cyan', 'Magenta', 'Lime', 'Pink'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3, 8, 14, 6, 9],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(0, 255, 255, 0.2)',
-          'rgba(255, 0, 255, 0.2)',
-          'rgba(0, 255, 0, 0.2)',
-          'rgba(255, 192, 203, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(0, 255, 255, 1)',
-          'rgba(255, 0, 255, 1)',
-          'rgba(0, 255, 0, 1)',
-          'rgba(255, 192, 203, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
+  loadthemes() {
+    this.http.get(Constants.BACK_URL + '/theme/all').subscribe({
+      next:(valiny: any)=> {
+        this.themes = valiny.data;
+        this.initialThemes = valiny.data;
+        this.activeTheme = this.initialThemes[0];
+        this.taille = this.initialThemes.length;
+        console.log(this.activeTheme);
+        this.getChart(this.activeTheme);
+      },
+      error:(err) => {
+        console.error('Error fetching theme', err);
+        Display.alert(this.snackbar,err.error.message,"close",6000);
       }
     });
+  }
+
+  next() {
+    if (this.taille == 0) {
+      return;
+    }
+
+    let newIndex = this.currentIndex + 1;
+    if (newIndex >= this.taille) {
+      newIndex = 0;
+    }
+
+    this.activeTheme = this.initialThemes[newIndex]
+    this.getChart(this.activeTheme);
+    this.currentIndex = newIndex;
+  }
+
+  getChart(active: any) {
+    this.http.get(Constants.BACK_URL + '/stat/theme/' + active.id_theme).subscribe({
+      next:(valiny: any)=> {
+        this.activeTheme.gain = valiny.data.gain;
+        this.activeTheme.usedCount = valiny.data.usedCount;
+        this.renderChart(valiny.data);
+      },
+      error:(err) => {
+        console.error('Error fetching theme', err);
+        Display.alert(this.snackbar,err.error.message,"close",6000);
+      }
+    });
+  }
+
+  previous() {
+    if (this.taille == 0) {
+      return;
+    }
+
+    let newIndex = this.currentIndex - 1;
+    if (newIndex < 0) {
+      newIndex = this.taille - 1;
+    }
+
+    this.activeTheme = this.initialThemes[newIndex];
+    this.getChart(this.activeTheme);
+    this.currentIndex = newIndex;
   }
 }

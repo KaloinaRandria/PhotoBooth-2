@@ -1,20 +1,26 @@
 <div class="row">
-  <div class="col-lg-8">
+  <div class="col-lg-9">
     <div class="card">
       <div class="card-body">
         <h5>Statistics</h5>
-        <canvas id="linechart"></canvas>
+          <apx-chart
+                  [series]="chartOptions.series"
+                  [chart]="chartOptions.chart"
+                  [xaxis]="chartOptions.xaxis"
+                  [yaxis]="chartOptions.yaxis"
+                  [stroke]="chartOptions.stroke"
+                  [markers]="chartOptions.markers"
+                  [title]="chartOptions.title">
+          </apx-chart>
       </div>
     </div>
 
   </div>
-  <div class="col-lg-4">
-    <div class="card">
-      <form action="" method="" class="row g-1">
-        <div class="col-auto">
-          <input type="number" placeholder="year" id="year" class="form-control" name="year" min="1900" max="2100" step="1">
-        </div>
-      </form>
+  <div class="col-lg-3">
+    <div class="card year-div">
+        <i class="mdi mdi-chevron-left" (click)="changeYear(-1)"></i>
+        <h3>{{ selectedYear }}</h3>
+        <i class="mdi mdi-chevron-right" (click)="changeYear(1)"></i>
     </div>
     <br>
     <div class="card">
@@ -22,20 +28,38 @@
         <div class="row">
           <div class="col-9">
             <div class="d-flex align-items-center align-self-start">
-              <h3 class="mb-0">$17.34</h3>
-              <p class="text-success ml-2 mb-0 font-weight-medium">+11%</p>
+              <h3 class="mb-0">${{currentBenefice}}</h3>
+              <p class="text-{{benefDiv}} ml-2 mb-0 font-weight-medium">{{ refactorBen(info) }}%</p>
             </div>
           </div>
           <div class="col-3">
-            <div class="icon icon-box-success">
-              <span class="mdi mdi-arrow-top-right icon-item"></span>
+            <div class="icon icon-box-{{benefDiv}}">
+              <span class="mdi mdi-arrow-{{benefArrow}} icon-item"></span>
             </div>
           </div>
         </div>
-        <h6 class="text-muted font-weight-normal">Revenue current</h6>
-        <br>
+        <h6 class="text-muted font-weight-normal">Benefice</h6>
       </div>
     </div>
+      <br>
+      <div class="card">
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-9">
+                      <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0">${{currentDepense}}</h3>
+                          <p class="text-{{depenseDiv}} ml-2 mb-0 font-weight-medium">{{ refactorDep(info) }}%</p>
+                      </div>
+                  </div>
+                  <div class="col-3">
+                      <div class="icon icon-box-{{depenseDiv}}">
+                          <span class="mdi mdi-arrow-{{depenseArrow}} icon-item"></span>
+                      </div>
+                  </div>
+              </div>
+              <h6 class="text-muted font-weight-normal">Depense</h6>
+          </div>
+      </div>
   </div>
 </div><br>
 <div class="col-md-12 card footer">
