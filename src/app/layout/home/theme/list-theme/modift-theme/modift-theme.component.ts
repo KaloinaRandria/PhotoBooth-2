@@ -3,6 +3,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { BaseService } from '../../../../../service/base.service';
 import {MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Display } from '../../../../../class/util/display';
+import { ListRoomComponent } from '../../../room/list-room/list-room.component';
+import { ListCategoryComponent } from '../../../category/list-category/list-category.component';
 
 @Component({
   selector: 'app-modift-theme',
@@ -13,6 +15,8 @@ export class ModiftThemeComponent {
   theme : any = undefined;
   constructor(private snackBar : MatSnackBar,
               private service  : BaseService,
+              private listRoom : ListRoomComponent,
+              private listCategory : ListCategoryComponent,
               private dialogRef : MatDialogRef<ModiftThemeComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
     this.theme = data.theme;
@@ -30,5 +34,13 @@ export class ModiftThemeComponent {
         Display.alert(this.snackBar,(exception.error.message),"close",6000);
       }
     });
+  }
+
+  getAllCategorie() {
+    this.listCategory.loadCategories();
+  }
+
+  getAllRoom() {
+    this.listRoom.loadRooms();
   }
 }
