@@ -40,7 +40,7 @@ export class ListReservationComponent implements OnInit{
     }
 
     const dialogRef = this.dialog.open(PopUpConfirmationComponent, {
-      data: {}
+      data: {price: resa.prix}
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -30,3 +30,9 @@
     color: #562975;
     border-color: #560a5c;
 }
+
+.fact {
+    display: inline-flex;
+    margin-left: 10px !important;
+    background: antiquewhite !important;
+}

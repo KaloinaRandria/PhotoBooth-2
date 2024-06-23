@@ -1,0 +1,43 @@
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div id="chart">
+                    <apx-chart
+                            *ngIf="chartOptions.series
+                            && chartOptions.xaxis
+                            && chartOptions.yaxis
+                            && chartOptions.tooltip
+                            && chartOptions.chart
+                            && chartOptions.stroke
+                            && chartOptions.dataLabels
+                            && chartOptions.plotOptions
+                            && chartOptions.colors
+                            && chartOptions.title
+                            && chartOptions.subtitle"
+                               [series]="chartOptions.series"
+                               [chart]="chartOptions.chart"
+                               [xaxis]="chartOptions.xaxis"
+                               [stroke]="chartOptions.stroke"
+                               [dataLabels]="chartOptions.dataLabels"
+                               [plotOptions]="chartOptions.plotOptions"
+                               [yaxis]="chartOptions.yaxis"
+                               [colors]="chartOptions.colors"
+                               [title]="chartOptions.title"
+                               [subtitle]="chartOptions.subtitle"
+                               [tooltip]="chartOptions.tooltip"
+                    ></apx-chart>
+
+                </div>
+
+                <div class="period-selector">
+                    <button mat-button (click)="changePeriod('today')">ToDay</button>
+                    <button mat-button (click)="changePeriod('last30days')">Last 30 days</button>
+                    <button mat-button (click)="changePeriod('thisyear')">this Year</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

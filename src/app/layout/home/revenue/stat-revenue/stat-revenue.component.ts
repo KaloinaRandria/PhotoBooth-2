@@ -24,6 +24,7 @@ export type ChartOptions = {
   stroke: ApexStroke;
   markers: ApexMarkers; // Ensure this is not optional
   title: ApexTitleSubtitle;
+  colors: string[];
 };
 
 @Component({
@@ -83,7 +84,8 @@ export class StatRevenueComponent implements OnInit {
       title: {
         text: 'Financial Statistics',
         align: 'left'
-      }
+      },
+      colors: ['#008FFB', '#FF4560', '#00E396']
     };
   }
 

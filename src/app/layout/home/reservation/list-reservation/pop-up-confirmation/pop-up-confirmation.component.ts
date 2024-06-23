@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pop-up-confirmation',
@@ -7,7 +7,12 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './pop-up-confirmation.component.css'
 })
 export class PopUpConfirmationComponent {
-  constructor(public dialogRef: MatDialogRef<PopUpConfirmationComponent>) { }
+  prix: number = 0;
+  constructor(public dialogRef: MatDialogRef<PopUpConfirmationComponent>, @Inject(MAT_DIALOG_DATA) public data: any)
+  {
+    console.log(data);
+    this.prix = data.price;
+  }
 
   onCancel(): void {
     this.dialogRef.close(false); // Return false on cancel

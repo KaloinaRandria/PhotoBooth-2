@@ -6,7 +6,7 @@
             <i class="mdi mdi-star-outline ic"></i> {{data.theme.intitule}} ({{data.theme.categorie_theme.intitule}})
         </div>
         <div class="col-md-6 tb">
-            <i class="mdi mdi-cash-multiple ic"></i> {{data.prix}} Ar
+            <i class="mdi mdi-cash-multiple ic"></i> {{data.prix / 2}} Ar (50%)
         </div>
         <div class="col-md-6 tb">
             <i class="mdi mdi-access-point ic"></i> Room {{data.theme.salle.numero}}
@@ -18,4 +18,5 @@
     <hr>
     <button type="button" (click)="onButtonClick()" *ngIf="className != 'merged'" class="btn btn-outline-success">Confirm reservation</button>
     <button type="button" *ngIf="className == 'merged'" disabled class="btn btn-outline-success merged-btn">Confirmed</button>
+    <button type="button" (click)="factureClick()" *ngIf="className == 'merged'" class="btn btn-outline-success btn-icon-text merged-btn fact"><i class="mdi mdi-file-check btn-icon-prepend"></i>Facture</button>
 </div>

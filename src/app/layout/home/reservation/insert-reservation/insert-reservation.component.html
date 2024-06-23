@@ -86,10 +86,12 @@
                   <button (click)="check()" type="button" class="btn btn-primary btn-icon-text chk">
                       <i class="mdi mdi-bookmark-outline btn-icon-prepend"></i> Check </button>
               </form>
-              <app-success *ngIf="canShow && available" (buttonClicked)="confirm()" [data]="data" [className]="style" id="divSuccess" [@fadeInOut]></app-success>
+
+              <app-success *ngIf="canShow && available" (buttonClicked)="confirm()" (facture)="facture()" [data]="data" [className]="style" id="divSuccess" [@fadeInOut]></app-success>
               <app-danger *ngIf="canShow && !available" (buttonClicked)="shedule()" [@fadeInOut] [data]="dataError"></app-danger>
           </div>
       </div>
+      <button (click)="facture()">facture</button>
 </div>
 </div>
 
