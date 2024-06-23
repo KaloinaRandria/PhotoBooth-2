@@ -22,7 +22,6 @@ export class ListCategoryComponent implements OnInit {
 
   popUp(categorie: any) {
     const dialogRef = this.dialog.open(ModifyCategComponent, {
-
       data: {categ: categorie}
     });
   }
@@ -70,14 +69,14 @@ export class ListCategoryComponent implements OnInit {
   }
 
   filterPro(
-      categList: any[],
-      filter: any
+    categList: any[],
+    filter: any
   ): any[] {
     return categList.filter(categ => {
-      const matchesIntitule = filter.intitule && filter.intitule !== '' ? categ.intitule.includes(filter.intitule) : true;
-      return (
-          matchesIntitule
-      );
+      const matchesIntitule = filter.intitule && filter.intitule !== ''
+        ? categ.intitule.toLowerCase().includes(filter.intitule.toLowerCase())
+        : true;
+      return matchesIntitule;
     });
   }
 
