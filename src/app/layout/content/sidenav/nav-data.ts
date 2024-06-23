@@ -48,6 +48,11 @@ export const navData: INavbardata[] = [
         routeLink: 'services/list',
         label: 'List',
         access: role
+      },
+      {
+        routeLink: 'services/analyse',
+        label: 'Analyse',
+        access: role
       }
     ]
   },

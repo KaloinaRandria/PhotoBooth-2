@@ -7,9 +7,14 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class SuccessComponent {
   @Output() buttonClicked = new EventEmitter<void>();
+  @Output() facture = new EventEmitter<void>();
   @Input() data: any = undefined;
   @Input() className: any = undefined;
   onButtonClick() {
     this.buttonClicked.emit();
+  }
+
+  factureClick() {
+    this.facture.emit();
   }
 }

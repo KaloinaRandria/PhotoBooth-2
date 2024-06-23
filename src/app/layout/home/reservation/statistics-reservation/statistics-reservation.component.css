@@ -1,0 +1,57 @@
+
+
+.year-div {
+    display: flex;
+    align-items: center;
+    flex-direction: unset;
+    justify-content: center;
+    padding: 10px;
+    background: #9b2dac3b !important;
+    margin-bottom: 15px;
+}
+
+.year-div i {
+    display: flex;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #333;
+    transition: all .2s ease-in-out;
+}
+
+.year-div h3 {
+    font-size: x-large;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.year-div i:hover {
+    scale: 1.2;
+    color: #2c2927;
+}
+
+.year-div h3 {
+    margin: 0 20px;
+}
+
+.month {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.total {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.conf {
+    color: #00E396;
+}
+
+.wait {
+    color: #008FFB;
+}
+
+.canc {
+    color: #FF4560;
+}

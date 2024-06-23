@@ -88,6 +88,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginator} from "@angular/material/paginator";
 import {NgApexchartsModule} from "ng-apexcharts";
+import { StatServiceComponent } from './layout/home/services/stat-service/stat-service.component';
 
 
 @NgModule({
@@ -146,6 +147,7 @@ import {NgApexchartsModule} from "ng-apexcharts";
     StatisticsClientComponent,
     StatisticsReservationComponent,
     ModiftThemeComponent,
+    StatServiceComponent,
   ],
     imports: [
         BrowserModule,
