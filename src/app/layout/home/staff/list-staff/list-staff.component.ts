@@ -7,6 +7,9 @@ import {HttpClient} from "@angular/common/http";
 import {RoleService} from "../../../../service/form/role.service";
 import {MatDialog} from "@angular/material/dialog";
 import {PopUpComponent} from "./pop-up/pop-up.component";
+import {Navigation} from "../../../../class/util/navigation";
+import _default from "chart.js/dist/plugins/plugin.tooltip";
+import numbers = _default.defaults.animations.numbers;
 
 @Component({
   selector: 'app-list-staff',
@@ -19,6 +22,9 @@ export class ListStaffComponent implements OnInit{
   posteList: any[] = [];
   roleList: any[] = [];
 
+  page: number = 1;
+  maxPage: number = 1;
+
   filter:any = {
     username:'',
     ageMin: '',
@@ -27,6 +33,16 @@ export class ListStaffComponent implements OnInit{
     role: '',
     salaire: ''
   };
+
+  next() {
+    this.page = this.page + 1;
+    this.staff = Navigation.paginate(this.initialStaff, this.page);
+  }
+
+  previous() {
+    this.page = this.page - 1;
+    this.staff = Navigation.paginate(this.initialStaff, this.page);
+  }
 
   ngOnInit() {
     this.getAllStaff();
@@ -48,8 +64,9 @@ export class ListStaffComponent implements OnInit{
     this.staffService.getAll(api).subscribe({
       next:(response: any) => {
         if (response.success) {
-          this.staff = response.data;
           this.initialStaff = response.data;
+          this.staff = Navigation.paginate(this.initialStaff, this.page);
+          this.maxPage = Navigation.maxPage(this.initialStaff);
         }  else {
           Display.alert(this.snackBar,(response.message),"close",6000);
         }

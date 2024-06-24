@@ -4,6 +4,7 @@ import { Display } from "../../../../class/util/display";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatDialog } from "@angular/material/dialog";
 import { ModifyClientComponent } from "./modify-client/modify-client.component";
+import {Navigation} from "../../../../class/util/navigation";
 
 @Component({
   selector: 'app-list-client',
@@ -20,6 +21,19 @@ export class ListClientComponent implements OnInit {
     ageMax: '',
     numero: ''
   };
+
+  page: number = 1;
+  maxPage: number = 1;
+
+  next() {
+    this.page = this.page + 1;
+    this.client = Navigation.paginate(this.initialClient, this.page);
+  }
+
+  previous() {
+    this.page = this.page - 1;
+    this.client = Navigation.paginate(this.initialClient, this.page);
+  }
 
   ngOnInit() {
     this.getAllClient();
@@ -38,9 +52,9 @@ export class ListClientComponent implements OnInit {
     this.clientService.getAll(api).subscribe({
       next: (response: any) => {
         if (response.success) {
-          this.client = response.data;
           this.initialClient = response.data;
-          console.log(this.client);
+          this.client = Navigation.paginate(this.initialClient, this.page);
+          this.maxPage = Navigation.maxPage(this.initialClient);
         } else {
           Display.alert(this.snackBar, response.message, "close", 6000);
         }

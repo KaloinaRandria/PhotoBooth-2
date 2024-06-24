@@ -20,6 +20,7 @@ export class StatisticsClientComponent implements OnInit {
   options: any[] = [];
   topClient: any[] = [];
   clientId= '';
+  canDisplay = false;
 
   constructor(private http : HttpClient, private alert: MatSnackBar) {
   }
@@ -79,10 +80,13 @@ export class StatisticsClientComponent implements OnInit {
     this.loadClient(event.value);
   }
 
+  selectedClient: any = undefined;
+
   loadClient(id: string) {
     this.http.get(Constants.BACK_URL + '/stat/client/' + id).subscribe({
       next: (valiny: any) => {
-        console.log(valiny);
+        this.selectedClient = valiny.data.attributes;
+        console.log(this.selectedClient);
       },
       error: (err) => {
         console.error(err);
