@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <h1>Client info | Analyse</h1>
+            <mat-form-field class="inpl">
+                <mat-label>Client </mat-label>
+                <mat-select name="clientS"  >
+                    <ngx-mat-select-search [formControl]="searchControl" placeholderLabel="Rechercher..."></ngx-mat-select-search>
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option.value">
+                        {{ option.viewValue }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
