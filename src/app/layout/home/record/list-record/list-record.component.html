@@ -3,21 +3,21 @@
     <div class="form-row">
       <!-- Filter Section -->
       <div class="col-md-2 mb-2">
-        <input type="text" [ngModel]="filter.label" name="label" class="form-control" placeholder="Search Label" required>
+        <input type="text" [(ngModel)]="filter.label" name="label" class="form-control" placeholder="Search Label" required>
       </div>
       <div class="col-md-2 mb-2">
-        <input type="number" [ngModel]="filter.coutmin" name="coutmin" class="form-control" placeholder="Min amount " required>
+        <input type="number" [(ngModel)]="filter.coutmin" name="coutmin" class="form-control" placeholder="Min amount " required>
       </div>
       <div class="col-md-2 mb-2">
-        <input type="number" [ngModel]="filter.coutmax" name="coutmax" class="form-control" placeholder="Max amount " required>
-      </div>
-
-      <div class="col-md-2 mb-2">
-        <input type="date" [ngModel]="filter.datemin" name="datemin" class="form-control" placeholder="Min date " required>
+        <input type="number" [(ngModel)]="filter.coutmax" name="coutmax" class="form-control" placeholder="Max amount " required>
       </div>
 
       <div class="col-md-2 mb-2">
-        <input type="date" [ngModel]="filter.datemax" name="datemax" class="form-control" placeholder="Max date " required>
+        <input type="date" [(ngModel)]="filter.datemin" name="datemin" class="form-control" placeholder="Min date " required>
+      </div>
+
+      <div class="col-md-2 mb-2">
+        <input type="date" [(ngModel)]="filter.datemax" name="datemax" class="form-control" placeholder="Max date " required>
       </div>
 
       <div class="col-md-2 mb-2">
