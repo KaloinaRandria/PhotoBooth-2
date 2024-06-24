@@ -8,8 +8,8 @@
             </div>
             <div class="col-md-6 mb-3">
                 <label for="">Category</label>
-                <select name="categorie" class="form-control">
-                    <option >label categ</option>
+                <select [(ngModel)]="theme.categorie.id_categorie_theme" name="categorie" class="form-control">
+                    <option *ngFor="let item of categorie" [value]="item.id_categorie_theme" >{{ item.intitule }}</option>
                 </select>
             </div>
         </div>
@@ -20,19 +20,19 @@
             </div>
             <div class="col-md-6 mb-3">
                 <label for="">Room</label>
-                <select name="salle" class="form-control">
-                    <option >room</option>
+                <select [(ngModel)]="theme.room.id_salle" name="salle" class="form-control">
+                    <option *ngFor="let item of room" [value]="item.id_salle">{{ item.numero }}</option>
                 </select>
             </div>
         </div>
         <div class="form-row">
             <div class="col-md-6 mb-3">
                 <label for="">Start date</label>
-                <input name="debut" type="date" class="form-control" id="" placeholder="" value="" required>
+                <input [(ngModel)]="theme.date_debut" name="debut" type="date" class="form-control" id="" placeholder="" value="" required>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="">End date</label>
-                <input name="fin" type="date" class="form-control" id="" placeholder="" value="" required>
+                <input [(ngModel)]="theme.date_fin" name="fin" type="date" class="form-control" id="" placeholder="" value="" required>
             </div>
         </div>
     </form>

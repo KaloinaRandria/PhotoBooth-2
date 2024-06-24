@@ -13,13 +13,16 @@ import { ListCategoryComponent } from '../../../category/list-category/list-cate
 })
 export class ModiftThemeComponent {
   theme : any = undefined;
+  room : any [] = [];
+  categorie : any [] = [];
   constructor(private snackBar : MatSnackBar,
               private service  : BaseService,
-              private listRoom : ListRoomComponent,
-              private listCategory : ListCategoryComponent,
               private dialogRef : MatDialogRef<ModiftThemeComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
     this.theme = data.theme;
+    this.room = data.room;
+    this.categorie = data.category;
+    
   }
   onNoClick() {
     this.dialogRef.close();
@@ -36,11 +39,5 @@ export class ModiftThemeComponent {
     });
   }
 
-  getAllCategorie() {
-    this.listCategory.loadCategories();
-  }
 
-  getAllRoom() {
-    this.listRoom.loadRooms();
-  }
 }
