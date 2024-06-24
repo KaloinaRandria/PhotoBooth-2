@@ -1,46 +1,19 @@
 <div class="row">
     <div class="row">
       <h3>the best client</h3>
-      <div class="col-md-4 grid-margin">
+      <div class="col-md-4 grid-margin" *ngFor="let item of topClient; let i = index">
         <div class="card">
           <div class="card-body">
             <div class="row">
+                <div class="rank">
+                    #{{i + 1}}
+                </div>
               <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                <h4 class="mb-5">nom Client</h4>
+                <h4 class="mb-5">{{item.client.nom}} {{item.client.prenom}}</h4>
               </div>
               <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                <h4 class="text-muted font-weight-normal">05</h4>
-                <p class="grey">visit</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 grid-margin">
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                <h4 class="mb-5">nom Client</h4>
-              </div>
-              <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                <h4 class="text-muted font-weight-normal">05</h4>
-                <p class="grey">visit</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 grid-margin">
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                <h4 class="mb-5">nom Client</h4>
-              </div>
-              <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                <h4 class="text-muted font-weight-normal">05</h4>
-                <p class="grey">visit</p>
+                  <h4 class="text-muted font-weight-normal">{{item.nb_reservations}} / {{item.total_prix}}</h4>
+                  <p class="grey">visit / vola</p>
               </div>
             </div>
           </div>
@@ -52,7 +25,7 @@
             <h3>Client info | Analyse</h3>
             <mat-form-field class="inpl">
                 <mat-label>Client </mat-label>
-                <mat-select name="clientS"  >
+                <mat-select name="clientS" (selectionChange)="update($event)"  [(ngModel)]="clientId">
                     <ngx-mat-select-search [formControl]="searchControl" placeholderLabel="Rechercher..."></ngx-mat-select-search>
                     <mat-option *ngFor="let option of filteredOptions | async" [value]="option.value">
                         {{ option.viewValue }}

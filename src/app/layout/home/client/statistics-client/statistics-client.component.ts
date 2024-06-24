@@ -4,6 +4,9 @@ import {HttpClient} from "@angular/common/http";
 import {Constants} from "../../../../class/util/constants";
 import {map, Observable, startWith} from "rxjs";
 import {FormControl} from "@angular/forms";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Display} from "../../../../class/util/display";
+import {MatSelectChange} from "@angular/material/select";
 Chart.register(...registerables);
 
 @Component({
@@ -15,11 +18,14 @@ export class StatisticsClientComponent implements OnInit {
   filteredOptions: Observable<any[]> | undefined;
   searchControl = new FormControl();
   options: any[] = [];
+  topClient: any[] = [];
+  clientId= '';
 
-  constructor(private http : HttpClient) {
+  constructor(private http : HttpClient, private alert: MatSnackBar) {
   }
 
   ngOnInit() {
+    this.getTopClient();
     this.getAllClient();
     this.filteredOptions = this.searchControl.valueChanges.pipe(
         startWith(''),
@@ -51,6 +57,36 @@ export class StatisticsClientComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
+        Display.alert(this.alert , "Error", "close", 3000);
+      }
+    });
+  }
+
+  getTopClient() {
+    this.http.get(Constants.BACK_URL + '/stat/client/top/3').subscribe({
+      next: (valiny: any) => {
+        console.log(valiny);
+        this.topClient = valiny.data;
+      },
+      error: (err) => {
+        console.error(err);
+        Display.alert(this.alert , "Error", "close", 3000);
+      }
+    });
+  }
+
+  update(event: MatSelectChange) {
+    this.loadClient(event.value);
+  }
+
+  loadClient(id: string) {
+    this.http.get(Constants.BACK_URL + '/stat/client/' + id).subscribe({
+      next: (valiny: any) => {
+        console.log(valiny);
+      },
+      error: (err) => {
+        console.error(err);
+        Display.alert(this.alert , "Error", "close", 3000);
       }
     });
   }

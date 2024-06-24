@@ -4,3 +4,8 @@
 .grey{
   color: grey;
 }
+
+.rank {
+    font-size: xx-large;
+    margin-bottom: 5px;
+}
