@@ -10,6 +10,10 @@ import { Display } from '../../../../class/util/display';
 })
 export class ListServicesComponent implements OnInit{
   services : any[] = [];
+  initialServices:any[]=[];
+  filter: any = {
+    label: ''
+  };
   constructor(private service : ServicesBoothService , private snackBar : MatSnackBar) {
   }
 
@@ -41,6 +45,7 @@ export class ListServicesComponent implements OnInit{
        next:(response : any) =>{
         if (response.success) {
           this.services = response.data;
+          this.initialServices=response.data;
           console.log(this.services);
         } else {
           Display.alert(this.snackBar,(response.message),"close",6000);
@@ -51,5 +56,20 @@ export class ListServicesComponent implements OnInit{
         Display.alert(this.snackBar , (exception.error.message),"close",6000);
       }
     });
+  }
+  filterServices(servicesList: any[], filter: any): any[] {
+    console.log(servicesList),console.log(filter)
+    return servicesList.filter(service => {
+      const matchesLabel = filter.label && filter.label !== '' ? service.intitule.toLowerCase().includes(filter.label.toLowerCase()) : true;
+
+      return matchesLabel;
+    });
+  }
+  filterFunc() {
+    const filterTab = this.filterServices(this.initialServices, this.filter);
+    this.services = filterTab;
+  }
+  initial() {
+    this.services = this.initialServices;
   }
 }
