@@ -33,7 +33,11 @@ body {
 
   background: #E7DAB5 !important;
 }
-
+.footer{
+  position: relative;
+  top: 20px;
+  padding: 50px;
+}
 .modale{
   padding: 50px;
   background: #efe9d7;
