@@ -4,6 +4,7 @@ import {Display} from "../../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
 import {ModifyCategComponent} from "./modify-categ/modify-categ.component";
+import {Navigation} from "../../../../class/util/navigation";
 
 @Component({
   selector: 'app-list-category',
@@ -18,7 +19,20 @@ export class ListCategoryComponent implements OnInit {
     intitule: ''
   };
 
+  page: number = 1;
+  maxPage: number = 1;
+
   constructor(private categoryService: CategoryService,private snackbar:MatSnackBar,private dialog: MatDialog) {}
+
+  next() {
+    this.page = this.page + 1;
+    this.categories = Navigation.paginate(this.categoriesInitial, this.page);
+  }
+
+  previous() {
+    this.page = this.page - 1;
+    this.categories = Navigation.paginate(this.categoriesInitial, this.page);
+  }
 
   popUp(categorie: any) {
     const dialogRef = this.dialog.open(ModifyCategComponent, {
@@ -35,9 +49,9 @@ export class ListCategoryComponent implements OnInit {
     this.categoryService.getAll(url).subscribe(
       (response: any) => {
         if (response.success) {
-          this.categories = response.data;
           this.categoriesInitial = response.data;
-          console.log(this.categories);
+          this.categories = Navigation.paginate(this.categoriesInitial, this.page);
+          this.maxPage = Navigation.maxPage(this.categoriesInitial);
         } else {
           console.error('Failed to fetch categories');
         }

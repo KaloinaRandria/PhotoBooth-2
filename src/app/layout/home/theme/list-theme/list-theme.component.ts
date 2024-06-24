@@ -7,6 +7,7 @@ import { Display } from '../../../../class/util/display';
 import { CategoryService } from '../../../../service/category/category.service';
 import { ModiftThemeComponent } from "./modift-theme/modift-theme.component";
 import { MatDialog } from "@angular/material/dialog";
+import {Navigation} from "../../../../class/util/navigation";
 
 @Component({
   selector: 'app-list-theme',
@@ -30,6 +31,19 @@ export class ListThemeComponent implements OnInit {
   themeList: any[] = [];
   initialThemes: any[] = [];
 
+  page: number = 1;
+  maxPage: number = 1;
+
+  next() {
+    this.page = this.page + 1;
+    this.themeList = Navigation.paginate(this.initialThemes, this.page);
+  }
+
+  previous() {
+    this.page = this.page - 1;
+    this.themeList = Navigation.paginate(this.initialThemes, this.page);
+  }
+
   constructor(private dialog: MatDialog, private http: HttpClient, private roomService: RoomService, private snackBar: MatSnackBar, private categoryService: CategoryService) {
     this.getAllTheme();
     this.loadRooms();
@@ -41,8 +55,9 @@ export class ListThemeComponent implements OnInit {
   getAllTheme() {
     this.http.get(Constants.BACK_URL + '/theme/all').subscribe({
       next: (valiny: any) => {
-        this.themeList = valiny.data;
         this.initialThemes = valiny.data;
+        this.themeList = Navigation.paginate(this.initialThemes, this.page);
+        this.maxPage = Navigation.maxPage(this.initialThemes);
       },
       error: (err) => {
         console.error('Error fetching theme', err);

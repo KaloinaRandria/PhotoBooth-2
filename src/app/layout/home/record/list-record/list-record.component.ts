@@ -5,6 +5,7 @@ import { RecordService } from "../../../../service/record/record.service";
 import { Constants } from "../../../../class/util/constants";
 import { Display } from "../../../../class/util/display";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import {Navigation} from "../../../../class/util/navigation";
 
 @Component({
   selector: 'app-list-record',
@@ -22,6 +23,19 @@ export class ListRecordComponent implements OnInit {
     datemax: ''
   };
 
+  page: number = 1;
+  maxPage: number = 1;
+
+  next() {
+    this.page = this.page + 1;
+    this.records = Navigation.paginate(this.initialRecords, this.page);
+  }
+
+  previous() {
+    this.page = this.page - 1;
+    this.records = Navigation.paginate(this.initialRecords, this.page);
+  }
+
   constructor(private dialog: MatDialog, private recordService: RecordService, private snackbar: MatSnackBar) {}
 
   popUp(record: any) {
@@ -37,8 +51,9 @@ export class ListRecordComponent implements OnInit {
   loadRecords() {
     this.recordService.getAll('/depense/all').subscribe({
       next: (valiny: any) => {
-        this.records = valiny.data;
         this.initialRecords = valiny.data;
+        this.records = Navigation.paginate(this.initialRecords, this.page);
+        this.maxPage = Navigation.maxPage(this.initialRecords);
       },
       error: (err) => {
         console.error(err);

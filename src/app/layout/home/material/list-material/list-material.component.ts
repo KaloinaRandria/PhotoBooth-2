@@ -6,6 +6,7 @@ import { AddComponent } from './add/add.component';
 import { Display } from "../../../../class/util/display";
 import { MaterialService } from "../../../../service/material/material.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import {Navigation} from "../../../../class/util/navigation";
 
 @Component({
   selector: 'app-list-material',
@@ -21,6 +22,19 @@ export class ListMaterialComponent implements OnInit {
     min: '',
     max: ''
   };
+
+  page: number = 1;
+  maxPage: number = 1;
+
+  next() {
+    this.page = this.page + 1;
+    this.materiels = Navigation.paginate(this.initialMat, this.page);
+  }
+
+  previous() {
+    this.page = this.page - 1;
+    this.materiels = Navigation.paginate(this.initialMat, this.page);
+  }
 
   ngOnInit(): void {
     this.getAllMateriel();
@@ -39,8 +53,9 @@ export class ListMaterialComponent implements OnInit {
   getAllMateriel() {
     this.http.get(Constants.BACK_URL + '/materiel/all').subscribe({
       next: (valiny: any) => {
-        this.materiels = valiny.data;
         this.initialMat = valiny.data;
+        this.materiels = Navigation.paginate(this.initialMat, this.page);
+        this.maxPage = Navigation.maxPage(this.initialMat);
       },
       error: (err) => {
         console.error(err);
