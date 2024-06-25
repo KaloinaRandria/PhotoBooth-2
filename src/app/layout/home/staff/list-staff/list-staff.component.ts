@@ -156,7 +156,7 @@ export class ListStaffComponent implements OnInit{
   }
 
   initial() {
-    this.staff = this.initialStaff;
+    this.staff = Navigation.paginate(this.initialStaff, this.page);
   }
 
   delete(staff:any):void {

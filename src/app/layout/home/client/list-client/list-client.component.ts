@@ -98,7 +98,7 @@ export class ListClientComponent implements OnInit {
   }
 
   initial() {
-    this.client = this.initialClient;
+    this.client = Navigation.paginate(this.initialClient, this.page);
   }
 
   delete(client: any): void {

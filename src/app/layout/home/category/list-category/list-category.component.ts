@@ -100,6 +100,6 @@ export class ListCategoryComponent implements OnInit {
   }
 
   initial() {
-    this.categories = this.categoriesInitial;
+    this.categories = Navigation.paginate(this.categoriesInitial, this.page);
   }
 }

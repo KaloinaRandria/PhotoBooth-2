@@ -150,7 +150,7 @@ export class ListThemeComponent implements OnInit {
   }
 
   initial() {
-    this.themeList = this.initialThemes;
+    this.themeList = Navigation.paginate(this.initialThemes, this.page);
   }
 
   popUp(theme: any) {
