@@ -196,7 +196,8 @@ export class InsertReservationComponent implements OnInit {
       fin: this.getTimestamp(date, heureFin),
       id_salle: id_salle,
       id_service : service,
-      nb_personne: nb
+      nb_personne: nb,
+      id_client: this.form.clientS
     };
 
     const url = Constants.BACK_URL + '/resa/available';
