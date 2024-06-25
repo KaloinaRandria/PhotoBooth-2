@@ -38,6 +38,19 @@ body {
   top: 20px;
   padding: 20px;
 }
+.dark{
+  background: #261D15 !important;
+  color: aliceblue;
+}
+.dark:disabled{
+  color: aliceblue !important;
+}
+
+.gradient{
+  background: linear-gradient(to right, #150901, #e7dab5) !important;
+  color: #e7dab5 !important;
+}
+
 .modale{
   padding: 50px;
   background: #efe9d7;
