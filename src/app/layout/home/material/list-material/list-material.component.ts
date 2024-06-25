@@ -86,7 +86,7 @@ export class ListMaterialComponent implements OnInit {
   }
 
   initial() {
-    this.materiels = this.initialMat;
+    this.materiels = Navigation.paginate(this.initialMat, this.page);
   }
 
   delete(material: any) {

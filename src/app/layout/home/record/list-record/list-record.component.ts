@@ -115,6 +115,6 @@ export class ListRecordComponent implements OnInit {
   }
 
   initial() {
-    this.records = this.initialRecords;
+    this.records = Navigation.paginate(this.initialRecords, this.page);
   }
 }
