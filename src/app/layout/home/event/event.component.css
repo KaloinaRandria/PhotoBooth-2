@@ -1,0 +1,10 @@
+.alert {
+    position: relative;
+}
+
+.alert span {
+    position: absolute;
+    right: 10px; /* Adjust this value to set the distance from the right edge */
+    top: 50%;
+    transform: translateY(-50%);
+}

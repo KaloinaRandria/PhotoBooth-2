@@ -115,7 +115,7 @@ export class ListClientComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
-        Display.alert(this.snackBar, err, "close", 6000);
+        Display.alert(this.snackBar, 'Cannot delete, see logs', "close", 6000);
       }
     });
   }

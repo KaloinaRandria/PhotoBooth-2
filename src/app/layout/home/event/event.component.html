@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-body">
+        <h2 >App Notification</h2>
+        <div *ngFor="let notif of notifs" class="alert alert-{{notif.type}} alert-dismissible fade show" role="alert">
+            <i class="{{notif.icon}} me-1"></i>
+            {{ notif.libele }}
+            <span>{{ reformatDate(notif.action_date) }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 card pagination">
+    <div class="card-body">
+        <div class="form-inline">
+            <button class="btn btn-light" [disabled]="page == 1" (click)="previous()">previous</button>
+            <button class="btn btn-light left" [disabled]="page == maxPage" (click)="next()">next</button>
+        </div>
+    </div>
+</div>
