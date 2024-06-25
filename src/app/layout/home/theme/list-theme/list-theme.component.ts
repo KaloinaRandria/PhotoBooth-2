@@ -155,7 +155,7 @@ export class ListThemeComponent implements OnInit {
 
   popUp(theme: any) {
     const dialogRef = this.dialog.open(ModiftThemeComponent, {
-      data: { theme }
+      data: { theme:theme,room:this.rooms,category:this.categories }
     });
   }
 }
