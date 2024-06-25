@@ -1,4 +1,4 @@
-<div class="row modale">
+<div class="row">
     <form class="row g-1">
         <div class="col">
             <div class="input-group">
@@ -13,11 +13,13 @@
         </div>
         <div class="col">
             <select name="post" [(ngModel)]="filter.poste" class="form-control selectpicker">
+                <option value="">Post</option>
                 <option *ngFor="let poste of posteList" [value]="poste.id_poste">{{ poste.intitule }}</option>
             </select>
         </div>
         <div class="col">
             <select name="role" [(ngModel)]="filter.role" class="form-control selectpicker">
+                <option value="">Role</option>
                 <option *ngFor="let role of roleList" [value]="role.id_role">{{ role.intitule }}</option>
             </select>
         </div>
@@ -25,8 +27,8 @@
             <input name="salaire" [(ngModel)]="filter.salaire" type="number" class="form-control" placeholder="Salaire" required>
         </div>
         <div class="col-auto">
-            <button class="btn btn-light submit-button filter" (click)="filterFunc()">Filter</button>
-            <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
+            <button class="btn dark submit-button filter" (click)="filterFunc()">Filter</button>
+            <button class="btn dark submit-button" (click)="initial()">Initial</button>
         </div>
     </form>
 
@@ -75,12 +77,11 @@
         <!-- Other table rows -->
         </tbody>
       </table>
-</div>
-<div class="col-md-12 card pagination">
-    <div class="card-body">
+      <div class="col-md-12 box-light">
         <div class="form-inline">
             <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
             <button class="btn left dark" [disabled]="page == maxPage" (click)="next()">next</button>
         </div>
-    </div>
+          
+</div>
 </div>

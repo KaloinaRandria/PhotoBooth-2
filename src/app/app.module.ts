@@ -90,6 +90,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {NgApexchartsModule} from "ng-apexcharts";
 import { StatServiceComponent } from './layout/home/services/stat-service/stat-service.component';
 import { EventComponent } from './layout/home/event/event.component';
+import { ActualThemeComponent } from './layout/content/actual-theme/actual-theme.component';
 
 
 @NgModule({
@@ -150,6 +151,7 @@ import { EventComponent } from './layout/home/event/event.component';
     ModiftThemeComponent,
     StatServiceComponent,
     EventComponent,
+    ActualThemeComponent,
   ],
     imports: [
         BrowserModule,

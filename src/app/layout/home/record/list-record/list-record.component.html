@@ -22,7 +22,7 @@
       </div>
 
       <div class="col-md-2 mb-2">
-        <button class="btn btn-light submit-button" type="submit" (click)="filterFunc()">Filter</button>
+        <button class="btn dark submit-button" type="submit" (click)="filterFunc()">Filter</button>
       </div>
     </div>
   </form>
@@ -62,12 +62,10 @@
     <!-- Other table rows -->
     </tbody>
   </table>
-</div>
-<div class="col-md-12 card pagination">
-    <div class="card-body">
-        <div class="form-inline">
-            <button class="btn btn-light" [disabled]="page == 1" (click)="previous()">previous</button>
-            <button class="btn btn-light left" [disabled]="page == maxPage" (click)="next()">next</button>
-        </div>
+  <div class="col-md-12 box-light">
+    <div class="form-inline">
+        <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
+        <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
     </div>
+  </div>
 </div>
