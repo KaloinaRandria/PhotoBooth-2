@@ -34,21 +34,21 @@
             </mat-form-field>
         </div>
     </div>
-  <div class="col-md-12 card footer">
+  <div class="col-md-12 box-dark footer">
     <div class="row" *ngIf="selectedClient">
-      <div class="col-md-2">
-        <i class="mdi mdi-face-profile icon-lg"></i>
+      <div class="col-md-2 text-center user">
+        <i class="mdi mdi-account-box"></i>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-10 box-light">
         <div class="row">
           <div class="col-md-6">
             <h2>{{ selectedClient.client.nom }} {{ selectedClient.client.prenom }}</h2>
-            <h6>{{ selectedClient.client.num_telephone }}</h6>
-            <h6>{{ selectedClient.client.email }}</h6>
+            <h4>{{ selectedClient.client.num_telephone }}</h4>
+            <h4>{{ selectedClient.client.email }}</h4>
           </div>
           <div class="col-md-6">
             <h3>number of visits</h3>
-            <h3 class="grey">{{ selectedClient.nb_reservation }}</h3>
+            <h1 class="grey">{{ selectedClient.nb_reservation }}</h1>
           </div>
         </div>
       </div>
