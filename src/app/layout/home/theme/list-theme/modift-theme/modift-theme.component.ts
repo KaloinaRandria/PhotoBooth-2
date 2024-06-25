@@ -22,6 +22,8 @@ export class ModiftThemeComponent {
     this.theme = data.theme;
     this.room = data.room;
     this.categorie = data.category;
+
+    console.log(this.theme);
     
   }
   onNoClick() {
