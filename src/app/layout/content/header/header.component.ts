@@ -98,4 +98,8 @@ export class HeaderComponent implements OnInit{
       }
     }, this.sloganDelay);
   }
+
+  notify() {
+    this.router.navigate(['/home/event']).then(r => true);
+  }
 }

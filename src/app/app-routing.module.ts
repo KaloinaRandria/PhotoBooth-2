@@ -31,6 +31,7 @@ import { ProfitRevenueComponent } from './layout/home/revenue/profit-revenue/pro
 import { StatisticsClientComponent } from './layout/home/client/statistics-client/statistics-client.component';
 import { StatisticsReservationComponent } from './layout/home/reservation/statistics-reservation/statistics-reservation.component';
 import {StatServiceComponent} from "./layout/home/services/stat-service/stat-service.component";
+import {EventComponent} from "./layout/home/event/event.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -42,6 +43,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'calendar', component: CalendrierComponent },
+      { path: 'event', component: EventComponent },
       { path: 'staff/insert', component: InsertStaffComponent },
       { path: 'staff/list', component: ListStaffComponent },
       { path: 'client/insert', component: InsertClientComponent },

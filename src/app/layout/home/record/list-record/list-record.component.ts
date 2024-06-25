@@ -62,7 +62,7 @@ export class ListRecordComponent implements OnInit {
   }
 
   delete(record: any) {
-    const url = '/materiel/delete/' + record.idDepense;
+    const url = '/depense/delete/' + record.idDepense;
     this.recordService.delete(url).subscribe(
       (response: any) => {
         if (response.success) {

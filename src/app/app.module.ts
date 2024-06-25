@@ -89,6 +89,7 @@ import { MatTableModule } from '@angular/material/table';
 import {MatPaginator} from "@angular/material/paginator";
 import {NgApexchartsModule} from "ng-apexcharts";
 import { StatServiceComponent } from './layout/home/services/stat-service/stat-service.component';
+import { EventComponent } from './layout/home/event/event.component';
 
 
 @NgModule({
@@ -148,6 +149,7 @@ import { StatServiceComponent } from './layout/home/services/stat-service/stat-s
     StatisticsReservationComponent,
     ModiftThemeComponent,
     StatServiceComponent,
+    EventComponent,
   ],
     imports: [
         BrowserModule,
