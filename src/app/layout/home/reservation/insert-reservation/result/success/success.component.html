@@ -6,7 +6,7 @@
             <i class="mdi mdi-star-outline ic"></i> {{data.theme.intitule}} ({{data.theme.categorie_theme.intitule}})
         </div>
         <div class="col-md-6 tb">
-            <i class="mdi mdi-cash-multiple ic"></i> {{data.prix / 2}} Ar (50%)
+            <i class="mdi mdi-cash-multiple ic"></i> {{data.prix / 2}} Ar (50%) <span *ngIf="data.bonus">-10%</span>
         </div>
         <div class="col-md-6 tb">
             <i class="mdi mdi-access-point ic"></i> Room {{data.theme.salle.numero}}

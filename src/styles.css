@@ -46,11 +46,31 @@ body {
   color: aliceblue !important;
 }
 
+.user{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 70px;
+  font-size: 220px;
+}
+
 .gradient{
-  background: linear-gradient(to right, #150901, #e7dab5) !important;
+  background: linear-gradient(to right, #261D15, #e7a046) !important;
   color: #e7dab5 !important;
 }
 
+.box-dark{
+  color: #e7dab5 !important;
+  border-radius: 5px;
+  background: #261D15 !important;
+  padding: 20px;
+}
+.box-light{
+  color: #261D15 !important;
+  border-radius: 5px;
+  background: #ede4c9 !important;
+  padding: 20px;
+}
 .modale{
   padding: 50px;
   background: #efe9d7;
