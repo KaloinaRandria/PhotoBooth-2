@@ -12,3 +12,5 @@ export class Constants {
   static readonly FORMULAIRE_API: string = "/user/formulaire";
   static readonly itemPerPage: number = 5;
 }
+
+
