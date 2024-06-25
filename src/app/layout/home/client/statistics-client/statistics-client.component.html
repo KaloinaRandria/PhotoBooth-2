@@ -1,7 +1,7 @@
 <div class="row">
     <div class="row">
       <h3>the best client</h3>
-      <div class="col-md-4 grid-margin" *ngFor="let item of topClient; let i = index">
+      <div class="col-md-4 grid-margin " *ngFor="let item of topClient; let i = index">
         <div class="card">
           <div class="card-body">
             <div class="row">
@@ -13,7 +13,7 @@
               </div>
               <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
                   <h4 class="text-muted font-weight-normal">{{item.nb_reservations}} / {{item.total_prix}}</h4>
-                  <p class="grey">visit / vola</p>
+                  <p class="grey">visit / money</p>
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@
             <h6>{{ selectedClient.client.email }}</h6>
           </div>
           <div class="col-md-6">
-            <h3>Nombre natongavany</h3>
+            <h3>number of visits</h3>
             <h3 class="grey">{{ selectedClient.nb_reservation }}</h3>
           </div>
         </div>
