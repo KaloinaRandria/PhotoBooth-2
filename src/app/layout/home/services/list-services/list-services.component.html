@@ -1,15 +1,15 @@
 <div class="row">
     <form>
-        <div class="form-row">
+        <div class="row g-1">
             <!-- Filter Section -->
-            <div class="col-md-3 mb-3">
+            <div class="col-auto mb-3">
                 <input type="text" [(ngModel)]="filter.label" name="label" class="form-control" placeholder="Search Label" required>
             </div>
-            <div class="col-md-3 mb-3">
-                <button class="btn btn-light submit-button" type="submit" (click)="filterFunc()">Filter</button>
+            <div class="col-auto mb-3">
+                <button class="btn submit-button dark" type="submit" (click)="filterFunc()">Filter</button>
             </div>
-          <div class="col-md-3 mb-3">
-            <button class="btn btn-light submit-button" type="submit" (click)="initial()">Initial</button>
+          <div class="col-auto mb-3">
+            <button class="btn submit-button dark" type="submit" (click)="initial()">Initial</button>
           </div>
         </div>
     </form>
@@ -25,8 +25,10 @@
             <div class="row">
               <div class="col-8 col-sm-12 col-xl-8 my-auto">
                 <div class="d-flex d-sm-block d-md-flex align-items-center">
-                </div>
-                <h6 class="text-muted font-weight-normal"></h6>
+                </div><br>
+                <h5 class="text-muted font-weight-normal">less than 3 : $4255555</h5>
+                <h5 class="text-muted font-weight-normal">between 3 and 10 : $336678</h5>
+                <h5 class="text-muted font-weight-normal">more than 10 : $65734</h5>
               </div>
               <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
                   <i class="icon-lg tarif {{ svc.icon }} text-primary ml-auto" [style.color]="svc.color + ' !important'"></i>
@@ -36,4 +38,7 @@
         </div>
       </div>
     </div>
+</div>
+<div class="col-md-12 card footer">
+  photoBooth
 </div>

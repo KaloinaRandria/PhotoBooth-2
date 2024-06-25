@@ -33,11 +33,22 @@
                 </div>
 
                 <div class="period-selector">
-                    <button mat-button (click)="changePeriod('today')">ToDay</button>
-                    <button mat-button (click)="changePeriod('last30days')">Last 30 days</button>
-                    <button mat-button (click)="changePeriod('thisyear')">this Year</button>
+                    <div class="form-inline g-1">
+                        <div class="col-auto">
+                            <button class="btn dark" mat-button (click)="changePeriod('today')">ToDay</button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn dark" mat-button (click)="changePeriod('last30days')">Last 30 days</button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn dark" mat-button (click)="changePeriod('thisyear')">this Year</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="col-md-12 card footer">
+    photoBooth
+  </div>

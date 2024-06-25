@@ -19,10 +19,15 @@
 
       </div>
       <div class="col-auto">
-        <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
-      </div>
-      <div class="col-auto">
-        <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
+        <label for="">action</label>
+        <div class="row g-1">
+          <div class="col-auto">
+            <button class="btn dark submit-button" (click)="initial()">Initial</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn dark submit-button" (click)="filterFunc()">Filter</button>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -66,12 +71,10 @@
     </tr>
     </tbody>
   </table>
-</div>
-<div class="col-md-12 card pagination">
-    <div class="card-body">
-        <div class="form-inline">
-            <button class="btn btn-light" [disabled]="page == 1" (click)="previous()">previous</button>
-            <button class="btn btn-light left" [disabled]="page == maxPage" (click)="next()">next</button>
-        </div>
+  <div class="col-md-12 box-light">
+    <div class="form-inline">
+        <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
+        <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
     </div>
+  </div>
 </div>

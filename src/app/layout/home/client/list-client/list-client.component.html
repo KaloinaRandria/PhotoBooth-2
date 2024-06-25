@@ -23,9 +23,18 @@
             <label for="">Maximum age </label>
             <input name="age_max" type="number" [(ngModel)]="filter.ageMax" class="form-control"  placeholder="" required>
           </div>
+          <div class="col-auto">
+            <label for="">Action</label>
+            <div class="row g-1">
+              <div class="col-auto">
+                <button class="btn dark submit-button" (click)="initial()">Initial</button>
+              </div>
+              <div class="col-auto">
+                <button class="btn dark submit-button" (click)="filterFunc()">Filter</button>
+              </div>
+            </div>
+          </div>
         </div>
-            <button class="btn btn-light submit-button" (click)="filterFunc()">Filter</button>
-            <button class="btn btn-light submit-button" (click)="initial()">Initial</button>
       </form>
 </div><br>
 <div class="row info table-responsive nicescroll">
@@ -63,12 +72,10 @@
     </tr>
     </tbody>
   </table>
-</div>
-<div class="col-md-12 card pagination">
-    <div class="card-body">
-        <div class="form-inline">
-            <button class="btn btn-light" [disabled]="page == 1" (click)="previous()">previous</button>
-            <button class="btn btn-light left" [disabled]="page == maxPage" (click)="next()">next</button>
-        </div>
+  <div class="col-md-12 box-light">
+    <div class="form-inline">
+        <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
+        <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
     </div>
+  </div>
 </div>
