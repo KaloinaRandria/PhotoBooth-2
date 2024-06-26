@@ -4,3 +4,13 @@
 .right{
   margin-right: auto;
 }
+
+.large {
+  font-size: large;
+}
+
+.theme_title {
+  text-transform: uppercase;
+  color: #2d2c2c;
+  font-weight: bold;
+}

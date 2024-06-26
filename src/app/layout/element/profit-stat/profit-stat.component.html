@@ -1,0 +1,42 @@
+<button
+        [class.active]="activeOptionButton=='Custom'"
+>
+    Custom
+</button>
+<button
+        (click)="updateOptions( 'LY' )"
+        [class.active]="activeOptionButton=='LY'"
+>
+    LY
+</button>
+<button
+        (click)="updateOptions( 'CY' )"
+        [class.active]="activeOptionButton=='CY'"
+>
+    CY
+</button>
+<button
+        (click)="updateOptions( 'LM' )"
+        [class.active]="activeOptionButton=='LM'"
+>
+    LM
+</button>
+<button
+        (click)="updateOptions( 'all' )"
+        [class.active]="activeOptionButton=='all'"
+>
+    All
+</button>
+<apx-chart
+    #chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [colors]="chartOptions.colors"
+    [yaxis]="chartOptions.yaxis"
+    [dataLabels]="chartOptions.dataLabels"
+    [markers]="chartOptions.markers"
+    [stroke]="chartOptions.stroke"
+    [xaxis]="chartOptions.xaxis"
+    [tooltip]="chartOptions.tooltip"
+    [annotations]="chartOptions.annotations"
+></apx-chart>

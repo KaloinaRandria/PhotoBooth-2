@@ -11,7 +11,7 @@
     <div class="col-lg-4">
       <div class="card">
         <div class="card-body">
-          <h2 class="mb-0" >{{activeTheme.intitule}}</h2>
+          <h2 class="mb-0 theme_title" >{{activeTheme.intitule}}</h2>
           <div class="row">
             <div class="col-8 col-sm-12 col-xl-8 my-auto">
               <h6 class="text-muted font-weight-normal">{{activeTheme.categorie_theme.intitule}}</h6>
@@ -28,32 +28,47 @@
           <div class="row">
             <div class="col-9">
               <div class="d-flex align-items-center align-self-start">
-                <h3 class="mb-0">${{activeTheme.gain}}</h3>
-                <p class="text-success ml-2 mb-0 font-weight-medium">+11%</p>
+                <h3 class="mb-0 large">{{getGain(activeTheme.gain)}}</h3>
+                <p class="text-secondary ml-2 mb-0 font-weight-medium">AR</p>
               </div>
             </div>
             <div class="col-3">
               <div class="icon icon-box-success">
-                <span class="mdi mdi-arrow-top-right icon-item"></span>
+                <span class="mdi mdi-currency-gbp icon-item"></span>
               </div>
             </div>
           </div>
-          <h6 class="text-muted font-weight-normal">Revenue current</h6>
+          <h6 class="text-muted font-weight-normal">Revenue</h6>
           <br>
           <div class="row">
             <div class="col-9">
               <div class="d-flex align-items-center align-self-start">
-                <h3 class="mb-0">{{ activeTheme.usedCount }} times Used</h3>
+                <h3 class="mb-0 large">{{ activeTheme.nbVisit }} Reservation with</h3>
                 <p class="text-success ml-2 mb-0 font-weight-medium"></p>
               </div>
             </div>
             <div class="col-3">
-              <div class="icon icon-box-success">
-                <span class="mdi mdi-arrow-top-right icon-item"></span>
+              <div class="icon icon-box-dark">
+                <span class="mdi mdi-arrow-right icon-item"></span>
               </div>
             </div>
           </div>
-          <h6 class="text-muted font-weight-normal">number clients</h6>
+          <h6 class="text-muted font-weight-normal">used count</h6>
+            <br>
+            <div class="row">
+                <div class="col-9">
+                    <div class="d-flex align-items-center align-self-start">
+                        <h3 class="mb-0 large">{{ activeTheme.nbPersonne }} Visit</h3>
+                        <p class="text-success ml-2 mb-0 font-weight-medium"></p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div  class="icon icon-box-{{activeTheme.type}}">
+                        <span class="mdi mdi-arrow-{{activeTheme.arrow}} icon-item"></span>
+                    </div>
+                </div>
+            </div>
+            <h6 class="text-muted font-weight-normal">total visit</h6>
         </div>
       </div>
     </div>

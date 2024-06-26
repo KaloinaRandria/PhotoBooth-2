@@ -59,11 +59,20 @@ export class StatisticComponent implements OnInit {
   });
   }
 
+  getGain(nb: any) {
+    if(!nb) {
+      return 0;
+    }
+    return nb;
+  }
+
   loadthemes() {
     this.http.get(Constants.BACK_URL + '/theme/all').subscribe({
       next:(valiny: any)=> {
         this.themes = valiny.data;
         this.initialThemes = valiny.data;
+        console.log("initial");
+        console.log(this.initialThemes[0]);
         this.activeTheme = this.initialThemes[0];
         this.taille = this.initialThemes.length;
         console.log(this.activeTheme);
@@ -74,6 +83,14 @@ export class StatisticComponent implements OnInit {
         Display.alert(this.snackbar,err.error.message,"close",6000);
       }
     });
+  }
+
+  getPersBg(count: any) {
+    console.log(count);
+    if (count < 30) {
+      return "danger";
+    }
+    return "success"
   }
 
   next() {

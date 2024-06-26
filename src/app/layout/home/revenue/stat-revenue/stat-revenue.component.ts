@@ -85,7 +85,7 @@ export class StatRevenueComponent implements OnInit {
         text: 'Financial Statistics',
         align: 'left'
       },
-      colors: ['#008FFB', '#FF4560', '#00E396']
+      colors: ['#00E396', '#FF4560', '#008FFB']
     };
   }
 
