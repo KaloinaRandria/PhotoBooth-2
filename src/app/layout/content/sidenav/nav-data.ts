@@ -63,8 +63,8 @@ export const navData: INavbardata[] = [
     expanded: false,
     items: [
       {
-        routeLink: 'revenue/profit',
-        label: 'Profit',
+        routeLink: 'predict',
+        label: 'NEXT',
         access: role
       },
       {

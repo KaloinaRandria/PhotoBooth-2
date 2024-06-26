@@ -43,6 +43,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'calendar', component: CalendrierComponent },
+      { path: 'predict', component: ProfitRevenueComponent },
       { path: 'event', component: EventComponent },
       { path: 'staff/insert', component: InsertStaffComponent },
       { path: 'staff/list', component: ListStaffComponent },
