@@ -1,0 +1,9 @@
+.confirmed {
+    background-color: #88ea4a;
+    color: white/* Change la couleur de l'icône à verte lorsque confirmé */
+}
+
+.canceled {
+    background-color: #c5162b;
+    color: white/* Change la couleur de l'icône à verte lorsque confirmé */
+}

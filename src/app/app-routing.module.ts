@@ -32,6 +32,7 @@ import { StatisticsClientComponent } from './layout/home/client/statistics-clien
 import { StatisticsReservationComponent } from './layout/home/reservation/statistics-reservation/statistics-reservation.component';
 import {StatServiceComponent} from "./layout/home/services/stat-service/stat-service.component";
 import {EventComponent} from "./layout/home/event/event.component";
+import {ReservationDoneComponent} from "./layout/home/reservation/reservation-done/reservation-done.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -58,6 +59,7 @@ const routes: Routes = [
       { path: 'theme/statistics', component: StatisticComponent },
       { path: 'reservation/insert', component: InsertReservationComponent },
       { path: 'reservation/list', component: ListReservationComponent },
+      { path: 'reservation/listdone', component: ReservationDoneComponent },
       { path: 'room/list', component: ListRoomComponent },
       { path: 'room/insert', component: InsertRoomComponent },
       { path: 'category/insert', component: InsertCategoryComponent },

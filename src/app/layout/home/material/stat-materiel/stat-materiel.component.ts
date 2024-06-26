@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Chart, registerables} from "chart.js";
 import { Constants } from '../../../../class/util/constants';
 Chart.register(...registerables);
@@ -9,7 +9,7 @@ Chart.register(...registerables);
   templateUrl: './stat-materiel.component.html',
   styleUrl: './stat-materiel.component.css'
 })
-export class StatMaterielComponent {
+export class StatMaterielComponent implements OnInit{
   baseChart: any = {
     data: [],
     labels: []
@@ -19,6 +19,7 @@ export class StatMaterielComponent {
 
   ngOnInit(): void {
     this.getChartData();
+    this.getMatStat();
   }
 
   getChartData() {
@@ -35,7 +36,19 @@ export class StatMaterielComponent {
     });
   }
 
-renderChart(chartData: any) {
+  chiffre: number = 0;
+  getMatStat() {
+    this.http.get(Constants.BACK_URL + '/stat/mat').subscribe({
+      next:(valiny: any)=> {
+        this.chiffre = valiny.data.total;
+      },
+      error:(err) => {
+        console.error(err);
+      }
+    });
+  }
+
+  renderChart(chartData: any) {
   new Chart("piechart", {
     type: 'bar',
     data: {

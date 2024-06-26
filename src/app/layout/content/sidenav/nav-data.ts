@@ -170,6 +170,11 @@ export const navData: INavbardata[] = [
         access: role
       },
       {
+        routeLink: 'reservation/listdone',
+        label: 'Archive',
+        access: role
+      },
+      {
         routeLink: 'reservation/statistics',
         label: 'Statistics',
         access: role

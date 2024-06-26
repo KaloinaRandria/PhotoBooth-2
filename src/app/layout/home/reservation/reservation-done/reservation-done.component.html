@@ -1,0 +1,96 @@
+<div class="row">
+    <form action="" method="">
+        <div class="row g-1">
+            <!-- Première ligne: Prénom du client et Service -->
+            <div class="col mb-1">
+                <input name="client" [(ngModel)]="filter.clientS" type="text" class="form-control" id="searchFirstName" placeholder="Client Name" required>
+            </div>
+            <div class="col mb-1">
+                <select name="service" [(ngModel)]="filter.service" class="form-control" id="selectService" required>
+                    <option value="" disabled selected>Service</option>
+                    <option *ngFor="let serv of services" [value]="serv.id_comp_service">{{ serv.intitule }}</option>
+                </select>
+            </div>
+            <div class="col mb-1">
+                <input name="date_reservation_min" [(ngModel)]="filter.reservationDateMin" type="date" class="form-control" placeholder="Reservation Date Min" required>
+            </div>
+            <div class="col mb-1">
+                <input name="date_reservation_max" [(ngModel)]="filter.reservationDateMax" type="date" class="form-control" placeholder="Reservation Date Max" required>
+            </div>
+
+            <!-- Deuxième ligne: Date réservée min et max et heures de début et de fin -->
+            <div class="col mb-1">
+                <input name="date_reservee_min" [(ngModel)]="filter.reservedDateMin" type="date" class="form-control" placeholder="Reserved Date Min" required>
+            </div>
+            <div class="col mb-1">
+                <input name="date_reservee_max" [(ngModel)]="filter.reservedDateMax" type="date" class="form-control" placeholder="Reserved Date Max" required>
+            </div>
+            <div class="col mb-1">
+                <input name="heure_debut" [(ngModel)]="filter.start" type="time" class="form-control" id="startHour" placeholder="Start Hour" required>
+            </div>
+            <div class="col mb-1">
+                <input name="heure_fin" [(ngModel)]="filter.end" type="time" class="form-control" id="endHour" placeholder="End Hour" required>
+            </div>
+
+            <!-- Troisième ligne: Prix min et max -->
+            <div class="col-md-6 mb-1">
+                <input name="prix_min" [(ngModel)]="filter.minPrice" type="number" class="form-control" placeholder="Minimum Price" required>
+            </div>
+            <div class="col-md-6 mb-1">
+                <input name="prix_max" [(ngModel)]="filter.maxPrice" type="number" class="form-control" placeholder="Maximum Price" required>
+            </div>
+
+            <div class="col-md-12 mb-1">
+
+                <button class="btn dark submit-button filter " (click)="filterFunc()">Filter</button>
+                <button class="btn dark submit-button initial" (click)="initial()">Initial</button>
+            </div>
+        </div>
+    </form>
+
+
+
+</div><br>
+
+<div class="row info table-responsive nicescroll">
+    <h1 class="titre">HOSTORIQUE DE RESERVATION</h1>
+    <table class="table">
+        <thead class="header">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Client Name</th>
+            <th scope="col">Reservation Date</th>
+            <th scope="col">Reserved Date</th>
+            <th scope="col">Start</th>
+            <th scope="col">End</th>
+            <th scope="col">Service</th>
+            <th scope="col">Price</th>
+            <th scope="col">Check</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let resa of reservations">
+            <td scope="row">{{ resa.id_reservation}}</td>
+            <td>{{ resa.client.nom }}</td>
+            <td>{{ extractDate(resa.date_reservation) }}</td>
+            <td>{{ resa.date_reservee }}</td>
+            <td>{{ extractTime(resa.heure_debut) }}</td>
+            <td>{{ extractTime(resa.heure_fin) }}</td>
+            <td>{{ resa.service.intitule }}</td>
+            <td>{{ resa.prix }}</td>
+            <td>
+                <button class="icon-btn ripple" [ngClass]="{'confirmed': resa.confirmed ,'canceled': !resa.valid}">
+                    <i class="mdi mdi-bookmark-check icon-check" ></i>
+                </button>
+            </td>
+        </tr>
+        <!-- Other table rows -->
+        </tbody>
+    </table>
+    <div class="col-md-12 box-light">
+        <div class="form-inline">
+            <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
+            <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
+        </div>
+    </div>
+</div>

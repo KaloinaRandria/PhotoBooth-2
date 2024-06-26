@@ -215,8 +215,6 @@ export class InsertReservationComponent implements OnInit {
             message: message
           };
         }
-
-        this.scrollToBottom();
       },
       error: (err) => {
         Display.alert(this.snackBar , 'Internal Error, See log',"close",5000);
@@ -273,27 +271,6 @@ export class InsertReservationComponent implements OnInit {
         Display.alert(this.snackBar , 'Internal Error, See log',"close",5000);
         console.error(err);
       }
-    });
-  }
-
-  scrollToElement(elementId: string): void {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }
-  }
-
-  scrollDown(): void {
-    window.scrollBy({
-      top: 500,
-      behavior: 'smooth'
-    });
-  }
-
-  scrollToBottom(): void {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth'
     });
   }
 

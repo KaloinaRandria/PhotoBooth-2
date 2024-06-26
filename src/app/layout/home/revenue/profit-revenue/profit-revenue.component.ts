@@ -3,11 +3,22 @@ import {Constants} from "../../../../class/util/constants";
 import {Display} from "../../../../class/util/display";
 import {HttpClient} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-profit-revenue',
   templateUrl: './profit-revenue.component.html',
-  styleUrl: './profit-revenue.component.css'
+  styleUrl: './profit-revenue.component.css',
+  animations: [
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void <=> *', [
+        animate(300)
+      ]),
+    ])
+  ]
 })
 export class ProfitRevenueComponent implements OnInit {
   showEstimation = false;

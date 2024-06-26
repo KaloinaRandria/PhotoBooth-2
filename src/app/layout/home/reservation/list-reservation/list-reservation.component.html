@@ -99,4 +99,11 @@
         <!-- Other table rows -->
         </tbody>
       </table>
+    <div class="col-md-12 box-light">
+        <div class="form-inline">
+            <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
+            <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
+        </div>
+    </div>
 </div>
+

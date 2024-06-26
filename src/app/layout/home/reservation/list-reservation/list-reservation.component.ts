@@ -5,7 +5,8 @@ import { PopUpConfirmationComponent } from './pop-up-confirmation/pop-up-confirm
 import {Constants} from "../../../../class/util/constants";
 import {Display} from "../../../../class/util/display";
 import {HttpClient} from "@angular/common/http";
-import {MatSnackBar} from "@angular/material/snack-bar"; // Importez le plugin dayGrid
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Navigation} from "../../../../class/util/navigation"; // Importez le plugin dayGrid
 
 
 @Component({
@@ -50,6 +51,19 @@ export class ListReservationComponent implements OnInit{
     });
   }
 
+  page: number = 1;
+  maxPage: number = 1;
+
+  next() {
+    this.page = this.page + 1;
+    this.reservations = Navigation.paginate(this.initialReservations, this.page);
+  }
+
+  previous() {
+    this.page = this.page - 1;
+    this.reservations = Navigation.paginate(this.initialReservations, this.page);
+  }
+
   confirmResa(resa: any) {
     this.http.put(Constants.BACK_URL + '/resa/confirm/' + resa.id_reservation, null).subscribe({
       next: (valiny: any) => {
@@ -66,8 +80,9 @@ export class ListReservationComponent implements OnInit{
   getAllReservation() {
     this.http.get(Constants.BACK_URL + '/resa/all').subscribe({
       next: (valiny: any) => {
-        this.reservations = valiny.data;
         this.initialReservations = valiny.data;
+        this.reservations = Navigation.paginate(this.initialReservations, this.page);
+        this.maxPage = Navigation.maxPage(this.initialReservations);
       },
       error: (err) => {
         console.error(err);

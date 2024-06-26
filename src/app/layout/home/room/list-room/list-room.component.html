@@ -1,47 +1,39 @@
 <div class="row">
-  <form action="" method="" class="row g-1">
-    <div class="col-1">
-        <input name="numero" [(ngModel)]="filter.room" type="number" class="form-control" placeholder="Room number">
-    </div>
-    <div class="col-auto">
-      <button class="btn dark submit-button" (click)="filterFunc()" type="submit">Filter</button>
-    </div>
-    <div class="col-auto">
-      <button class="btn dark submit-button" (click)="initial()" type="submit">Initial</button>
-    </div>
-  </form>
+    <form action="" method="" class="row g-1">
+        <div class="col-1">
+            <input name="numero" [(ngModel)]="filter.room" type="number" class="form-control" placeholder="Room number">
+        </div>
+        <div class="col-auto">
+            <button class="btn dark submit-button" (click)="filterFunc()" type="submit">Filter</button>
+        </div>
+        <div class="col-auto">
+            <button class="btn dark submit-button" (click)="initial()" type="submit">Initial</button>
+        </div>
+    </form>
 </div><br>
 
-<div class="row info ">
-      <h1 class="titre">ROOM LIST</h1>
-
-      <table class="table">
-        <thead class="header">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Room number</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let room of rooms">
-          <td>{{room.id_salle}}</td>
-          <td>{{room.numero}}</td>
-          <td>
-            <button class="icon-btn ripple"  (click)="popUp(room)">
-              <i class="mdi mdi-table-edit icon-edit"></i>
-            </button>
-          </td>
-          <td>
-            <button class="icon-btn ripple" (click)="delete(room)">
-              <i class="mdi mdi-delete icon-delete"></i>
-            </button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+<div class="container">
+    <div class="row info">
+        <h1 class="titre text-center">ROOM LIST</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let room of rooms">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title" style="color: #261d15 !important;">Room #{{ room.numero }}</h2>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary fill" (click)="popUp(room)">
+                                <i class="mdi mdi-table-edit icon-edit " style="left: 2px"></i>
+                            </button>
+                            <button class="btn btn-danger no-fill" (click)="delete(room)">
+                                <i class="mdi mdi-delete icon-delete" style="left: 2px"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="col-md-12 card footer">
-  photoBooth
+<div class="col-md-12 card footer mt-4 text-center footer" >
+    photoBooth
 </div>

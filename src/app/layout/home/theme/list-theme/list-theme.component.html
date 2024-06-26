@@ -1,101 +1,81 @@
 <div class="row">
-  <h1 class="titre">FILTER</h1>
+    <h1 class="titre">FILTER</h1>
 
-  <form>
-    <div class="row g-1">
-      <div class="col mb-1">
-        <label for="labelSearch">Intitule</label>
-        <input name="intitule" type="search" [(ngModel)]="filter.intitule" class="form-control" id="labelSearch" placeholder="Intitule" value="">
-      </div>
-      <div class="col mb-1">
-        <label for="category">Category</label>
-        <select name="categorie" [(ngModel)]="filter.categorie" class="form-control" id="category">
-          <option *ngFor="let item of categories" [value]="item.id_categorie_theme">{{ item.intitule }}</option>
-        </select>
-      </div>
-      <div class="col mb-1">
-        <label for="room">Room</label>
-        <select name="salle" [(ngModel)]="filter.room" class="form-control" id="room">
-          <option *ngFor="let item of rooms" [value]="item.id_salle">{{ item.numero }}</option>
-        </select>
-      </div>
-      <div class="col mb-1">
-        <label for="startDate">Start date</label>
-        <input name="debut" type="date" [(ngModel)]="filter.startDate" class="form-control" id="startDate" placeholder="Start date" >
-      </div>
-      <div class="col mb-1">
-        <label for="endDate">End date</label>
-        <input name="fin" type="date" [(ngModel)]="filter.endDate" class="form-control" id="endDate" placeholder="End date">
-      </div>
-
-      <div class="col mb-1">
-        <label >Minimum worth</label>
-        <input name="valeur_min" [(ngModel)]="filter.minWorth" type="number" class="form-control"  placeholder="Worth" value="">
-      </div>
-      <div class="col mb-1">
-        <label >Maximum worth</label>
-        <input name="valeur_max" type="number" [(ngModel)]="filter.maxWorth" class="form-control"  placeholder="Worth" value="">
-      </div>
-      <div class="col-auto ">
-        <label >action</label>
+    <form>
         <div class="row g-1">
-          <div class="col-auto">
-            <button class="btn dark submit-button" (click)="filterFunc()">Filter</button>
-          </div>
-          <div class="col-auto">
-            <button class="btn dark submit-button" (click)="initial()">Initial</button>
-          </div>
+            <div class="col mb-1">
+                <label for="labelSearch">Intitule</label>
+                <input name="intitule" type="search" [(ngModel)]="filter.intitule" class="form-control" id="labelSearch" placeholder="Intitule" value="">
+            </div>
+            <div class="col mb-1">
+                <label for="category">Category</label>
+                <select name="categorie" [(ngModel)]="filter.categorie" class="form-control" id="category">
+                    <option *ngFor="let item of categories" [value]="item.id_categorie_theme">{{ item.intitule }}</option>
+                </select>
+            </div>
+            <div class="col mb-1">
+                <label for="room">Room</label>
+                <select name="salle" [(ngModel)]="filter.room" class="form-control" id="room">
+                    <option *ngFor="let item of rooms" [value]="item.id_salle">{{ item.numero }}</option>
+                </select>
+            </div>
+            <div class="col mb-1">
+                <label for="startDate">Start date</label>
+                <input name="debut" type="date" [(ngModel)]="filter.startDate" class="form-control" id="startDate" placeholder="Start date" >
+            </div>
+            <div class="col mb-1">
+                <label for="endDate">End date</label>
+                <input name="fin" type="date" [(ngModel)]="filter.endDate" class="form-control" id="endDate" placeholder="End date">
+            </div>
+            <div class="col mb-1">
+                <label >Minimum worth</label>
+                <input name="valeur_min" [(ngModel)]="filter.minWorth" type="number" class="form-control"  placeholder="Worth" value="">
+            </div>
+            <div class="col mb-1">
+                <label >Maximum worth</label>
+                <input name="valeur_max" type="number" [(ngModel)]="filter.maxWorth" class="form-control"  placeholder="Worth" value="">
+            </div>
+            <div class="col-auto ">
+                <label >action</label>
+                <div class="row g-1">
+                    <div class="col-auto">
+                        <button class="btn dark submit-button" (click)="filterFunc()">Filter</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn dark submit-button" (click)="initial()">Initial</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-    </div>
-  </form>
+    </form>
 </div><br>
 
-<div class="row info table-responsive nicescroll">
-      <h1 class="titre">THEME LIST</h1>
+<div class="row info">
+    <h1 class="titre">THEME LIST</h1>
 
-      <table class="table">
-        <thead class="header">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Intitule</th>
-          <th scope="col">Category</th>
-          <th scope="col">Room</th>
-          <th scope="col">Start Date</th>
-          <th scope="col">End Date</th>
-          <th scope="col">Worth (Ar) </th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let item of themeList">
-          <td>{{ item.id_theme }}</td>
-          <td>{{ item.intitule }}</td>
-          <td>{{ item.categorie_theme.intitule }}</td>
-          <td>{{ item.salle.numero }}</td>
-          <td>{{ item.date_debut }}</td>
-          <td>{{ item.date_fin }}</td>
-          <td>{{ item.worth }}</td>
-          <td>
-            <button class="icon-btn ripple" >
-              <i class="mdi mdi-table-edit icon-edit"  (click)="popUp(item)"></i>
-            </button>
-          </td>
-          <td>
-            <button class="icon-btn ripple" >
-              <i class="mdi mdi-delete icon-delete"></i>
-            </button>
-          </td>
-        </tr>
-        <!-- Other table rows -->
-        </tbody>
-      </table>
-<div class="col-md-12 box-light">
-  <div class="form-inline">
-      <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
-      <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
-  </div>
+    <div class="card-columns">
+        <div class="card sary" *ngFor="let item of themeList">
+            <img class="card-img-top" src="{{getSource(item)}}" alt="Theme Image">
+            <div class="card-body">
+                <h2 class="card-title" style="color: #261d15 !important;">{{ item.intitule }}</h2>
+                <p class="card-text">
+                    <strong>Category:</strong> {{ item.categorie_theme.intitule }}<br>
+                    <strong>Room:</strong> {{ item.salle.numero }}<br>
+                    <strong>Start Date:</strong> {{ item.date_debut }}<br>
+                    <strong>End Date:</strong> {{ item.date_fin }}<br>
+                    <strong>Worth:</strong> {{ item.worth }}
+                </p>
+                <button class="btn btn-primary fill" (click)="popUp(item)">
+                    <i class="mdi mdi-table-edit icon-edit " style="left: 4px; top: 4px"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="col-md-12 box-light">
+    <div class="form-inline">
+        <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
+        <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
+    </div>
 </div>

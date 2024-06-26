@@ -50,6 +50,10 @@ export class ListThemeComponent implements OnInit {
     this.loadCategories();
   }
 
+  getSource(item: any) {
+    return Constants.BACK_URL + item.imageThemes[0].image_url;
+  }
+
   ngOnInit(): void {}
 
   getAllTheme() {
