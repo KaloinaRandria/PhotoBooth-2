@@ -197,4 +197,52 @@ table tr th td{
 }
 
 
+.pinterest-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  width: calc(33.333% - 10px);
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.nm {
+  color: #261d15;
+  font-weight: 600;
+  font-style: revert;
+  letter-spacing: 2px
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.icon-btn .mdi {
+  font-size: 20px;
+}
+
+
+
 

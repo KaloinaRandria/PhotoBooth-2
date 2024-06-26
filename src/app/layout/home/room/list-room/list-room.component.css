@@ -147,3 +147,31 @@ table tr th td{
   background-color: #261d15;
   color: white;
 }
+
+.fill {
+  background-color: #261d15 !important;
+  color: #fffcee !important;
+  transition: all .2s ease-in-out !important;
+  border-color: azure;
+}
+
+.fill:hover {
+  background-color: #fffcee !important;
+  color: #261d15 !important;
+  border-color: #261d15;
+}
+
+.no-fill {
+  background-color: #fffcee !important;
+  color: #261d15 !important;
+  transition: all .2s ease-in-out !important;
+  border-color: azure;
+}
+
+.no-fill:hover {
+  background-color: #261d15 !important;
+  color: #fffcee !important;
+  border-color: #fffcee;
+}
+
+

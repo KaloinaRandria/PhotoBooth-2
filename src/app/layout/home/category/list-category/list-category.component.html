@@ -1,52 +1,43 @@
 <script src="../../reservation/insert-reservation/insert-reservation.component.ts"></script>
 <div class="row">
-  <form action="" method="" class="row g-1">
-    <div class="col-1">
-        <input name="intitule" [(ngModel)]="filter.intitule" type="text" class="form-control" placeholder="label">
-    </div>
-    <div class="col-auto">
-      <button class="btn dark submit-button" (click)="filterFunc()" type="submit">Filter</button>
-    </div>
-    <div class="col-auto">
-      <button class="btn dark submit-button" (click)="initial()" type="submit">Initial</button>
-    </div>
-  </form>
+    <form action="" method="" class="row g-1">
+        <div class="col-1">
+            <input name="intitule" [(ngModel)]="filter.intitule" type="text" class="form-control" placeholder="label">
+        </div>
+        <div class="col-auto">
+            <button class="btn dark submit-button" (click)="filterFunc()" type="submit">Filter</button>
+        </div>
+        <div class="col-auto">
+            <button class="btn dark submit-button" (click)="initial()" type="submit">Initial</button>
+        </div>
+    </form>
 </div><br>
 
-<div class="row info table-responsive nicescroll">
-  <h1 class="titre">THEME CATEGORY LIST</h1>
-
-  <table class="table table">
-    <thead class="header">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Intitule</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let categorie of categories">
-      <td>{{categorie.id_categorie_theme}}</td>
-      <td>{{categorie.intitule}}</td>
-      <td>
-        <button class="icon-btn ripple" (click)="popUp(categorie)">
-          <i class="mdi mdi-table-edit icon-edit"></i>
-        </button>
-      </td>
-      <td>
-        <button class="icon-btn ripple" (click)="delete(categorie)">
-          <i class="mdi mdi-delete icon-delete"></i>
-        </button>
-      </td>
-    </tr>
-    <!-- Other table rows -->
-    </tbody>
-  </table>
-  <div class="col-md-12 box-light">
-    <div class="form-inline">
-        <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
-        <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
+<div class="container">
+    <div class="row info">
+        <h1 class="titre text-center">THEME CATEGORY LIST</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let categorie of categories">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title" style="color: #261d15 !important;">{{ categorie.intitule }}</h2>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary fill" (click)="popUp(categorie)">
+                                <i class="mdi mdi-table-edit icon-edit " style="left: 2px"></i>
+                            </button>
+                            <button class="btn btn-danger no-fill" (click)="delete(categorie)">
+                                <i class="mdi mdi-delete icon-delete" style="left: 2px"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="col-md-12 box-light mt-4 text-center">
+        <div class="form-inline">
+            <button class="btn dark" [disabled]="page == 1" (click)="previous()">Previous</button>
+            <button class="btn dark" [disabled]="page == maxPage" (click)="next()">Next</button>
+        </div>
+    </div>
 </div>

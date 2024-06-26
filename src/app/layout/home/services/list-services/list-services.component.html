@@ -19,16 +19,14 @@
     <h3 class="titre">SERVICE LIST</h3>
     <div class="row">
       <div *ngFor="let svc of services" class="col-md-4 grid-margin">
-        <div class="card" [style.background]="applyOpacity(svc.color) + ' !important'">
+        <div class="card pd" [style.background]="applyOpacity(svc.color) + ' !important'">
           <div class="card-body">
-            <h2 class="mb-0">{{ svc.intitule }}</h2>
+            <h2 class="mb-0 serv">{{ svc.intitule }}</h2>
             <div class="row">
               <div class="col-8 col-sm-12 col-xl-8 my-auto">
                 <div class="d-flex d-sm-block d-md-flex align-items-center">
                 </div><br>
-                <h5 class="text-muted font-weight-normal">less than 3 : $4255555</h5>
-                <h5 class="text-muted font-weight-normal">between 3 and 10 : $336678</h5>
-                <h5 class="text-muted font-weight-normal">more than 10 : $65734</h5>
+                <h5 *ngFor="let tarif of svc.tarif" class="text-muted font-weight-normal">{{tarif.range_label}} : {{tarif.prix}} AR / hour</h5>
               </div>
               <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
                   <i class="icon-lg tarif {{ svc.icon }} text-primary ml-auto" [style.color]="svc.color + ' !important'"></i>

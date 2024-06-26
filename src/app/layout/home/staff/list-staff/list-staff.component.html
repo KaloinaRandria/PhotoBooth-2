@@ -31,57 +31,29 @@
             <button class="btn dark submit-button" (click)="initial()">Initial</button>
         </div>
     </form>
-
 </div><br>
-<div class="row info table-responsive nicescroll">
-      <h1 class="titre">STAFF LIST</h1>
 
-      <table class="table">
-        <thead class="header">
-        <tr>
-          <th scope="col">id_</th>
-            <th scope="col">Username</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">Poste</th>
-            <th scope="col">Role</th>
-          <th scope="col">Hiring Date</th>
-          <th scope="col">Salary</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let membre of staff">
-          <td>{{ membre.id_membre }}</td>
-            <td>{{ membre.username }}</td>
-          <td>{{ membre.prenom }}</td>
-          <td>{{ membre.nom }}</td>
-          <td>{{ calculateAge(membre.date_de_naissance) }}</td>
-          <td>{{ membre.poste.intitule }}</td>
-            <td>{{ membre.role.intitule }}</td>
-          <td>{{ membre.date_embauche }}</td>
-          <td>{{ getSalaire(membre.salaire) }}</td>
-          <td>
-            <button class="icon-btn ripple " (click)="popUp(membre)">
-              <i class="mdi mdi-table-edit icon-edit "></i>
-            </button>
-          </td>
-          <td>
-            <button class="icon-btn ripple " (click)="delete(membre)">
-              <i class="mdi mdi-delete icon-delete "></i>
-            </button>
-          </td>
-        </tr>
-        <!-- Other table rows -->
-        </tbody>
-      </table>
-      <div class="col-md-12 box-light">
+<div class="row info">
+    <h1 class="titre">STAFF LIST</h1>
+    <div class="pinterest-grid">
+        <div *ngFor="let membre of staff" class="card">
+            <div class="card-body">
+                <h2 class="card-title nm">{{ membre.username }} ({{calculateAge(membre.date_de_naissance)}}yo)</h2>
+                <p class="card-text"><strong>Poste:</strong> {{ membre.poste.intitule }}</p>
+                <p class="card-text"><strong>Role:</strong> {{ membre.role.intitule }}</p>
+                <button class="icon-btn ripple" (click)="popUp(membre)">
+                    <i class="mdi mdi-table-edit icon-edit"></i>
+                </button>
+                <button class="icon-btn ripple" (click)="delete(membre)">
+                    <i class="mdi mdi-delete icon-delete"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 box-light">
         <div class="form-inline">
             <button class="btn dark" [disabled]="page == 1" (click)="previous()">previous</button>
-            <button class="btn left dark" [disabled]="page == maxPage" (click)="next()">next</button>
+            <button class="btn dark left" [disabled]="page == maxPage" (click)="next()">next</button>
         </div>
-          
-</div>
+    </div>
 </div>

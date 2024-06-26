@@ -82,9 +82,6 @@ body {
   color: white;
 }
 
-::-webkit-scrollbar{
-  display: none;
-}
 
 .left{
   margin-left: auto;
@@ -133,9 +130,6 @@ table tr td{
 }
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 /* Sélecteur pour Firefox */
 .nicescroll::-webkit-scrollbar {
   width: 12px; /* Largeur de la scrollbar */
@@ -171,8 +165,35 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .card {
   background: #ede4c9 !important;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.footer {
+  font-weight: bold !important;
+  font-style: italic !important;
+  text-align: center !important;
+}
+
+.fill {
+  background-color: #261d15 !important;
+  color: #fffcee !important;
+  transition: all .2s ease-in-out !important;
+  border-color: azure;
+}
+
+.fill:hover {
+  background-color: #fffcee !important;
+  color: #261d15 !important;
+  border-color: #261d15;
+}
+
+.no-fill {
+  background-color: #fffcee !important;
+  color: #261d15 !important;
+  transition: all .2s ease-in-out !important;
+  border-color: azure;
+}
+
+.no-fill:hover {
+  background-color: #261d15 !important;
+  color: #fffcee !important;
+  border-color: #fffcee;
+}

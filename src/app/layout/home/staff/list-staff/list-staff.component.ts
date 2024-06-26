@@ -55,6 +55,7 @@ export class ListStaffComponent implements OnInit{
 
   popUp(staff: any) {
     const dialogRef = this.dialog.open(PopUpComponent, {
+      height : "600px",
       data: {staff:staff, roleList: this.roleList, posteList: this.posteList }
     });
   }

@@ -92,6 +92,7 @@ import { StatServiceComponent } from './layout/home/services/stat-service/stat-s
 import { EventComponent } from './layout/home/event/event.component';
 import { ActualThemeComponent } from './layout/content/actual-theme/actual-theme.component';
 import { ProfitStatComponent } from './layout/element/profit-stat/profit-stat.component';
+import { ReservationDoneComponent } from './layout/home/reservation/reservation-done/reservation-done.component';
 
 
 @NgModule({
@@ -154,6 +155,7 @@ import { ProfitStatComponent } from './layout/element/profit-stat/profit-stat.co
     EventComponent,
     ActualThemeComponent,
     ProfitStatComponent,
+    ReservationDoneComponent,
   ],
     imports: [
         BrowserModule,

@@ -17,13 +17,11 @@
       </slide>
     </carousel>
       <br>
-      <div class="card pa-card" *ngIf="!serv">
+      <div class="card pa-card wave_box" *ngIf="!serv">
           <div class="card-body pa">
               Most Used Service apper here when you choose a range date
           </div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
+          <div class="box-inner"></div>
       </div>
       <div class="col-md-12 p-0" *ngIf="serv">
           <div class="card pado" [style.background]="applyOpacity(serv.service.color) + ' !important'">

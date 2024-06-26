@@ -113,7 +113,19 @@ table tr td{
 
 }
 
+.serv {
+    font-weight: 600;
+    text-transform: capitalize;
+}
 
+.pd {
+    opacity: 0.9;
+    transition: all .3s ease-in-out;
+}
+.pd:hover {
+    opacity: 1;
+    filter: brightness(1.5);
+}
 
 
 .icon-btn {

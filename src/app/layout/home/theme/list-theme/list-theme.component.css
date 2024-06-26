@@ -1,7 +1,6 @@
 /*INSERT CSS*/
 .form-div
 {
-  /*font-family: Arsenal;*/
 }
 
 table tr th{
@@ -143,6 +142,26 @@ table tr th td{
   position: relative;
   top: 5%;
 }
+
+.sary img {
+  filter: grayscale(80%);
+  transition: all 0.3s ease-in-out;
+
+}
+
+.sary {
+  transition: all 0.3s ease-in-out;
+}
+
+.sary:hover img {
+  filter: grayscale(0%);
+}
+
+.sary:hover {
+  scale: 1.01;
+  filter: brightness(1.1);
+}
+
 
 
 
