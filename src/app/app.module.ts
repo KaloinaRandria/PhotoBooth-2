@@ -91,6 +91,7 @@ import {NgApexchartsModule} from "ng-apexcharts";
 import { StatServiceComponent } from './layout/home/services/stat-service/stat-service.component';
 import { EventComponent } from './layout/home/event/event.component';
 import { ActualThemeComponent } from './layout/content/actual-theme/actual-theme.component';
+import { ProfitStatComponent } from './layout/element/profit-stat/profit-stat.component';
 
 
 @NgModule({
@@ -152,6 +153,7 @@ import { ActualThemeComponent } from './layout/content/actual-theme/actual-theme
     StatServiceComponent,
     EventComponent,
     ActualThemeComponent,
+    ProfitStatComponent,
   ],
     imports: [
         BrowserModule,

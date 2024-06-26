@@ -1,14 +1,12 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {Display} from "../../../class/util/display";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {User} from "../../../class/model/user/user";
-import {DataSecurity} from "../../../class/util/data-security";
 import {DashboardService} from "../../../service/dashboard/dashboard.service";
 import {BrowserModule, Title} from "@angular/platform-browser";
-import html2pdf from 'html2pdf.js';
 import { Constants } from '../../../class/util/constants';
 import {Chart, registerables} from "chart.js";
+import {ProfitStatComponent} from "../../element/profit-stat/profit-stat.component";
+import {HttpClient} from "@angular/common/http";
 Chart.register(...registerables);
 
 @Component({
@@ -25,64 +23,111 @@ export class DashboardComponent implements OnInit {
   constructor(
     private titleService: Title,
     private dash: DashboardService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
     this.titleService.setTitle("PB | Dashboard");
-    this.getAllTheme();
-    this.renderChart();
+
+    const temp = {
+      start: "2020-01-01",
+      end: "2030-01-01"
+    }
+
+    this.loadFinance(temp);
+    this.loadThemes(temp);
   }
 
-  getAllTheme() {
-    this.dash.getAllTheme('/theme/all').subscribe({
-      next:(response:any) => {
-        this.themeList = response.data;
-        console.log(this.themeList);
-      },
-      error:(exception) => {
-        Display.alert(this.snackBar,(exception.error.message),"close",6000);
-        console.error(exception);
+  loadThemes(data: any) {
+    this.http.post(Constants.BACK_URL + '/theme/range', data).subscribe({
+      next: (valiny: any) => {
+        this.themeList = valiny.data;
+        console.log("eto");
+        console.log(valiny);
+        },
+      error: (err) => {
+        console.error('olanaa');
+        console.error(err);
       }
     });
   }
 
-  slides = [
-    { image: 'https://picsum.photos/id/700/900/500', captionTitle: 'First Slide', captionText: 'This is the first slide' },
-    { image: 'https://picsum.photos/id/701/900/500', captionTitle: 'Second Slide', captionText: 'This is the second slide' },
-    { image: 'https://picsum.photos/id/702/900/500', captionTitle: 'Third Slide', captionText: 'This is the third slide' }
-  ];
+  filter : any = {
+    start : "",
+    end : ""
+  }
 
-  renderChart() {
+  minDate: number | undefined;
+  maxDate: number | undefined;
 
-    new Chart("linechart", {
-      type: 'line',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Cyan', 'Magenta', 'Lime', 'Pink'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3, 8, 14, 6, 9],
-          backgroundColor: 'rgba(21,9,1,0.5)', // couleur avec transparence
-          borderColor: 'rgb(21,9,1)',
-          borderWidth: 1
-        }]
+  @ViewChild(ProfitStatComponent) profitStatComponent!: ProfitStatComponent;
+
+  filterFunc() {
+    const startDate = new Date(this.filter.start).getTime();
+    const endDate = new Date(this.filter.end).getTime();
+
+    if (!isNaN(startDate) && !isNaN(endDate)) {
+      this.minDate = startDate;
+      this.maxDate = endDate;
+    } else {
+      this.minDate = undefined;
+      this.maxDate = undefined;
+    }
+
+    if (this.profitStatComponent) {
+      this.profitStatComponent.updateChartOptions(this.minDate, this.maxDate);
+    }
+
+    this.loadThemes(this.filter);
+    this.loadServiceStat();
+    this.loadFinance(this.filter);
+  }
+
+  serv: any;
+
+  loadServiceStat() {
+    this.http.post(Constants.BACK_URL + '/stat/service/range', this.filter).subscribe({
+      next: (valiny: any) => {
+        console.log(valiny);
+        this.serv = valiny.data;
       },
-      options: {
-        scales: {
-          x: {
-            ticks: {
-              padding: 20 // Augmenter l'espace entre les labels de l'axe x
-            }
-          },
-          y: {
-            beginAtZero: true,
-            ticks: {
-              stepSize: 2, // Ajuste l'intervalle entre les valeurs des ticks
-              padding: 20 // Augmenter l'espace entre les labels de l'axe y
-            }
-          }
-        }
+      error: (err) => {
+        console.error(err);
       }
     });
+  }
+
+  finance: any;
+
+  loadFinance(data: any) {
+    this.http.post(Constants.BACK_URL + '/stat/finance/range', data).subscribe({
+      next: (valiny: any) => {
+        console.log(valiny.data.attributes);
+        this.finance = valiny.data.attributes;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+
+  applyOpacity(color: string): string {
+    const rgbValue = this.hexToRgb(color);
+    const rgbaValue = `rgba(${rgbValue.r}, ${rgbValue.g}, ${rgbValue.b}, 0.2)`; // 0.2 correspond à 20% d'opacité
+    return rgbaValue;
+  }
+
+  private hexToRgb(hex: string): { r: number, g: number, b: number } {
+    // Supprimer le # du début s'il est présent
+    hex = hex.replace('#', '');
+
+    // Convertir en valeurs RGB
+    const bigint = parseInt(hex, 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+
+    return { r, g, b };
   }
 }
