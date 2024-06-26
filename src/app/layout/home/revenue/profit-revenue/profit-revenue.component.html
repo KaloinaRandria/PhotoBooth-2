@@ -1,1 +1,24 @@
-<p>profit-revenue works!</p>
+<div class="container mt-5 p-5" style="background-color: #f5f5dc; color: #5a3d2b; border-radius: 15px;">
+    <h1 class="text-center mb-4">Profit Forecast</h1>
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-lg btn-outline-dark" (click)="prevoirMoisProchain()">Forecast Next Month</button>
+    </div>
+    <div *ngIf="!loading" [ngClass]="{'animate-growth': showEstimation}">
+        <h2 class="text-center mb-4">Month: {{ result.month }}</h2>
+        <h3 class="text-center mb-4">Profit Estimate: {{ result.benefice | currency }}</h3>
+        <div class="list-group">
+            <div class="list-group-item active" style="background-color: #8b4513; border-color: #8b4513;">
+                <h4 class="mb-1">Suggested Theme Categories</h4>
+            </div>
+            <div class="list-group-item" *ngFor="let categorie of result.suggestion">
+                {{ categorie.categorie_theme }}
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-lg btn-warning">Why?</button>
+        </div>
+    </div>
+    <div class="text-center mt-4" style="font-size: 0.9em; color: #808080;">
+        <p>The forecast algorithm is based on statistics and may occasionally produce inaccuracies. Result may change over time</p>
+    </div>
+</div>
